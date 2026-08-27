@@ -9,8 +9,10 @@ const title = `${profile.fullName} | ${profile.professionalTitle}`;
 const description = `Portfolio of ${profile.fullName}, a ${profile.professionalTitle} with ${profile.experiencePositioning} building reliable native mobile applications.`;
 
 export const metadata: Metadata = {
+  metadataBase: new URL("https://erbdinesh.com"),
   title,
   description,
+  alternates: { canonical: "/" },
   applicationName: siteName,
   authors: [{ name: profile.fullName }],
   creator: profile.fullName,
@@ -18,6 +20,8 @@ export const metadata: Metadata = {
     title,
     description,
     siteName,
+    url: "https://erbdinesh.com",
+    images: "/og-image.png",
     locale: "en_IN",
     type: "profile",
   },
@@ -26,6 +30,7 @@ export const metadata: Metadata = {
     title,
     description,
     creator: profile.fullName,
+    images: "/og-image.png",
   },
   robots: {
     index: true,
