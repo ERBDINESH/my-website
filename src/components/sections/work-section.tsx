@@ -5,15 +5,6 @@ import { Container } from "@/components/ui/container";
 import { SectionHeading } from "@/components/ui/section-heading";
 import { selectedApplications } from "@/data/portfolio";
 
-function getInitials(name: string) {
-  return name
-    .split(/\s+/)
-    .slice(0, 2)
-    .map((word) => word[0])
-    .join("")
-    .toUpperCase();
-}
-
 export function WorkSection() {
   return (
     <section
@@ -36,11 +27,7 @@ export function WorkSection() {
                 key={application.name}
                 className="flex flex-col border border-border bg-surface p-6 shadow-sm transition-shadow hover:shadow-soft sm:p-7"
               >
-                {application.imagePath ? (
-                  <Image src={application.imagePath} alt={`${application.name} application icon`} width={80} height={80} className="size-20 rounded-[1.15rem] object-contain" />
-                ) : (
-                  <div className="flex size-20 items-center justify-center rounded-[1.15rem] bg-primary/10 text-lg font-bold text-primary" aria-hidden="true">{getInitials(application.name)}</div>
-                )}
+                <Image src={application.imagePath} alt={`${application.name} application icon`} width={80} height={80} className="size-20 rounded-[1.15rem] object-contain" />
 
                 <div className="min-w-0">
                   <p className="text-sm font-semibold uppercase tracking-[0.1em] text-accent">
