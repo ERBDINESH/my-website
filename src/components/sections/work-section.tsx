@@ -15,7 +15,7 @@ export function WorkSection() {
       <Container>
         <SectionHeading
           id="work-heading"
-          eyebrow="03 — Selected work"
+          eyebrow="04 — Selected work"
           title="Applications contributed to"
           description="Public applications supported through verified native iOS engineering contributions."
         />

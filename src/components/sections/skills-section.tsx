@@ -14,7 +14,7 @@ export function SkillsSection() {
       <Container>
         <SectionHeading
           id="skills-heading"
-          eyebrow="04 — Skills"
+          eyebrow="05 — Skills"
           title="Technical capabilities"
           description="Native iOS technologies and engineering practices supported by the verified professional record."
         />

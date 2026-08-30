@@ -36,6 +36,23 @@ export function HeroSection() {
               {profile.location}
             </p>
 
+            <div className="mt-6">
+              <ActionLink
+                href="https://launchproof.erbdinesh.com"
+                variant="text"
+                className="inline-flex items-center gap-2 text-sm font-semibold"
+              >
+                <span className="inline-flex items-center gap-2 rounded-full border border-accent/30 bg-accent/5 px-2.5 py-1.5 text-[11px] font-bold uppercase tracking-[0.16em] text-accent">
+                  <span className="size-2 rounded-full bg-accent" aria-hidden="true" />
+                  Now live: LaunchProof Beta
+                </span>
+                <span className="inline-flex items-center gap-1">
+                  Explore LaunchProof
+                  <ArrowDown className="size-3.5 rotate-[-90deg]" aria-hidden="true" />
+                </span>
+              </ActionLink>
+            </div>
+
             <div className="mt-9 flex flex-wrap items-center gap-3">
               <ActionLink href="#work">
                 View My Work

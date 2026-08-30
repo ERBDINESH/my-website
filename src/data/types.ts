@@ -2,6 +2,7 @@ export type SectionId =
   | "home"
   | "about"
   | "experience"
+  | "projects"
   | "work"
   | "skills"
   | "connect";
@@ -10,6 +11,7 @@ export type NavigationLabel =
   | "Home"
   | "About"
   | "Experience"
+  | "Projects"
   | "Work"
   | "Skills"
   | "Connect";
@@ -64,6 +66,17 @@ export interface SelectedApplication {
   imagePath: `/assets/${string}` | null;
 }
 
+export interface FeaturedProject {
+  name: string;
+  status: string;
+  category: string;
+  description: string;
+  highlights: readonly string[];
+  technologies: readonly string[];
+  primaryUrl: string;
+  githubUrl: string;
+}
+
 export type SkillGroupName =
   | "Primary iOS"
   | "Architecture"
@@ -88,6 +101,7 @@ export interface PortfolioData {
   socialLinks: readonly SocialLink[];
   navigation: readonly NavigationItem[];
   experience: readonly Experience[];
+  featuredProject: FeaturedProject;
   selectedApplications: readonly SelectedApplication[];
   skillGroups: readonly SkillGroup[];
   recommendations: readonly Recommendation[];

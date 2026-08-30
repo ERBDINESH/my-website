@@ -20,7 +20,7 @@ export function ConnectSection() {
         <div className="grid gap-10 lg:grid-cols-[minmax(0,1fr)_minmax(20rem,0.8fr)] lg:items-start lg:gap-20">
           <SectionHeading
             id="connect-heading"
-            eyebrow="05 — Connect"
+            eyebrow="06 — Connect"
             title="Start a professional conversation"
             description="Connect for relevant iOS opportunities, mobile engineering discussions, or professional collaboration."
             className="[&_h2]:text-white [&_p:last-child]:text-slate-300"

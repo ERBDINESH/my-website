@@ -1,5 +1,6 @@
 import type {
   Experience,
+  FeaturedProject,
   NavigationItem,
   PersonalProfile,
   PortfolioData,
@@ -46,6 +47,7 @@ export const navigation = [
   { id: "home", label: "Home", href: "#home" },
   { id: "about", label: "About", href: "#about" },
   { id: "experience", label: "Experience", href: "#experience" },
+  { id: "projects", label: "Projects", href: "#projects" },
   { id: "work", label: "Work", href: "#work" },
   { id: "skills", label: "Skills", href: "#skills" },
   { id: "connect", label: "Connect", href: "#connect" },
@@ -140,6 +142,25 @@ export const experience = [
     employerLogoPath: "/assets/employers/unizen-technologies.jpg",
   },
 ] as const satisfies readonly Experience[];
+
+export const featuredProject = {
+  name: "LaunchProof",
+  status: "Live Beta",
+  category: "Release Readiness Platform",
+  description:
+    "A production-focused platform that helps web teams answer one question: “Is this website ready to launch?”",
+  highlights: [
+    "17 release-readiness checks",
+    "READY / NOT READY / SCAN FAILED verdict",
+    "Release blockers and warnings",
+    "Launch Score",
+    "Shareable immutable reports",
+    "Secure authenticated projects",
+  ],
+  technologies: ["Next.js", "TypeScript", "Supabase", "Railway", "Cloudflare"],
+  primaryUrl: "https://launchproof.erbdinesh.com",
+  githubUrl: "https://github.com/ERBDINESH/launchproof",
+} as const satisfies FeaturedProject;
 
 export const selectedApplications = [
   {
@@ -272,6 +293,7 @@ export const portfolio = {
   socialLinks,
   navigation,
   experience,
+  featuredProject,
   selectedApplications,
   skillGroups,
   recommendations,

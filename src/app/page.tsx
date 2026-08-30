@@ -1,6 +1,7 @@
 import { AboutSection } from "@/components/sections/about-section";
 import { ConnectSection } from "@/components/sections/connect-section";
 import { ExperienceSection } from "@/components/sections/experience-section";
+import { FeaturedProjectSection } from "@/components/sections/featured-project-section";
 import { HeroSection } from "@/components/sections/hero-section";
 import { RecommendationsSection } from "@/components/sections/recommendations-section";
 import { SkillsSection } from "@/components/sections/skills-section";
@@ -14,6 +15,7 @@ export default function Home() {
       <HeroSection />
       <AboutSection />
       <ExperienceSection />
+      <FeaturedProjectSection />
       <WorkSection />
       <SkillsSection />
       <RecommendationsSection />
