@@ -1,4 +1,4 @@
-import { ArrowUpRight, Check, ExternalLink, ShieldCheck } from "lucide-react";
+import { ArrowUpRight, Check, ShieldCheck } from "lucide-react";
 import { ActionLink } from "@/components/ui/action-link";
 import { Container } from "@/components/ui/container";
 import { SectionHeading } from "@/components/ui/section-heading";
@@ -107,14 +107,6 @@ export function FeaturedProjectSection() {
             >
               Try LaunchProof
               <ArrowUpRight className="ml-2 size-4" aria-hidden="true" />
-            </ActionLink>
-            <ActionLink
-              href={featuredProject.githubUrl}
-              variant="secondary"
-              className="px-4 py-2.5"
-            >
-              <ExternalLink className="mr-2 size-4" aria-hidden="true" />
-              View on GitHub
             </ActionLink>
           </div>
         </div>
