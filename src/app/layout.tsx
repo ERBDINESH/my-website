@@ -1,17 +1,37 @@
-import type { Metadata } from "next";
+import type { Metadata, Viewport } from "next";
 import { SiteFooter } from "@/components/layout/site-footer";
 import { SiteHeader } from "@/components/layout/site-header";
+import { ThemeProvider } from "@/components/theme/theme-provider";
 import { profile } from "@/data/portfolio";
 import "./globals.css";
 
-const siteName = `${profile.fullName} Portfolio`;
-const title = `${profile.fullName} | ${profile.professionalTitle}`;
-const description = `Portfolio of ${profile.fullName}, a ${profile.professionalTitle} with ${profile.experiencePositioning} building reliable native mobile applications.`;
+const siteName = `${profile.fullName} | ${profile.professionalTitle}`;
+const title = `${profile.fullName} – ${profile.professionalTitle}`;
+const description = `Portfolio of ${profile.fullName}, a senior native iOS software engineer with ${profile.experiencePositioning} across banking, commerce, and connected-device products.`;
+
+export const viewport: Viewport = {
+  themeColor: [
+    { media: "(prefers-color-scheme: dark)", color: "#090c0b" },
+    { media: "(prefers-color-scheme: light)", color: "#f5f7f6" },
+  ],
+  colorScheme: "dark light",
+};
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://erbdinesh.com"),
   title,
   description,
+  keywords: [
+    "Dineshbabu Elumalai",
+    "Software Engineer – iOS",
+    "Senior iOS Engineer",
+    "Mobile Software Engineer",
+    "Swift Developer",
+    "SwiftUI Developer",
+    "UIKit",
+    "iOS Architecture",
+    "iOS Technical Consulting",
+  ],
   alternates: { canonical: "/" },
   applicationName: siteName,
   authors: [{ name: profile.fullName }],
@@ -22,11 +42,11 @@ export const metadata: Metadata = {
     siteName,
     url: "https://erbdinesh.com",
     images: "/og-image.png",
-    locale: "en_IN",
+    locale: "en_US",
     type: "profile",
   },
   twitter: {
-    card: "summary",
+    card: "summary_large_image",
     title,
     description,
     creator: profile.fullName,
@@ -42,23 +62,40 @@ export const metadata: Metadata = {
   },
 };
 
-export default function RootLayout({ children }: LayoutProps<"/">) {
+export default function RootLayout({
+  children,
+}: {
+  children: React.ReactNode;
+}) {
   return (
-    <html lang="en">
-      <body suppressHydrationWarning>
-        <a
-          href="#main-content"
-          className="fixed left-4 top-4 z-100 -translate-y-24 rounded-md bg-primary px-4 py-3 text-sm font-semibold text-white shadow-soft transition-transform focus:translate-y-0 motion-reduce:transition-none"
-        >
-          Skip to content
-        </a>
-        <div className="flex min-h-screen flex-col">
-          <SiteHeader />
-          <main id="main-content" tabIndex={-1} className="flex-1">
-            {children}
-          </main>
-          <SiteFooter />
-        </div>
+    <html lang="en" data-theme="dark" suppressHydrationWarning className="scroll-smooth">
+      <head>
+        {/* Pre-hydration theme initialization script: guarantees Dark default and prevents visual flash */}
+        <script
+          dangerouslySetInnerHTML={{
+            __html: `(function(){try{var t=localStorage.getItem('theme');document.documentElement.dataset.theme=(t==='light'?'light':'dark');}catch(e){document.documentElement.dataset.theme='dark';}})();`,
+          }}
+        />
+      </head>
+      <body
+        suppressHydrationWarning
+        className="min-h-screen bg-background text-foreground antialiased selection:bg-emerald-500/25 selection:text-foreground"
+      >
+        <ThemeProvider>
+          <a
+            href="#main-content"
+            className="fixed left-4 top-4 z-100 -translate-y-24 rounded-xl border border-accent/40 bg-accent px-4 py-2.5 text-xs font-semibold text-white shadow-lg transition-transform focus:translate-y-0 motion-reduce:transition-none"
+          >
+            Skip to content
+          </a>
+          <div className="flex min-h-screen flex-col">
+            <SiteHeader />
+            <main id="main-content" tabIndex={-1} className="flex-1 focus:outline-none">
+              {children}
+            </main>
+            <SiteFooter />
+          </div>
+        </ThemeProvider>
       </body>
     </html>
   );

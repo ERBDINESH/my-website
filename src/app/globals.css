@@ -1,36 +1,205 @@
 @import "tailwindcss";
 
-:root {
-  --background: #ffffff;
-  --surface: #f8fafc;
-  --surface-strong: #eff6ff;
-  --foreground: #0f172a;
-  --muted: #475569;
-  --subtle: #64748b;
-  --primary: #1d4ed8;
-  --primary-hover: #1e40af;
-  --accent: #059669;
-  --border: #cbd5e1;
-  --focus: #2563eb;
-  --selection-background: #dbeafe;
-  --selection-foreground: #172554;
-  --shadow-soft: 0 8px 24px rgb(15 23 42 / 0.08);
+@custom-variant dark (&:where([data-theme="dark"], [data-theme="dark"] *));
+
+/* ========================================================
+   DARK THEME (Default)
+   ======================================================== */
+:root,
+[data-theme="dark"] {
+  --background: #090c0b;
+  --background-canvas: #060807;
+  
+  /* Solid Content Surfaces (DARK SOLID SURFACES = Content) */
+  --surface: #101512;
+  --surface-raised: #151b17;
+  --surface-elevated: #1b231e;
+  --surface-overlay: #222c26;
+  
+  --card-bg: #101512;
+  --card-border: rgba(255, 255, 255, 0.08);
+  --card-hover-bg: #131a16;
+  --card-hover-border: rgba(255, 255, 255, 0.16);
+  --card-shadow: 0 8px 24px -4px rgba(0, 0, 0, 0.5);
+
+  --foreground: #f1f5f9;
+  --foreground-muted: #94a3b8;
+  --foreground-subtle: #64748b;
+  
+  /* Emerald Accent Family (Dark mode: luminous emerald) */
+  --emerald-accent: #10b981;
+  --emerald-accent-hover: #34d399;
+  --emerald-accent-dark: #059669;
+  --emerald-action-text: #a7f3d0;
+  --emerald-glass-bg: rgba(16, 185, 129, 0.12);
+  --emerald-glass-bg-hover: rgba(16, 185, 129, 0.20);
+  --emerald-glass-border: rgba(52, 211, 153, 0.32);
+  --emerald-glass-highlight: inset 0 1px 0 0 rgba(110, 231, 183, 0.40);
+  --emerald-glow: 0 0 28px -4px rgba(16, 185, 129, 0.24);
+
+  --accent: var(--emerald-accent);
+  --accent-hover: var(--emerald-accent-hover);
+  --accent-glow: var(--emerald-glow);
+  --accent-border: var(--emerald-glass-border);
+  --accent-muted: rgba(16, 185, 129, 0.08);
+
+  /* Dark Liquid Glass Material Tokens */
+  --glass-bg-subtle: rgba(14, 19, 16, 0.48);
+  --glass-bg-regular: rgba(18, 24, 21, 0.68);
+  --glass-bg-strong: rgba(22, 29, 25, 0.86);
+  --glass-bg-floating: rgba(16, 22, 19, 0.74);
+  --glass-control-bg: rgba(20, 27, 23, 0.60);
+  
+  --glass-border: rgba(255, 255, 255, 0.09);
+  --glass-border-subtle: rgba(255, 255, 255, 0.05);
+  --glass-border-strong: rgba(255, 255, 255, 0.18);
+  
+  --glass-highlight: inset 0 1px 0 0 rgba(255, 255, 255, 0.14);
+  --glass-highlight-subtle: inset 0 1px 0 0 rgba(255, 255, 255, 0.07);
+  --glass-highlight-strong: inset 0 1px 0 0 rgba(255, 255, 255, 0.22);
+
+  --glass-shadow: 0 12px 32px -4px rgba(0, 0, 0, 0.55), 0 4px 12px -2px rgba(0, 0, 0, 0.35);
+  --glass-shadow-floating: 0 20px 44px -8px rgba(0, 0, 0, 0.65), 0 8px 18px -4px rgba(0, 0, 0, 0.45);
+  --glass-shadow-control: 0 4px 14px -2px rgba(0, 0, 0, 0.45);
+  
+  --glass-blur: 18px;
+  --glass-blur-lg: 24px;
+  --glass-saturation: saturate(180%);
+  
+  --border: rgba(255, 255, 255, 0.08);
+  --border-strong: rgba(255, 255, 255, 0.14);
+  --border-subtle: rgba(255, 255, 255, 0.04);
+
+  --focus: #10b981;
+  --selection-background: rgba(16, 185, 129, 0.25);
+  --selection-foreground: #ffffff;
+
+  /* iPhone Screen Semantic Tokens (Dark Mode) */
+  --phone-screen-bg: #0c100e;
+  --phone-card-bg: #121815;
+  --phone-card-sub-bg: #0e1310;
+  --phone-card-border: rgba(255, 255, 255, 0.08);
+  --phone-bar-bg: rgba(0, 0, 0, 0.45);
+  --phone-badge-bg: rgba(0, 0, 0, 0.40);
+  --phone-text: #f1f5f9;
+  --phone-text-muted: #94a3b8;
+  --phone-text-subtle: #64748b;
+  --phone-progress-track: rgba(255, 255, 255, 0.12);
+  --phone-home-bar: rgba(255, 255, 255, 0.35);
+  
   --header-height: 4.5rem;
+}
+
+/* ========================================================
+   LIGHT THEME (Supported Alternative)
+   ======================================================== */
+[data-theme="light"] {
+  /* Warm-neutral off-white background hierarchy */
+  --background: #f5f7f6;
+  --background-canvas: #edf1ee;
+  
+  /* Solid Content Surfaces (LIGHT SOLID SURFACES = Content) */
+  --surface: #ffffff;
+  --surface-raised: #f8faf9;
+  --surface-elevated: #edf2ef;
+  --surface-overlay: #e3eae5;
+  
+  --card-bg: #ffffff;
+  --card-border: rgba(16, 21, 18, 0.08);
+  --card-hover-bg: #f9fbf9;
+  --card-hover-border: rgba(16, 21, 18, 0.16);
+  --card-shadow: 0 4px 16px -2px rgba(16, 21, 18, 0.05);
+
+  /* High contrast text hierarchy */
+  --foreground: #101512;
+  --foreground-muted: #3a4740;
+  --foreground-subtle: #617067;
+  
+  /* Emerald Accent Family (Light mode: rich deep emerald) */
+  --emerald-accent: #059669;
+  --emerald-accent-hover: #047857;
+  --emerald-accent-dark: #064e3b;
+  --emerald-action-text: #064e3b;
+  --emerald-glass-bg: rgba(5, 150, 105, 0.08);
+  --emerald-glass-bg-hover: rgba(5, 150, 105, 0.14);
+  --emerald-glass-border: rgba(5, 150, 105, 0.26);
+  --emerald-glass-highlight: inset 0 1px 0 0 rgba(255, 255, 255, 0.85);
+  --emerald-glow: 0 0 24px -4px rgba(5, 150, 105, 0.15);
+
+  --accent: var(--emerald-accent);
+  --accent-hover: var(--emerald-accent-hover);
+  --accent-glow: var(--emerald-glow);
+  --accent-border: var(--emerald-glass-border);
+  --accent-muted: rgba(5, 150, 105, 0.08);
+
+  /* Light Liquid Glass Material Tokens */
+  --glass-bg-subtle: rgba(255, 255, 255, 0.55);
+  --glass-bg-regular: rgba(255, 255, 255, 0.72);
+  --glass-bg-strong: rgba(255, 255, 255, 0.88);
+  --glass-bg-floating: rgba(255, 255, 255, 0.78);
+  --glass-control-bg: rgba(255, 255, 255, 0.65);
+  
+  --glass-border: rgba(16, 21, 18, 0.08);
+  --glass-border-subtle: rgba(16, 21, 18, 0.05);
+  --glass-border-strong: rgba(16, 21, 18, 0.15);
+  
+  --glass-highlight: inset 0 1px 0 0 rgba(255, 255, 255, 0.90);
+  --glass-highlight-subtle: inset 0 1px 0 0 rgba(255, 255, 255, 0.60);
+  --glass-highlight-strong: inset 0 1px 0 0 rgba(255, 255, 255, 1);
+
+  --glass-shadow: 0 12px 32px -8px rgba(16, 21, 18, 0.08), 0 4px 12px -4px rgba(16, 21, 18, 0.04);
+  --glass-shadow-floating: 0 18px 40px -10px rgba(16, 21, 18, 0.12), 0 6px 16px -4px rgba(16, 21, 18, 0.06);
+  --glass-shadow-control: 0 2px 8px -2px rgba(16, 21, 18, 0.07);
+  
+  --glass-blur: 18px;
+  --glass-blur-lg: 24px;
+  --glass-saturation: saturate(160%);
+  
+  --border: rgba(16, 21, 18, 0.08);
+  --border-strong: rgba(16, 21, 18, 0.15);
+  --border-subtle: rgba(16, 21, 18, 0.04);
+
+  --focus: #059669;
+  --selection-background: rgba(5, 150, 105, 0.20);
+  --selection-foreground: #064e3b;
+
+  /* iPhone Screen Semantic Tokens (Light Mode) */
+  --phone-screen-bg: #f2f5f3;
+  --phone-card-bg: #ffffff;
+  --phone-card-sub-bg: #ffffff;
+  --phone-card-border: rgba(16, 21, 18, 0.08);
+  --phone-bar-bg: rgba(255, 255, 255, 0.75);
+  --phone-badge-bg: rgba(226, 232, 240, 0.65);
+  --phone-text: #0f172a;
+  --phone-text-muted: #334155;
+  --phone-text-subtle: #64748b;
+  --phone-progress-track: #e2e8f0;
+  --phone-home-bar: #94a3b8;
 }
 
 @theme inline {
   --color-background: var(--background);
   --color-surface: var(--surface);
-  --color-surface-strong: var(--surface-strong);
+  --color-surface-raised: var(--surface-raised);
+  --color-surface-elevated: var(--surface-elevated);
+  --color-surface-overlay: var(--surface-overlay);
+  
   --color-foreground: var(--foreground);
-  --color-muted: var(--muted);
-  --color-subtle: var(--subtle);
-  --color-primary: var(--primary);
-  --color-primary-hover: var(--primary-hover);
+  --color-foreground-muted: var(--foreground-muted);
+  --color-foreground-subtle: var(--foreground-subtle);
+  
   --color-accent: var(--accent);
+  --color-accent-hover: var(--accent-hover);
+  --color-accent-glow: var(--accent-glow);
+  --color-accent-border: var(--accent-border);
+  --color-accent-muted: var(--accent-muted);
+  
   --color-border: var(--border);
+  --color-border-strong: var(--border-strong);
+  --color-border-subtle: var(--border-subtle);
+  
   --color-focus: var(--focus);
-  --shadow-soft: var(--shadow-soft);
+  --shadow-glow: var(--emerald-glow);
 }
 
 html {
@@ -42,8 +211,15 @@ body {
   min-height: 100%;
   background: var(--background);
   color: var(--foreground);
-  font-family: "Avenir Next", "Segoe UI", sans-serif;
+  font-family: -apple-system, BlinkMacSystemFont, "SF Pro Text", "SF Pro Display", "SF Compact", "Helvetica Neue", "Segoe UI", system-ui, sans-serif;
   text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* SF Mono for technical indicators, code, architecture identifiers */
+.font-mono-code {
+  font-family: "SF Mono", Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
 }
 
 ::selection {
@@ -52,12 +228,143 @@ body {
 }
 
 :where(a, button, input, textarea, select, summary):focus-visible {
-  outline: 3px solid var(--focus);
-  outline-offset: 3px;
+  outline: 2px solid var(--accent);
+  outline-offset: 2px;
+}
+
+/* ========================================================
+   LIQUID GLASS UTILITIES
+   Translucent functional layers with optical depth
+   ======================================================== */
+
+.liquid-glass-subtle {
+  background: var(--glass-bg-subtle);
+  backdrop-filter: blur(var(--glass-blur)) var(--glass-saturation);
+  -webkit-backdrop-filter: blur(var(--glass-blur)) var(--glass-saturation);
+  border: 1px solid var(--glass-border-subtle);
+  box-shadow: var(--glass-highlight-subtle);
+}
+
+.liquid-glass-regular {
+  background: var(--glass-bg-regular);
+  backdrop-filter: blur(var(--glass-blur)) var(--glass-saturation);
+  -webkit-backdrop-filter: blur(var(--glass-blur)) var(--glass-saturation);
+  border: 1px solid var(--glass-border);
+  box-shadow: var(--glass-highlight), var(--glass-shadow);
+}
+
+.liquid-glass-strong {
+  background: var(--glass-bg-strong);
+  backdrop-filter: blur(var(--glass-blur-lg)) var(--glass-saturation);
+  -webkit-backdrop-filter: blur(var(--glass-blur-lg)) var(--glass-saturation);
+  border: 1px solid var(--glass-border-strong);
+  box-shadow: var(--glass-highlight-strong), var(--glass-shadow-floating);
+}
+
+.liquid-glass-floating {
+  background: var(--glass-bg-floating);
+  backdrop-filter: blur(var(--glass-blur-lg)) var(--glass-saturation);
+  -webkit-backdrop-filter: blur(var(--glass-blur-lg)) var(--glass-saturation);
+  border: 1px solid var(--glass-border);
+  box-shadow: var(--glass-highlight), var(--glass-shadow-floating);
+}
+
+.liquid-glass-control {
+  background: var(--glass-control-bg);
+  backdrop-filter: blur(14px) var(--glass-saturation);
+  -webkit-backdrop-filter: blur(14px) var(--glass-saturation);
+  border: 1px solid var(--glass-border);
+  box-shadow: var(--glass-highlight-subtle), var(--glass-shadow-control);
+}
+
+.liquid-glass-emerald {
+  background: var(--emerald-glass-bg);
+  backdrop-filter: blur(14px) var(--glass-saturation);
+  -webkit-backdrop-filter: blur(14px) var(--glass-saturation);
+  border: 1px solid var(--emerald-glass-border);
+  box-shadow: var(--emerald-glass-highlight), 0 4px 16px -2px rgba(16, 185, 129, 0.18);
+}
+
+.liquid-glass-emerald:hover {
+  background: var(--emerald-glass-bg-hover);
+  border-color: var(--emerald-glass-border);
+  box-shadow: var(--emerald-glass-highlight), 0 6px 20px -2px rgba(16, 185, 129, 0.25);
+}
+
+/* Fallback for browsers without backdrop-filter */
+@supports not (backdrop-filter: blur(10px)) {
+  [data-theme="light"] .liquid-glass-subtle { background: #ffffff; }
+  [data-theme="light"] .liquid-glass-regular { background: #f8faf9; }
+  [data-theme="light"] .liquid-glass-strong { background: #ffffff; }
+  [data-theme="light"] .liquid-glass-floating { background: #f8faf9; }
+  [data-theme="light"] .liquid-glass-control { background: #f0f3f1; }
+  [data-theme="light"] .liquid-glass-emerald { background: #ecfdf5; }
+
+  [data-theme="dark"] .liquid-glass-subtle { background: #131915; }
+  [data-theme="dark"] .liquid-glass-regular { background: #151d18; }
+  [data-theme="dark"] .liquid-glass-strong { background: #1a231d; }
+  [data-theme="dark"] .liquid-glass-floating { background: #17201a; }
+  [data-theme="dark"] .liquid-glass-control { background: #141b16; }
+  [data-theme="dark"] .liquid-glass-emerald { background: #0c2d20; }
+}
+
+/* SOLID CONTENT PANELS (Preserves content contrast & hierarchy) */
+.solid-content-panel {
+  background: var(--card-bg);
+  border: 1px solid var(--card-border);
+  box-shadow: var(--card-shadow);
+}
+
+.solid-content-card {
+  background: var(--card-bg);
+  border: 1px solid var(--card-border);
+  box-shadow: var(--card-shadow);
+  transition: all 0.2s ease;
+}
+
+.solid-content-card:hover {
+  background: var(--card-hover-bg);
+  border-color: var(--card-hover-border);
+}
+
+/* Ambient Emerald Emitter (subtle optical depth behind glass layers) */
+.ambient-emerald-glow {
+  background: radial-gradient(circle, rgba(16, 185, 129, 0.12) 0%, rgba(16, 185, 129, 0.02) 50%, transparent 70%);
+}
+
+/* Subtle engineering grid background */
+.engineering-grid {
+  background-image: 
+    linear-gradient(to right, var(--border-subtle) 1px, transparent 1px),
+    linear-gradient(to bottom, var(--border-subtle) 1px, transparent 1px);
+  background-size: 32px 32px;
+}
+
+/* Hardware bezel styling */
+.device-bezel {
+  box-shadow: 
+    0 0 0 1px var(--border-strong),
+    0 0 0 4px var(--surface-raised),
+    0 24px 48px -12px rgba(0, 0, 0, 0.25);
+}
+
+[data-theme="dark"] .device-bezel {
+  box-shadow: 
+    0 0 0 1px rgba(255, 255, 255, 0.14),
+    0 0 0 4px #18201b,
+    0 24px 48px -12px rgba(0, 0, 0, 0.88);
 }
 
 @media (prefers-reduced-motion: reduce) {
   html {
     scroll-behavior: auto;
+  }
+  
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
   }
 }
