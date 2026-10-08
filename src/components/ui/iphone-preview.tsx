@@ -25,9 +25,9 @@ export function IPhonePreview() {
 
   return (
     <div className="relative mx-auto flex w-full max-w-[340px] sm:max-w-[360px] lg:max-w-[375px] xl:max-w-[385px] flex-col items-center">
-      {/* Subtle emerald ambient lighting behind the phone */}
+      {/* Subtle brand ambient lighting behind the phone */}
       <div
-        className="pointer-events-none absolute -inset-6 rounded-[56px] bg-emerald-500/[0.08] blur-3xl"
+        className="pointer-events-none absolute -inset-6 rounded-[56px] bg-accent/[0.08] blur-3xl"
         aria-hidden="true"
       />
 
@@ -78,7 +78,7 @@ export function IPhonePreview() {
       </LiquidGlass>
 
       {/* Hardware Chassis: Apple Device Frame (stays dark/metallic physical hardware) */}
-      <div className="device-bezel relative aspect-[9/19] w-full rounded-[48px] border border-border-strong bg-[#18201b] p-3 shadow-2xl transition-all duration-300">
+      <div className="device-bezel relative aspect-[9/19] w-full rounded-[48px] border border-border-strong bg-[#272730] p-3 shadow-2xl transition-all duration-300">
         {/* Dynamic Island: Physical hardware cutout stays near-black */}
         <div className="absolute left-1/2 top-4 z-20 flex h-6 w-28 -translate-x-1/2 items-center justify-between rounded-full bg-black px-2.5 shadow-inner">
           <div className="size-2.5 rounded-full bg-neutral-900" />
