@@ -7,48 +7,48 @@
    ======================================================== */
 :root,
 [data-theme="dark"] {
-  --background: #090c0b;
-  --background-canvas: #060807;
+  --background: #101014;
+  --background-canvas: #0a0a0e;
   
   /* Solid Content Surfaces (DARK SOLID SURFACES = Content) */
-  --surface: #101512;
-  --surface-raised: #151b17;
-  --surface-elevated: #1b231e;
-  --surface-overlay: #222c26;
+  --surface: #17171d;
+  --surface-raised: #1d1d25;
+  --surface-elevated: #25252e;
+  --surface-overlay: #30303a;
   
-  --card-bg: #101512;
+  --card-bg: #17171d;
   --card-border: rgba(255, 255, 255, 0.08);
-  --card-hover-bg: #131a16;
+  --card-hover-bg: #202027;
   --card-hover-border: rgba(255, 255, 255, 0.16);
   --card-shadow: 0 8px 24px -4px rgba(0, 0, 0, 0.5);
 
-  --foreground: #f1f5f9;
-  --foreground-muted: #94a3b8;
-  --foreground-subtle: #64748b;
+  --foreground: #f5f3ee;
+  --foreground-muted: #b6b5be;
+  --foreground-subtle: #92909e;
   
-  /* Emerald Accent Family (Dark mode: luminous emerald) */
-  --emerald-accent: #10b981;
-  --emerald-accent-hover: #34d399;
-  --emerald-accent-dark: #059669;
-  --emerald-action-text: #a7f3d0;
-  --emerald-glass-bg: rgba(16, 185, 129, 0.12);
-  --emerald-glass-bg-hover: rgba(16, 185, 129, 0.20);
-  --emerald-glass-border: rgba(52, 211, 153, 0.32);
-  --emerald-glass-highlight: inset 0 1px 0 0 rgba(110, 231, 183, 0.40);
-  --emerald-glow: 0 0 28px -4px rgba(16, 185, 129, 0.24);
+  /* Brand Accent Family (Dark mode: warm coral) */
+  --emerald-accent: #ff786d;
+  --emerald-accent-hover: #ff9d85;
+  --emerald-accent-dark: #ba302c;
+  --emerald-action-text: #ffb5a2;
+  --emerald-glass-bg: rgba(255, 120, 109, 0.12);
+  --emerald-glass-bg-hover: rgba(255, 120, 109, 0.20);
+  --emerald-glass-border: rgba(255, 157, 133, 0.32);
+  --emerald-glass-highlight: inset 0 1px 0 0 rgba(255, 181, 162, 0.40);
+  --emerald-glow: 0 0 28px -4px rgba(255, 120, 109, 0.24);
 
   --accent: var(--emerald-accent);
   --accent-hover: var(--emerald-accent-hover);
   --accent-glow: var(--emerald-glow);
   --accent-border: var(--emerald-glass-border);
-  --accent-muted: rgba(16, 185, 129, 0.08);
+  --accent-muted: rgba(255, 120, 109, 0.08);
 
   /* Dark Liquid Glass Material Tokens */
-  --glass-bg-subtle: rgba(14, 19, 16, 0.48);
-  --glass-bg-regular: rgba(18, 24, 21, 0.68);
-  --glass-bg-strong: rgba(22, 29, 25, 0.86);
-  --glass-bg-floating: rgba(16, 22, 19, 0.74);
-  --glass-control-bg: rgba(20, 27, 23, 0.60);
+  --glass-bg-subtle: rgba(18, 18, 24, 0.48);
+  --glass-bg-regular: rgba(23, 23, 31, 0.68);
+  --glass-bg-strong: rgba(29, 29, 38, 0.86);
+  --glass-bg-floating: rgba(23, 23, 31, 0.74);
+  --glass-control-bg: rgba(27, 27, 36, 0.60);
   
   --glass-border: rgba(255, 255, 255, 0.09);
   --glass-border-subtle: rgba(255, 255, 255, 0.05);
@@ -70,20 +70,20 @@
   --border-strong: rgba(255, 255, 255, 0.14);
   --border-subtle: rgba(255, 255, 255, 0.04);
 
-  --focus: #10b981;
-  --selection-background: rgba(16, 185, 129, 0.25);
+  --focus: #ff786d;
+  --selection-background: rgba(255, 120, 109, 0.25);
   --selection-foreground: #ffffff;
 
   /* iPhone Screen Semantic Tokens (Dark Mode) */
-  --phone-screen-bg: #0c100e;
-  --phone-card-bg: #121815;
-  --phone-card-sub-bg: #0e1310;
+  --phone-screen-bg: #111116;
+  --phone-card-bg: #1b1b22;
+  --phone-card-sub-bg: #15151b;
   --phone-card-border: rgba(255, 255, 255, 0.08);
   --phone-bar-bg: rgba(0, 0, 0, 0.45);
   --phone-badge-bg: rgba(0, 0, 0, 0.40);
-  --phone-text: #f1f5f9;
-  --phone-text-muted: #94a3b8;
-  --phone-text-subtle: #64748b;
+  --phone-text: #f5f3ee;
+  --phone-text-muted: #b6b5be;
+  --phone-text-subtle: #92909e;
   --phone-progress-track: rgba(255, 255, 255, 0.12);
   --phone-home-bar: rgba(255, 255, 255, 0.35);
   
@@ -95,42 +95,42 @@
    ======================================================== */
 [data-theme="light"] {
   /* Warm-neutral off-white background hierarchy */
-  --background: #f5f7f6;
-  --background-canvas: #edf1ee;
+  --background: #f7f7fa;
+  --background-canvas: #ededf3;
   
   /* Solid Content Surfaces (LIGHT SOLID SURFACES = Content) */
   --surface: #ffffff;
-  --surface-raised: #f8faf9;
-  --surface-elevated: #edf2ef;
-  --surface-overlay: #e3eae5;
+  --surface-raised: #f9f9fc;
+  --surface-elevated: #eeeef4;
+  --surface-overlay: #e5e5ed;
   
   --card-bg: #ffffff;
-  --card-border: rgba(16, 21, 18, 0.08);
-  --card-hover-bg: #f9fbf9;
-  --card-hover-border: rgba(16, 21, 18, 0.16);
-  --card-shadow: 0 4px 16px -2px rgba(16, 21, 18, 0.05);
+  --card-border: rgba(23, 23, 29, 0.08);
+  --card-hover-bg: #fafafd;
+  --card-hover-border: rgba(23, 23, 29, 0.16);
+  --card-shadow: 0 4px 16px -2px rgba(23, 23, 29, 0.05);
 
   /* High contrast text hierarchy */
-  --foreground: #101512;
-  --foreground-muted: #3a4740;
-  --foreground-subtle: #617067;
+  --foreground: #17171d;
+  --foreground-muted: #45434d;
+  --foreground-subtle: #666270;
   
-  /* Emerald Accent Family (Light mode: rich deep emerald) */
-  --emerald-accent: #059669;
-  --emerald-accent-hover: #047857;
-  --emerald-accent-dark: #064e3b;
-  --emerald-action-text: #064e3b;
-  --emerald-glass-bg: rgba(5, 150, 105, 0.08);
-  --emerald-glass-bg-hover: rgba(5, 150, 105, 0.14);
-  --emerald-glass-border: rgba(5, 150, 105, 0.26);
+  /* Brand Accent Family (Light mode: deep red) */
+  --emerald-accent: #ba302c;
+  --emerald-accent-hover: #9a2422;
+  --emerald-accent-dark: #81221f;
+  --emerald-action-text: #81221f;
+  --emerald-glass-bg: rgba(186, 48, 44, 0.08);
+  --emerald-glass-bg-hover: rgba(186, 48, 44, 0.14);
+  --emerald-glass-border: rgba(186, 48, 44, 0.26);
   --emerald-glass-highlight: inset 0 1px 0 0 rgba(255, 255, 255, 0.85);
-  --emerald-glow: 0 0 24px -4px rgba(5, 150, 105, 0.15);
+  --emerald-glow: 0 0 24px -4px rgba(186, 48, 44, 0.15);
 
   --accent: var(--emerald-accent);
   --accent-hover: var(--emerald-accent-hover);
   --accent-glow: var(--emerald-glow);
   --accent-border: var(--emerald-glass-border);
-  --accent-muted: rgba(5, 150, 105, 0.08);
+  --accent-muted: rgba(186, 48, 44, 0.08);
 
   /* Light Liquid Glass Material Tokens */
   --glass-bg-subtle: rgba(255, 255, 255, 0.55);
@@ -139,42 +139,42 @@
   --glass-bg-floating: rgba(255, 255, 255, 0.78);
   --glass-control-bg: rgba(255, 255, 255, 0.65);
   
-  --glass-border: rgba(16, 21, 18, 0.08);
-  --glass-border-subtle: rgba(16, 21, 18, 0.05);
-  --glass-border-strong: rgba(16, 21, 18, 0.15);
+  --glass-border: rgba(23, 23, 29, 0.08);
+  --glass-border-subtle: rgba(23, 23, 29, 0.05);
+  --glass-border-strong: rgba(23, 23, 29, 0.15);
   
   --glass-highlight: inset 0 1px 0 0 rgba(255, 255, 255, 0.90);
   --glass-highlight-subtle: inset 0 1px 0 0 rgba(255, 255, 255, 0.60);
   --glass-highlight-strong: inset 0 1px 0 0 rgba(255, 255, 255, 1);
 
-  --glass-shadow: 0 12px 32px -8px rgba(16, 21, 18, 0.08), 0 4px 12px -4px rgba(16, 21, 18, 0.04);
-  --glass-shadow-floating: 0 18px 40px -10px rgba(16, 21, 18, 0.12), 0 6px 16px -4px rgba(16, 21, 18, 0.06);
-  --glass-shadow-control: 0 2px 8px -2px rgba(16, 21, 18, 0.07);
+  --glass-shadow: 0 12px 32px -8px rgba(23, 23, 29, 0.08), 0 4px 12px -4px rgba(23, 23, 29, 0.04);
+  --glass-shadow-floating: 0 18px 40px -10px rgba(23, 23, 29, 0.12), 0 6px 16px -4px rgba(23, 23, 29, 0.06);
+  --glass-shadow-control: 0 2px 8px -2px rgba(23, 23, 29, 0.07);
   
   --glass-blur: 18px;
   --glass-blur-lg: 24px;
   --glass-saturation: saturate(160%);
   
-  --border: rgba(16, 21, 18, 0.08);
-  --border-strong: rgba(16, 21, 18, 0.15);
-  --border-subtle: rgba(16, 21, 18, 0.04);
+  --border: rgba(23, 23, 29, 0.08);
+  --border-strong: rgba(23, 23, 29, 0.15);
+  --border-subtle: rgba(23, 23, 29, 0.04);
 
-  --focus: #059669;
-  --selection-background: rgba(5, 150, 105, 0.20);
-  --selection-foreground: #064e3b;
+  --focus: #ba302c;
+  --selection-background: rgba(186, 48, 44, 0.20);
+  --selection-foreground: #81221f;
 
   /* iPhone Screen Semantic Tokens (Light Mode) */
-  --phone-screen-bg: #f2f5f3;
+  --phone-screen-bg: #f0f0f5;
   --phone-card-bg: #ffffff;
   --phone-card-sub-bg: #ffffff;
-  --phone-card-border: rgba(16, 21, 18, 0.08);
+  --phone-card-border: rgba(23, 23, 29, 0.08);
   --phone-bar-bg: rgba(255, 255, 255, 0.75);
   --phone-badge-bg: rgba(226, 232, 240, 0.65);
   --phone-text: #0f172a;
   --phone-text-muted: #334155;
-  --phone-text-subtle: #64748b;
+  --phone-text-subtle: #92909e;
   --phone-progress-track: #e2e8f0;
-  --phone-home-bar: #94a3b8;
+  --phone-home-bar: #b6b5be;
 }
 
 @theme inline {
@@ -282,30 +282,30 @@ body {
   backdrop-filter: blur(14px) var(--glass-saturation);
   -webkit-backdrop-filter: blur(14px) var(--glass-saturation);
   border: 1px solid var(--emerald-glass-border);
-  box-shadow: var(--emerald-glass-highlight), 0 4px 16px -2px rgba(16, 185, 129, 0.18);
+  box-shadow: var(--emerald-glass-highlight), 0 4px 16px -2px rgba(255, 120, 109, 0.18);
 }
 
 .liquid-glass-emerald:hover {
   background: var(--emerald-glass-bg-hover);
   border-color: var(--emerald-glass-border);
-  box-shadow: var(--emerald-glass-highlight), 0 6px 20px -2px rgba(16, 185, 129, 0.25);
+  box-shadow: var(--emerald-glass-highlight), 0 6px 20px -2px rgba(255, 120, 109, 0.25);
 }
 
 /* Fallback for browsers without backdrop-filter */
 @supports not (backdrop-filter: blur(10px)) {
   [data-theme="light"] .liquid-glass-subtle { background: #ffffff; }
-  [data-theme="light"] .liquid-glass-regular { background: #f8faf9; }
+  [data-theme="light"] .liquid-glass-regular { background: #f9f9fc; }
   [data-theme="light"] .liquid-glass-strong { background: #ffffff; }
-  [data-theme="light"] .liquid-glass-floating { background: #f8faf9; }
+  [data-theme="light"] .liquid-glass-floating { background: #f9f9fc; }
   [data-theme="light"] .liquid-glass-control { background: #f0f3f1; }
-  [data-theme="light"] .liquid-glass-emerald { background: #ecfdf5; }
+  [data-theme="light"] .liquid-glass-emerald { background: #fff0ee; }
 
-  [data-theme="dark"] .liquid-glass-subtle { background: #131915; }
-  [data-theme="dark"] .liquid-glass-regular { background: #151d18; }
-  [data-theme="dark"] .liquid-glass-strong { background: #1a231d; }
-  [data-theme="dark"] .liquid-glass-floating { background: #17201a; }
-  [data-theme="dark"] .liquid-glass-control { background: #141b16; }
-  [data-theme="dark"] .liquid-glass-emerald { background: #0c2d20; }
+  [data-theme="dark"] .liquid-glass-subtle { background: #19191f; }
+  [data-theme="dark"] .liquid-glass-regular { background: #1d1d25; }
+  [data-theme="dark"] .liquid-glass-strong { background: #23232c; }
+  [data-theme="dark"] .liquid-glass-floating { background: #202029; }
+  [data-theme="dark"] .liquid-glass-control { background: #1b1b23; }
+  [data-theme="dark"] .liquid-glass-emerald { background: #351b20; }
 }
 
 /* SOLID CONTENT PANELS (Preserves content contrast & hierarchy) */
@@ -327,9 +327,9 @@ body {
   border-color: var(--card-hover-border);
 }
 
-/* Ambient Emerald Emitter (subtle optical depth behind glass layers) */
+/* Ambient Brand Emitter (subtle optical depth behind glass layers) */
 .ambient-emerald-glow {
-  background: radial-gradient(circle, rgba(16, 185, 129, 0.12) 0%, rgba(16, 185, 129, 0.02) 50%, transparent 70%);
+  background: radial-gradient(circle, rgba(255, 120, 109, 0.12) 0%, rgba(255, 120, 109, 0.02) 50%, transparent 70%);
 }
 
 /* Subtle engineering grid background */
@@ -351,7 +351,7 @@ body {
 [data-theme="dark"] .device-bezel {
   box-shadow: 
     0 0 0 1px rgba(255, 255, 255, 0.14),
-    0 0 0 4px #18201b,
+    0 0 0 4px #272730,
     0 24px 48px -12px rgba(0, 0, 0, 0.88);
 }
 
@@ -367,4 +367,52 @@ body {
     animation-iteration-count: 1 !important;
     transition-duration: 0.01ms !important;
   }
+}
+
+/* Visual portfolio: warm accents, framed portrait, and work/life cards. */
+:root, [data-theme="dark"] { --portfolio-yellow: #f4cc64; --portfolio-life: #242018; }
+[data-theme="light"] { --portfolio-yellow: #79530a; --portfolio-life: #fff5d9; }
+.portfolio-hero { background: radial-gradient(ellipse at 75% 30%, var(--accent-muted), transparent 55%); }
+.hero-banner { display: grid; grid-template-columns: 1.15fr 1fr; overflow: hidden; border: 1px solid var(--border-strong); border-radius: 28px; background: var(--surface); }
+.hero-copy { padding: clamp(24px, 4vw, 56px); }
+.portfolio-eyebrow { display: flex; align-items: center; gap: 10px; font-family: "SF Mono", Menlo, Consolas, monospace; font-size: .875rem; font-weight: 600; line-height: 1.6; letter-spacing: .07em; color: var(--accent); }
+.hero-status-dot { width: 8px; height: 8px; flex-shrink: 0; border-radius: 50%; background: var(--accent); }
+.hero-name { margin-top: 12px; font-size: clamp(2.6rem, 5vw, 4.9rem); font-weight: 800; letter-spacing: -.055em; line-height: 1.06; }
+.hero-name span { color: var(--accent); }
+.hero-portrait-panel { display: flex; flex-direction: column; justify-content: center; gap: 22px; min-width: 0; padding: 32px; background: linear-gradient(145deg, var(--surface-raised), var(--surface)); border-left: 1px solid var(--border); }
+.hero-portrait-label { color: var(--portfolio-yellow); font-size: .875rem; letter-spacing: .09em; }
+.hero-portrait-frame { position: relative; margin: 0 14px 0 0; padding: 10px; border: 1px solid var(--border-strong); border-radius: 20px; transform: rotate(2deg); background: var(--surface-elevated); box-shadow: 12px 12px 0 -2px var(--portfolio-yellow); }
+.hero-portrait { display: block; width: 100%; height: auto; aspect-ratio: 1.1; object-fit: cover; object-position: center 35%; border-radius: 12px; }
+.hero-experience { display: flex; align-items: center; gap: 18px; margin-top: 10px; font-size: 1rem; line-height: 1.5; }
+.hero-experience strong { font-size: 3.7rem; line-height: 1; letter-spacing: -.05em; }
+.hero-experience strong span { color: var(--portfolio-yellow); }
+.hero-experience div > span { color: var(--foreground-muted); font-size: .875rem; }
+.hero-stack { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 20px; padding: 25px 10px 0; }
+.hero-stack .portfolio-eyebrow { color: var(--foreground-subtle); }
+.studio-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; }
+.studio-card { position: relative; min-width: 0; overflow: hidden; padding: clamp(24px, 3vw, 38px); border: 1px solid var(--border-strong); border-radius: 24px; background: var(--surface); transition: border-color .25s ease, box-shadow .25s ease; }
+.studio-card:hover { border-color: var(--accent-border); box-shadow: var(--card-shadow); }
+.studio-build { background: radial-gradient(ellipse at 80% 85%, var(--accent-muted), transparent 65%), var(--surface); }
+.studio-phone { display: flex; justify-content: center; margin-top: 30px; padding-bottom: 8px; }
+.studio-life { background: var(--portfolio-life); }
+.studio-life .portfolio-eyebrow { color: var(--portfolio-yellow); }
+.life-interests { display: flex; flex-wrap: wrap; gap: 14px; position: relative; z-index: 1; margin-top: 28px; color: var(--portfolio-yellow); font-size: .875rem; }
+.life-interests span { display: inline-flex; align-items: center; gap: 6px; }
+.life-mark { position: absolute; right: 24px; top: 0; font-family: Georgia, serif; font-size: 13rem; line-height: 1; color: var(--portfolio-yellow); opacity: .09; pointer-events: none; }
+.studio-lab { background: linear-gradient(135deg, var(--surface-raised), var(--surface)); }
+.hero-copy { animation: portfolio-enter .7s ease both; }
+.hero-portrait-panel { animation: portfolio-enter .9s ease both; }
+@keyframes portfolio-enter { from { opacity: 0; transform: translateY(12px); } to { opacity: 1; transform: translateY(0); } }
+@media (max-width: 767px) {
+  .hero-banner, .studio-grid { grid-template-columns: 1fr; }
+  .hero-portrait-panel { border-left: 0; border-top: 1px solid var(--border); padding: 26px; }
+  .hero-portrait-frame { max-width: 420px; width: calc(100% - 14px); align-self: center; }
+  .hero-portrait { aspect-ratio: 1.25; }
+  .hero-stack { justify-content: flex-start; }
+  .hero-name { font-size: clamp(2rem, 8.5vw, 4rem); }
+  .hero-experience strong { font-size: 3rem; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .hero-copy, .hero-portrait-panel { animation: none; }
+  .studio-card { transition: none; }
 }

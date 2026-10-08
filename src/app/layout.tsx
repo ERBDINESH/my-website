@@ -11,8 +11,8 @@ const description = `Portfolio of ${profile.fullName}, a senior native iOS softw
 
 export const viewport: Viewport = {
   themeColor: [
-    { media: "(prefers-color-scheme: dark)", color: "#090c0b" },
-    { media: "(prefers-color-scheme: light)", color: "#f5f7f6" },
+    { media: "(prefers-color-scheme: dark)", color: "#101014" },
+    { media: "(prefers-color-scheme: light)", color: "#f7f7fa" },
   ],
   colorScheme: "dark light",
 };
@@ -79,7 +79,7 @@ export default function RootLayout({
       </head>
       <body
         suppressHydrationWarning
-        className="min-h-screen bg-background text-foreground antialiased selection:bg-emerald-500/25 selection:text-foreground"
+        className="min-h-screen bg-background text-foreground antialiased selection:bg-accent/25 selection:text-foreground"
       >
         <ThemeProvider>
           <a
