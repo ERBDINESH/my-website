@@ -1,3 +1,6 @@
+"use client";
+
+import { useState } from "react";
 import {
   ArrowRight,
   Check,
@@ -9,16 +12,43 @@ import {
 } from "lucide-react";
 import { ActionLink } from "@/components/ui/action-link";
 import { Container } from "@/components/ui/container";
-import { LiquidGlass } from "@/components/ui/liquid-glass";
 import { SectionHeading } from "@/components/ui/section-heading";
 import { consultingBoundaries, consultingServices } from "@/data/portfolio";
 
 export function ConsultingSection() {
+  const [showEngagementStages, setShowEngagementStages] = useState(false);
   const serviceIcons = [
-    <FileSearch key="arch" className="size-4 text-accent" />,
-    <Layers key="modern" className="size-4 text-emerald-600 dark:text-emerald-300" />,
-    <Milestone key="feature" className="size-4 text-teal-600 dark:text-teal-300" />,
-    <Wrench key="release" className="size-4 text-accent" />,
+    <FileSearch key="arch" className="size-4.5 text-accent" />,
+    <Layers key="modern" className="size-4.5 text-emerald-500" />,
+    <Milestone key="feature" className="size-4.5 text-teal-400" />,
+    <Wrench key="release" className="size-4.5 text-accent" />,
+  ];
+
+  const workflowSteps = [
+    {
+      step: "01",
+      badge: "DISCOVERY",
+      title: "The Problem",
+      description: "Identification of architectural debt, performance bottlenecks, retain cycles, or legacy Objective-C blockers hindering team velocity.",
+    },
+    {
+      step: "02",
+      badge: "AUDIT",
+      title: "Technical Review",
+      description: "In-depth codebase inspection, Xcode Instruments profiling, and concurrency analysis to isolate root causes without bias.",
+    },
+    {
+      step: "03",
+      badge: "STRATEGY",
+      title: "Recommendation",
+      description: "Actionable Technical RFC document detailing migration blueprints, protocol boundaries, and estimated engineering milestones.",
+    },
+    {
+      step: "04",
+      badge: "DELIVERY",
+      title: "Implementation",
+      description: "Hands-on paired refactoring with your iOS team, modernizing foundation modules with Swift 6 and ensuring zero production regressions.",
+    },
   ];
 
   return (
@@ -35,22 +65,18 @@ export function ConsultingSection() {
           description="Helping engineering teams understand existing iOS codebases, improve architecture, modernize legacy implementations and plan maintainable feature development."
         />
 
-        {/* 4 SOLID SERVICE CARDS (Content-led, high contrast in both themes) */}
+        {/* 4 CORE SERVICES (Open, high-contrast capability matrix) */}
         <div className="mt-10 grid gap-6 sm:mt-12 md:grid-cols-2">
           {consultingServices.map((service, index) => (
             <div
               key={service.title}
-              className="solid-content-card group flex flex-col justify-between rounded-3xl p-6 sm:p-7 border border-border"
+              className="rounded-3xl border border-border/80 bg-surface/50 backdrop-blur-xs p-6 sm:p-8 flex flex-col justify-between transition-all hover:border-border-strong hover:bg-surface-raised/40"
             >
               <div>
                 <div className="flex items-center gap-3">
-                  {/* Liquid Glass Service Icon */}
-                  <LiquidGlass
-                    variant="control"
-                    className="flex size-9 items-center justify-center rounded-xl"
-                  >
+                  <span className="flex size-10 items-center justify-center rounded-xl bg-accent/10 border border-accent/20">
                     {serviceIcons[index % serviceIcons.length]}
-                  </LiquidGlass>
+                  </span>
                   <h3 className="text-lg sm:text-xl font-bold text-foreground">
                     {service.title}
                   </h3>
@@ -60,7 +86,7 @@ export function ConsultingSection() {
                   {service.description}
                 </p>
 
-                <div className="mt-5 border-t border-border pt-4">
+                <div className="mt-5 border-t border-border/60 pt-4">
                   <span className="font-mono-code text-[11px] font-semibold uppercase tracking-wider text-foreground-subtle">
                     Advisory Deliverables:
                   </span>
@@ -75,11 +101,11 @@ export function ConsultingSection() {
                 </div>
               </div>
 
-              <div className="mt-6 flex items-center justify-between border-t border-border pt-4 text-xs">
-                <span className="font-mono-code text-foreground-subtle">
+              <div className="mt-6 flex items-center justify-between border-t border-border/60 pt-4 text-xs font-mono-code">
+                <span className="text-foreground-subtle">
                   Format: Technical RFC &amp; Paired Review
                 </span>
-                <span className="font-mono-code text-[11px] text-accent font-semibold">
+                <span className="text-accent font-semibold">
                   Senior Advisory
                 </span>
               </div>
@@ -87,11 +113,63 @@ export function ConsultingSection() {
           ))}
         </div>
 
-        {/* Claim Boundaries & Engineering Standards Box in Liquid Glass */}
-        <LiquidGlass
-          variant="subtle"
-          className="mt-10 rounded-2xl p-6 sm:p-8 border border-border"
-        >
+        {/* 4-STAGE CONTINUOUS ADVISORY TIMELINE (Replaces 4 extra box cards) */}
+        <div className="mt-12 rounded-3xl border border-border/80 bg-surface/40 backdrop-blur-xs p-6 sm:p-8 lg:p-10 shadow-lg">
+          <div className="flex flex-wrap items-center justify-between gap-3 border-b border-border/60 pb-5">
+            <div>
+              <span className="font-mono-code text-[11px] font-bold uppercase tracking-wider text-accent">
+                Engagement Model
+              </span>
+              <h4 className="text-xl font-bold text-foreground mt-1">
+                How Technical Advisory Works
+              </h4>
+            </div>
+            <div className="flex items-center gap-3">
+              <span className="hidden sm:inline font-mono-code text-xs text-foreground-subtle">
+                Deterministic, Phased Engagements
+              </span>
+              <button
+                type="button"
+                onClick={() => setShowEngagementStages(!showEngagementStages)}
+                aria-expanded={showEngagementStages}
+                className="lg:hidden rounded-lg border border-border bg-surface px-3 py-1 font-mono-code text-[11px] font-semibold text-accent hover:border-accent/40 transition-all cursor-pointer"
+              >
+                {showEngagementStages ? "▲ Hide Stages" : "▼ View Stages"}
+              </button>
+            </div>
+          </div>
+
+          {/* Continuous Connected Flow */}
+          <div className="mt-8 relative">
+            <div className="hidden lg:block absolute left-8 right-8 top-5 h-[2px] bg-border-strong -z-10" />
+
+            <div className={`grid gap-6 sm:grid-cols-2 lg:grid-cols-4 ${showEngagementStages ? "block space-y-6 sm:space-y-0" : "hidden sm:grid"}`}>
+              {workflowSteps.map((ws) => (
+                <div key={ws.step} className="space-y-2">
+                  <div className="flex items-center gap-2">
+                    <span className="flex size-7 items-center justify-center rounded-xl bg-accent/15 font-mono-code text-xs font-bold text-accent border border-accent/25">
+                      {ws.step}
+                    </span>
+                    <span className="rounded-full bg-accent/10 px-2 py-0.5 font-mono-code text-[10px] text-accent font-semibold">
+                      {ws.badge}
+                    </span>
+                  </div>
+
+                  <h5 className="font-bold text-foreground text-base pt-1">
+                    {ws.title}
+                  </h5>
+
+                  <p className="text-xs leading-relaxed text-foreground-muted">
+                    {ws.description}
+                  </p>
+                </div>
+              ))}
+            </div>
+          </div>
+        </div>
+
+        {/* Claim Boundaries Box */}
+        <div className="mt-8 rounded-2xl border border-border/70 bg-surface/30 p-6 sm:p-8">
           <div className="flex items-start gap-3">
             <ShieldCheck className="size-5 shrink-0 text-accent mt-0.5" />
             <div>
@@ -112,12 +190,22 @@ export function ConsultingSection() {
               </ul>
             </div>
           </div>
-        </LiquidGlass>
+        </div>
 
-        {/* Consulting CTA with Liquid Glass Emerald button */}
+        {/* Specialized Areas Strip */}
+        <div className="mt-8 flex flex-wrap items-center justify-center gap-2 text-xs text-foreground-subtle font-mono-code">
+          <span className="text-foreground-muted">Advisory Specialties:</span>
+          <span className="rounded-md border border-border bg-surface px-2.5 py-1">Swift &amp; SwiftUI</span>
+          <span className="rounded-md border border-border bg-surface px-2.5 py-1">UIKit Interop</span>
+          <span className="rounded-md border border-border bg-surface px-2.5 py-1">Legacy Modernization</span>
+          <span className="rounded-md border border-border bg-surface px-2.5 py-1">Instruments Performance</span>
+          <span className="rounded-md border border-border bg-surface px-2.5 py-1">MVVM-C Architecture</span>
+        </div>
+
+        {/* Consulting CTA */}
         <div className="mt-8 flex justify-center">
           <ActionLink href="#contact" variant="primary">
-            <span>Discuss an Advisory Engagement</span>
+            <span>Get an iOS Technical Review / Consultation</span>
             <ArrowRight className="ml-2 size-4" />
           </ActionLink>
         </div>

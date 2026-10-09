@@ -1,7 +1,8 @@
 import { ArrowDown, Download, MessageSquare, Terminal } from "lucide-react";
 import { ActionLink } from "@/components/ui/action-link";
+import { ConsultantBadge } from "@/components/ui/consultant-badge";
 import { Container } from "@/components/ui/container";
-import { IPhonePreview } from "@/components/ui/iphone-preview";
+import { EngineeringHero } from "@/components/animations/EngineeringHero";
 import { LiquidGlass } from "@/components/ui/liquid-glass";
 import { profile } from "@/data/portfolio";
 
@@ -19,27 +20,10 @@ export function HeroSection() {
       />
 
       <Container size="wide">
-        <div className="grid items-center gap-10 lg:grid-cols-[minmax(0,1.25fr)_minmax(340px,0.75fr)] lg:gap-14 xl:gap-20">
+        <div className="grid items-center gap-10 lg:grid-cols-[minmax(0,0.95fr)_minmax(460px,1.25fr)] xl:grid-cols-[minmax(0,0.9fr)_minmax(560px,1.35fr)] lg:gap-10 xl:gap-14">
           {/* Main Hero Copy */}
           <div className="flex flex-col items-start text-left">
-            {/* Status indicator pill in Liquid Glass */}
-            <LiquidGlass
-              variant="control"
-              className="mb-6 inline-flex max-w-full items-center gap-2.5 rounded-full px-3.5 py-1.5 shadow-xs border-border"
-            >
-              <span className="relative flex size-2 shrink-0">
-                <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-accent opacity-75" />
-                <span className="relative inline-flex size-2 rounded-full bg-accent" />
-              </span>
-              <span className="text-xs font-medium text-foreground truncate sm:whitespace-normal">
-                <span className="sm:hidden">Available for Senior iOS Roles &amp; Advisory</span>
-                <span className="hidden sm:inline">
-                  Available for Senior Native iOS Roles &amp; Technical Advisory
-                </span>
-              </span>
-            </LiquidGlass>
-
-            {/* Engineer Identity */}
+            {/* 1. Engineer Identity Primary */}
             <div className="space-y-1">
               <h1
                 id="hero-heading"
@@ -52,14 +36,32 @@ export function HeroSection() {
               </p>
             </div>
 
-            {/* Core & Supporting Value Proposition */}
+            {/* 2. Core & Supporting Value Proposition */}
             <h2 className="mt-6 max-w-2xl text-2xl font-semibold leading-snug tracking-tight text-foreground sm:text-3xl sm:leading-snug">
               &ldquo;{profile.headline}&rdquo;
             </h2>
 
-            <p className="mt-4 max-w-2xl text-base leading-relaxed text-foreground-muted sm:text-lg sm:leading-relaxed">
+            <p className="mt-3 max-w-2xl text-base leading-relaxed text-foreground-muted sm:text-lg sm:leading-relaxed">
               {profile.supportingMessage}
             </p>
+
+            {/* 3. Supporting Identity & Availability Strip */}
+            <div className="mt-5 flex flex-wrap items-center gap-3">
+              <ConsultantBadge />
+
+              <LiquidGlass
+                variant="control"
+                className="inline-flex items-center gap-2 rounded-full px-3 py-1 shadow-xs border-border"
+              >
+                <span className="relative flex size-2 shrink-0">
+                  <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-accent opacity-75" />
+                  <span className="relative inline-flex size-2 rounded-full bg-accent" />
+                </span>
+                <span className="text-xs font-medium text-foreground-muted">
+                  Available for Senior Native iOS Roles &amp; Advisory
+                </span>
+              </LiquidGlass>
+            </div>
 
             {/* Call to Actions: 2 Prominent Actions + 1 Subtle Text Link */}
             <div className="mt-8 flex flex-wrap items-center gap-3 sm:gap-4">
@@ -99,9 +101,9 @@ export function HeroSection() {
             </div>
           </div>
 
-          {/* Interactive iPhone Hardware Visualization */}
+          {/* Interactive iPhone Hardware Visualization & Transformation Pipeline */}
           <div className="flex w-full items-center justify-center lg:justify-end">
-            <IPhonePreview />
+            <EngineeringHero />
           </div>
         </div>
       </Container>

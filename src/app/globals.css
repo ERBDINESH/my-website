@@ -205,6 +205,8 @@
 html {
   scroll-behavior: smooth;
   scroll-padding-top: calc(var(--header-height) + 1.5rem);
+  overflow-x: clip;
+  max-width: 100%;
 }
 
 body {
@@ -215,6 +217,8 @@ body {
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  overflow-x: clip;
+  max-width: 100%;
 }
 
 /* SF Mono for technical indicators, code, architecture identifiers */

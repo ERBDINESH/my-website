@@ -11,6 +11,7 @@ import {
   Network,
   Users2,
 } from "lucide-react";
+import { ArchitectureFlow } from "@/components/animations/ArchitectureFlow";
 import { Container } from "@/components/ui/container";
 import { LiquidGlass } from "@/components/ui/liquid-glass";
 import { SectionHeading } from "@/components/ui/section-heading";
@@ -164,7 +165,7 @@ export function CapabilitiesSection() {
           aria-labelledby={`tab-${selectedPillar.id}`}
           className="mt-6 transition-opacity duration-200"
         >
-          <div className="solid-content-card rounded-3xl p-6 sm:p-8 lg:p-10 shadow-lg border border-border">
+          <div className="rounded-3xl border border-border/80 bg-surface/50 backdrop-blur-xs p-6 sm:p-8 lg:p-10 shadow-xl">
             <div className="grid gap-8 lg:grid-cols-[1.15fr_0.85fr] lg:gap-12 items-start">
               {/* Left Column: Capability Details & Stack */}
               <div>
@@ -263,6 +264,11 @@ export function CapabilitiesSection() {
               </div>
             </div>
           </div>
+        </div>
+
+        {/* INTERACTIVE ARCHITECTURE THINKING VISUALIZATION */}
+        <div className="mt-12 sm:mt-16">
+          <ArchitectureFlow />
         </div>
       </Container>
     </section>

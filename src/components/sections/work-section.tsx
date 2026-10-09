@@ -5,6 +5,7 @@ import { useState } from "react";
 import {
   ArrowRight,
   ArrowUpRight,
+  Boxes,
   CheckCircle,
   Cpu,
   Layers,
@@ -40,10 +41,9 @@ export function WorkSection() {
             const engineeringApproach = study.engineeringApproachSentence || study.whatWasProduct;
 
             return (
-              /* SOLID CONTENT PANEL */
               <article
                 key={study.id}
-                className="solid-content-card rounded-3xl p-6 sm:p-8 lg:p-10 shadow-lg border border-border"
+                className="rounded-3xl border border-border/80 bg-surface/50 backdrop-blur-xs p-6 sm:p-8 lg:p-10 shadow-xl transition-all duration-300 hover:border-border-strong hover:bg-surface-raised/40"
               >
                 {/* Header: Identity, Category & CTA */}
                 <div className="flex flex-wrap items-start justify-between gap-4 border-b border-border pb-6">
@@ -151,16 +151,46 @@ export function WorkSection() {
                   </div>
                 </div>
 
-                {/* Technology: Understated metadata tags */}
+                {/* Architecture Highlights Quick Preview */}
+                {study.architectureHighlights && study.architectureHighlights.length > 0 && (
+                  <div className="mt-6 rounded-2xl border border-border/80 bg-surface/70 p-4 transition-all">
+                    <div className="flex items-center justify-between pb-2.5 border-b border-border/60">
+                      <span className="font-mono-code text-[11px] font-semibold uppercase tracking-wider text-accent flex items-center gap-1.5">
+                        <Boxes className="size-3.5" />
+                        Architecture Highlights
+                      </span>
+                      <span className="font-mono-code text-[10px] text-foreground-subtle hidden sm:inline">
+                        Verified Production Implementation
+                      </span>
+                    </div>
+                    <div className="mt-3 grid gap-3 sm:grid-cols-3">
+                      {study.architectureHighlights.map((hl) => (
+                        <div
+                          key={hl.label}
+                          className="rounded-xl border border-border bg-surface-raised/70 p-3 transition-colors hover:border-accent/40"
+                        >
+                          <div className="font-mono-code text-xs font-bold text-foreground">
+                            {hl.label}
+                          </div>
+                          <p className="mt-1 text-[11px] leading-relaxed text-foreground-muted">
+                            {hl.description}
+                          </p>
+                        </div>
+                      ))}
+                    </div>
+                  </div>
+                )}
+
+                {/* Technology: Understated metadata tags with interactive hover animation */}
                 <div className="mt-6 flex flex-wrap items-center justify-between gap-4 border-t border-border pt-4">
                   <div className="flex flex-wrap items-center gap-1.5">
                     <span className="mr-1.5 font-mono-code text-xs text-foreground-subtle">
-                      Technology:
+                      Stack:
                     </span>
                     {study.technologies.map((tech) => (
                       <span
                         key={tech}
-                        className="rounded-md border border-border bg-surface-raised px-2 py-0.5 font-mono-code text-xs text-foreground-muted"
+                        className="rounded-md border border-border bg-surface-raised px-2.5 py-0.5 font-mono-code text-xs text-foreground-muted transition-all duration-200 hover:border-accent/50 hover:text-accent hover:bg-surface-elevated cursor-default"
                       >
                         {tech}
                       </span>

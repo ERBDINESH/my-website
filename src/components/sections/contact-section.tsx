@@ -42,7 +42,7 @@ export function ContactSection() {
     <section
       id="contact"
       aria-labelledby="contact-heading"
-      className="relative py-16 sm:py-24"
+      className="relative overflow-hidden py-16 sm:py-24"
     >
       {/* Controlled Emerald Ambient Emitter behind the CTA Surface */}
       <div
