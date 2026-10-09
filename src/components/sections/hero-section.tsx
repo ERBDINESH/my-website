@@ -1,40 +1,108 @@
-import Image from "next/image";
-import { Download, Code2, MapPin } from "lucide-react";
+import { ArrowDown, Download, MessageSquare, Terminal } from "lucide-react";
 import { ActionLink } from "@/components/ui/action-link";
 import { Container } from "@/components/ui/container";
+import { IPhonePreview } from "@/components/ui/iphone-preview";
+import { LiquidGlass } from "@/components/ui/liquid-glass";
 import { profile } from "@/data/portfolio";
 
 export function HeroSection() {
   return (
-    <section id="hero" aria-labelledby="hero-heading" className="portfolio-hero pt-24 pb-8 sm:pt-28 sm:pb-12">
+    <section
+      id="hero"
+      aria-labelledby="hero-heading"
+      className="relative overflow-hidden pt-20 pb-12 sm:pt-24 sm:pb-16 lg:pt-28 lg:pb-20"
+    >
+      {/* Subtle emerald ambient lighting behind the hero content */}
+      <div
+        className="pointer-events-none absolute left-1/4 top-16 -z-10 h-[520px] w-[520px] rounded-full bg-emerald-500/[0.05] blur-[140px]"
+        aria-hidden="true"
+      />
+
       <Container size="wide">
-        <div className="hero-banner">
-          <div className="hero-copy">
-            <p className="portfolio-eyebrow"><span className="hero-status-dot" /> Available for senior iOS roles &amp; advisory</p>
-            <p className="mt-8 text-lg text-foreground-muted sm:text-xl">Hello, I’m Dinesh.</p>
-            <h1 id="hero-heading" className="hero-name">Dineshbabu<br /><span>Elumalai.</span></h1>
-            <p className="mt-4 font-mono-code text-base font-semibold text-foreground sm:text-xl">{profile.professionalTitle}</p>
-            <p className="mt-6 max-w-lg text-lg leading-relaxed text-foreground-muted">{profile.headline}</p>
-            <div className="mt-8 flex flex-wrap gap-3">
-              <ActionLink href="#work" variant="primary">Explore my work</ActionLink>
-              {profile.resumeUrl ? <ActionLink href={profile.resumeUrl} variant="secondary" download="Dineshbabu-Elumalai-Resume.pdf"><Download className="mr-2 size-4" aria-hidden="true" />Download resume</ActionLink> : null}
+        <div className="grid items-center gap-10 lg:grid-cols-[minmax(0,1.25fr)_minmax(340px,0.75fr)] lg:gap-14 xl:gap-20">
+          {/* Main Hero Copy */}
+          <div className="flex flex-col items-start text-left">
+            {/* Status indicator pill in Liquid Glass */}
+            <LiquidGlass
+              variant="control"
+              className="mb-6 inline-flex max-w-full items-center gap-2.5 rounded-full px-3.5 py-1.5 shadow-xs border-border"
+            >
+              <span className="relative flex size-2 shrink-0">
+                <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-accent opacity-75" />
+                <span className="relative inline-flex size-2 rounded-full bg-accent" />
+              </span>
+              <span className="text-xs font-medium text-foreground truncate sm:whitespace-normal">
+                <span className="sm:hidden">Available for Senior iOS Roles &amp; Advisory</span>
+                <span className="hidden sm:inline">
+                  Available for Senior Native iOS Roles &amp; Technical Advisory
+                </span>
+              </span>
+            </LiquidGlass>
+
+            {/* Engineer Identity */}
+            <div className="space-y-1">
+              <h1
+                id="hero-heading"
+                className="text-4xl font-extrabold tracking-tight text-foreground sm:text-5xl lg:text-[clamp(3rem,5vw,5.5rem)] lg:leading-[1.08]"
+              >
+                {profile.fullName}
+              </h1>
+              <p className="font-mono-code text-lg font-semibold text-accent sm:text-xl">
+                {profile.professionalTitle}
+              </p>
             </div>
-            <div className="mt-7 flex flex-wrap items-center gap-x-5 gap-y-3 text-sm text-foreground-muted">
-              <span className="inline-flex items-center gap-2"><MapPin className="size-4 text-accent" aria-hidden="true" />{profile.location}</span>
-              <a href="https://github.com/ERBDINESH" target="_blank" rel="noopener noreferrer" className="inline-flex min-h-11 items-center gap-2 hover:text-accent"><Code2 className="size-4" aria-hidden="true" />ERBDINESH<span className="sr-only"> (opens in a new tab)</span></a>
+
+            {/* Core & Supporting Value Proposition */}
+            <h2 className="mt-6 max-w-2xl text-2xl font-semibold leading-snug tracking-tight text-foreground sm:text-3xl sm:leading-snug">
+              &ldquo;{profile.headline}&rdquo;
+            </h2>
+
+            <p className="mt-4 max-w-2xl text-base leading-relaxed text-foreground-muted sm:text-lg sm:leading-relaxed">
+              {profile.supportingMessage}
+            </p>
+
+            {/* Call to Actions: 2 Prominent Actions + 1 Subtle Text Link */}
+            <div className="mt-8 flex flex-wrap items-center gap-3 sm:gap-4">
+              <ActionLink href="#work" variant="primary">
+                View Engineering Work
+                <ArrowDown className="ml-2 size-4" aria-hidden="true" />
+              </ActionLink>
+
+              {profile.resumeUrl ? (
+                <ActionLink
+                  href={profile.resumeUrl}
+                  variant="secondary"
+                  download="Dineshbabu-Elumalai-Resume.pdf"
+                >
+                  <Download className="mr-2 size-4 text-accent" aria-hidden="true" />
+                  Download Resume
+                </ActionLink>
+              ) : null}
+
+              <a
+                href="#contact"
+                className="inline-flex items-center gap-1.5 px-2 py-2 text-sm font-medium text-foreground-muted hover:text-accent transition-colors"
+              >
+                <MessageSquare className="size-3.5 text-accent" aria-hidden="true" />
+                <span>Discuss an iOS Project</span>
+              </a>
+            </div>
+
+            {/* Technical Verification Pill Strip (Solid Content) */}
+            <div className="mt-10 flex flex-wrap items-center gap-x-4 gap-y-2 border-t border-border pt-6 text-xs text-foreground-subtle">
+              <span className="flex items-center gap-1.5 font-mono-code text-foreground-muted">
+                <Terminal className="size-3 text-accent" aria-hidden="true" />
+                Swift • SwiftUI • UIKit • Objective-C
+              </span>
+              <span className="hidden text-foreground-subtle/40 sm:inline">•</span>
+              <span>Chennai, India (Remote &amp; Onsite)</span>
             </div>
           </div>
-          <div className="hero-portrait-panel">
-            <div className="hero-portrait-label font-mono-code" aria-hidden="true">THE ENGINEER BEHIND THE CODE</div>
-            <div className="hero-portrait-frame">
-              <Image src={profile.profileImagePath!} alt="Dineshbabu Elumalai" width={1122} height={1122} preload sizes="(max-width: 767px) 90vw, 440px" className="hero-portrait" />
-            </div>
-            <div className="hero-experience"><strong>7<span>+</span></strong><div>years of native iOS<br /><span>Banking · Commerce · Connected devices</span></div></div>
+
+          {/* Interactive iPhone Hardware Visualization */}
+          <div className="flex w-full items-center justify-center lg:justify-end">
+            <IPhonePreview />
           </div>
-        </div>
-        <div className="hero-stack" aria-label="Primary technologies">
-          <span className="portfolio-eyebrow">MY EVERYDAY TOOLKIT</span>
-          <div className="flex flex-wrap gap-x-7 gap-y-3">{["Swift", "SwiftUI", "UIKit", "Objective-C", "MVVM-C"].map((item) => <span key={item} className="font-mono-code text-base font-semibold">{item}</span>)}</div>
         </div>
       </Container>
     </section>

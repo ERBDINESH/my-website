@@ -41,7 +41,7 @@ export function ThemeToggle({ className, size = "default" }: ThemeToggleProps) {
           size === "sm" ? "px-2 py-1 text-[11px]" : "px-2.5 py-1 text-xs"
         } ${
           theme === "light"
-            ? "bg-white text-accent shadow-sm border border-black/5 font-semibold"
+            ? "bg-white text-emerald-800 shadow-sm border border-black/5 font-semibold"
             : "text-foreground-muted hover:text-foreground"
         }`}
         aria-label="Switch to Light theme"
@@ -67,12 +67,12 @@ export function ThemeToggle({ className, size = "default" }: ThemeToggleProps) {
           size === "sm" ? "px-2 py-1 text-[11px]" : "px-2.5 py-1 text-xs"
         } ${
           theme === "dark"
-            ? "bg-accent/20 text-accent border border-accent/40 shadow-sm font-semibold"
+            ? "bg-emerald-500/20 text-emerald-300 border border-emerald-500/40 shadow-sm font-semibold"
             : "text-foreground-muted hover:text-foreground"
         }`}
         aria-label="Switch to Dark theme"
       >
-        <Moon className="size-3 text-accent shrink-0" aria-hidden="true" />
+        <Moon className="size-3 text-emerald-400 shrink-0" aria-hidden="true" />
         <span>Dark</span>
       </button>
     </LiquidGlass>
