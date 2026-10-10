@@ -1,17 +1,18 @@
 import { ArrowUp } from "lucide-react";
 import { Container } from "@/components/ui/container";
 import { profile, socialLinks } from "@/data/portfolio";
+import { SITE_PROFESSIONAL_TITLE } from "@/data/site-branding";
 
 export function SiteFooter() {
   return (
     <footer className="border-t border-border bg-surface-raised/80 py-10 text-xs text-foreground-subtle transition-colors">
       <Container size="wide" className="flex flex-col gap-6 sm:flex-row sm:items-center sm:justify-between">
         <div className="space-y-1">
-          <div className="flex items-center gap-2 text-foreground font-medium">
+          <div className="flex flex-wrap items-center gap-2 text-foreground font-medium">
             <span className="size-2 rounded-full bg-accent" />
             <span>{profile.fullName}</span>
             <span className="text-foreground-subtle/30">•</span>
-            <span className="font-mono-code text-foreground-muted">{profile.professionalTitle}</span>
+            <span className="font-mono-code text-foreground-muted">{SITE_PROFESSIONAL_TITLE}</span>
           </div>
           <p className="text-foreground-subtle">
             7+ years building production native iOS applications across banking, commerce and connected devices.
