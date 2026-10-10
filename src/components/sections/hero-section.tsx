@@ -5,6 +5,7 @@ import { Container } from "@/components/ui/container";
 import { EngineeringHero } from "@/components/animations/EngineeringHero";
 import { LiquidGlass } from "@/components/ui/liquid-glass";
 import { profile } from "@/data/portfolio";
+import { SITE_PROFESSIONAL_TITLE } from "@/data/site-branding";
 
 export function HeroSection() {
   return (
@@ -32,7 +33,7 @@ export function HeroSection() {
                 {profile.fullName}
               </h1>
               <p className="font-mono-code text-lg font-semibold text-accent sm:text-xl">
-                {profile.professionalTitle}
+                {SITE_PROFESSIONAL_TITLE}
               </p>
             </div>
 
@@ -58,7 +59,7 @@ export function HeroSection() {
                   <span className="relative inline-flex size-2 rounded-full bg-accent" />
                 </span>
                 <span className="text-xs sm:text-[13px] font-medium text-foreground-muted">
-                  Available for Senior Native iOS Roles &amp; Advisory
+                  Available for {SITE_PROFESSIONAL_TITLE} roles &amp; advisory
                 </span>
               </LiquidGlass>
             </div>
