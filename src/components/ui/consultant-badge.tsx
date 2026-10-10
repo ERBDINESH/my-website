@@ -3,6 +3,7 @@
 import Image from "next/image";
 import { LiquidGlass } from "@/components/ui/liquid-glass";
 import { profile } from "@/data/portfolio";
+import { SITE_PROFESSIONAL_TITLE } from "@/data/site-branding";
 
 export function ConsultantBadge() {
   return (
@@ -35,7 +36,7 @@ export function ConsultantBadge() {
       </div>
 
       {/* Consultant Identity Info */}
-      <div className="flex flex-col text-left">
+      <div className="flex min-w-0 flex-col text-left">
         <div className="flex items-center gap-1.5">
           <span className="text-sm font-bold text-foreground tracking-tight">
             {profile.fullName}
@@ -44,8 +45,10 @@ export function ConsultantBadge() {
             VERIFIED
           </span>
         </div>
-        <div className="flex items-center gap-1.5 text-xs text-foreground-muted">
-          <span className="font-mono-code text-accent font-medium">Senior iOS Engineer</span>
+        <div className="flex min-w-0 flex-wrap items-center gap-x-1.5 gap-y-0.5 text-xs text-foreground-muted">
+          <span className="min-w-0 font-mono-code text-accent font-medium">
+            {SITE_PROFESSIONAL_TITLE}
+          </span>
           <span className="text-foreground-subtle/50">•</span>
           <span className="font-mono-code text-[11px] sm:text-xs text-foreground-subtle">
             7+ Yrs Native
