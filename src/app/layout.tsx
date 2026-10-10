@@ -3,11 +3,12 @@ import { SiteFooter } from "@/components/layout/site-footer";
 import { SiteHeader } from "@/components/layout/site-header";
 import { ThemeProvider } from "@/components/theme/theme-provider";
 import { profile } from "@/data/portfolio";
+import { SITE_PROFESSIONAL_TITLE } from "@/data/site-branding";
 import "./globals.css";
 
-const siteName = `${profile.fullName} | ${profile.professionalTitle}`;
-const title = `${profile.fullName} – ${profile.professionalTitle}`;
-const description = `Portfolio of ${profile.fullName}, a senior native iOS software engineer with ${profile.experiencePositioning} across banking, commerce, and connected-device products.`;
+const siteName = `${profile.fullName} | ${SITE_PROFESSIONAL_TITLE}`;
+const title = `${profile.fullName} – ${SITE_PROFESSIONAL_TITLE}`;
+const description = `Portfolio of ${profile.fullName}, ${SITE_PROFESSIONAL_TITLE}, with ${profile.experiencePositioning} across banking, commerce, and connected-device products.`;
 
 export const viewport: Viewport = {
   themeColor: [
@@ -23,7 +24,7 @@ export const metadata: Metadata = {
   description,
   keywords: [
     "Dineshbabu Elumalai",
-    "Software Engineer – iOS",
+    SITE_PROFESSIONAL_TITLE,
     "Senior iOS Engineer",
     "Mobile Software Engineer",
     "Swift Developer",
