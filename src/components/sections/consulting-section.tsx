@@ -139,31 +139,43 @@ export function ConsultingSection() {
             </div>
           </div>
 
-          {/* Continuous Connected Flow */}
+          {/* Discrete Connected Flow (Segments only between adjacent steps) */}
           <div className="mt-8 relative">
-            <div className="hidden lg:block absolute left-8 right-8 top-5 h-[2px] bg-border-strong -z-10" />
-
             <div className={`grid gap-6 sm:grid-cols-2 lg:grid-cols-4 ${showEngagementStages ? "block space-y-6 sm:space-y-0" : "hidden sm:grid"}`}>
-              {workflowSteps.map((ws) => (
-                <div key={ws.step} className="space-y-2">
-                  <div className="flex items-center gap-2">
-                    <span className="flex size-7 items-center justify-center rounded-xl bg-accent/15 font-mono-code text-xs font-bold text-accent border border-accent/25">
-                      {ws.step}
-                    </span>
-                    <span className="rounded-full bg-accent/10 px-2 py-0.5 font-mono-code text-[11px] sm:text-xs text-accent font-semibold">
-                      {ws.badge}
-                    </span>
+              {workflowSteps.map((ws, index) => {
+                const isLast = index === workflowSteps.length - 1;
+                return (
+                  <div key={ws.step} className="space-y-2">
+                    {/* Step marker, label pill, and discrete connector segment */}
+                    <div className="relative flex items-center">
+                      <div className="relative z-10 flex shrink-0 items-center gap-2">
+                        <span className="flex size-7 shrink-0 items-center justify-center rounded-full bg-accent/15 font-mono-code text-xs font-bold text-accent border border-accent/30 shadow-xs">
+                          {ws.step}
+                        </span>
+                        <span className="rounded-full bg-accent/10 px-2 py-0.5 font-mono-code text-[11px] sm:text-xs text-accent font-semibold border border-accent/20">
+                          {ws.badge}
+                        </span>
+                      </div>
+
+                      {/* Connector only between Step 1→2, 2→3, 3→4; vertically centered to circular marker; hidden on mobile */}
+                      {!isLast && (
+                        <div
+                          aria-hidden="true"
+                          className="hidden lg:block z-0 flex-1 h-[2px] ml-3 mr-[-1rem] bg-gradient-to-r from-accent/30 via-border-strong to-accent/25 rounded-full"
+                        />
+                      )}
+                    </div>
+
+                    <h5 className="font-bold text-foreground text-base sm:text-[17px] pt-1">
+                      {ws.title}
+                    </h5>
+
+                    <p className="text-xs sm:text-[13.5px] leading-relaxed text-foreground-muted">
+                      {ws.description}
+                    </p>
                   </div>
-
-                  <h5 className="font-bold text-foreground text-base sm:text-[17px] pt-1">
-                    {ws.title}
-                  </h5>
-
-                  <p className="text-xs sm:text-[13.5px] leading-relaxed text-foreground-muted">
-                    {ws.description}
-                  </p>
-                </div>
-              ))}
+                );
+              })}
             </div>
           </div>
         </div>
