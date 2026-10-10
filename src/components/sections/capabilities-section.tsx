@@ -142,7 +142,7 @@ export function CapabilitiesSection() {
                   tabIndex={isSelected ? 0 : -1}
                   onClick={() => setActivePillarId(pillar.id)}
                   onKeyDown={(e) => handleKeyDown(e, idx)}
-                  className={`flex flex-1 items-center justify-center gap-2 rounded-xl px-3.5 py-2.5 font-mono-code text-xs font-semibold transition-all duration-200 cursor-pointer ${
+                  className={`flex flex-1 items-center justify-center gap-2 rounded-xl px-3.5 py-2.5 font-mono-code text-xs sm:text-[13px] font-semibold transition-all duration-200 cursor-pointer ${
                     isSelected
                       ? "liquid-glass-emerald text-[var(--emerald-action-text)] shadow-xs font-bold"
                       : "text-foreground-muted hover:text-foreground hover:bg-foreground/5"
@@ -190,7 +190,7 @@ export function CapabilitiesSection() {
 
                 {/* Capabilities Chips */}
                 <div className="mt-7">
-                  <h4 className="font-mono-code text-xs font-semibold uppercase tracking-wider text-foreground-subtle">
+                  <h4 className="font-mono-code text-xs sm:text-[13px] font-semibold uppercase tracking-wider text-foreground-subtle">
                     Core Capabilities &amp; Frameworks
                   </h4>
                   <ul
@@ -200,7 +200,7 @@ export function CapabilitiesSection() {
                     {selectedPillar.items.map((item) => (
                       <li
                         key={item}
-                        className="rounded-xl border border-border bg-surface-raised px-3.5 py-1.5 font-mono-code text-xs font-medium text-foreground transition-colors hover:border-accent/40"
+                        className="rounded-xl border border-border bg-surface-raised px-3.5 py-1.5 font-mono-code text-xs sm:text-[13px] font-medium text-foreground transition-colors hover:border-accent/40"
                       >
                         {item}
                       </li>
@@ -209,7 +209,7 @@ export function CapabilitiesSection() {
                 </div>
 
                 {/* Production Verification Metadata */}
-                <div className="mt-8 flex items-center gap-3 border-t border-border pt-5 text-xs text-foreground-subtle">
+                <div className="mt-8 flex items-center gap-3 border-t border-border pt-5 text-xs sm:text-sm text-foreground-subtle">
                   <span className="flex size-2 rounded-full bg-accent" />
                   <span>Verified across production enterprise &amp; consumer apps</span>
                 </div>
@@ -221,7 +221,7 @@ export function CapabilitiesSection() {
                   <span className="font-mono-code text-xs font-semibold uppercase tracking-wider text-accent">
                     Conceptual Architecture Model
                   </span>
-                  <span className="font-mono-code text-[11px] text-foreground-subtle">
+                  <span className="font-mono-code text-xs text-foreground-subtle">
                     Data &amp; Control Flow
                   </span>
                 </div>
@@ -234,15 +234,15 @@ export function CapabilitiesSection() {
                       <div key={step.label} className="flex flex-col items-center">
                         <div className="w-full rounded-xl border border-border bg-surface p-3 transition-colors hover:border-accent/40">
                           <div className="flex items-center justify-between">
-                            <span className="font-mono-code text-xs font-bold text-foreground">
+                            <span className="font-mono-code text-sm font-bold text-foreground">
                               {step.label}
                             </span>
-                            <span className="font-mono-code text-[10px] text-foreground-subtle">
+                            <span className="font-mono-code text-[11px] text-foreground-subtle">
                               0{index + 1}
                             </span>
                           </div>
                           {step.subtext ? (
-                            <p className="mt-1 text-[11px] text-foreground-muted">
+                            <p className="mt-1 text-xs sm:text-[13px] leading-relaxed text-foreground-muted">
                               {step.subtext}
                             </p>
                           ) : null}
@@ -258,7 +258,7 @@ export function CapabilitiesSection() {
                   })}
                 </div>
 
-                <p className="mt-4 text-[11px] leading-relaxed text-foreground-subtle/80 italic">
+                <p className="mt-4 text-xs leading-relaxed text-foreground-subtle/80 italic">
                   *Understated conceptual visual. Production architectures adapt to domain complexity and modular constraints.
                 </p>
               </div>

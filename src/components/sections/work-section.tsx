@@ -68,12 +68,12 @@ export function WorkSection() {
                         {/* Category control pill in Liquid Glass */}
                         <LiquidGlass
                           variant="control"
-                          className="rounded-full px-2.5 py-0.5 font-mono-code text-[11px] font-semibold uppercase tracking-wider text-accent"
+                          className="rounded-full px-2.5 py-0.5 font-mono-code text-xs font-semibold uppercase tracking-wider text-accent"
                         >
                           {study.category}
                         </LiquidGlass>
                         <span className="text-foreground-subtle/40">•</span>
-                        <span className="font-mono-code text-xs text-foreground-subtle">
+                        <span className="font-mono-code text-xs sm:text-[13px] text-foreground-subtle">
                           {study.timeframe}
                         </span>
                       </div>
@@ -88,7 +88,7 @@ export function WorkSection() {
                     <button
                       type="button"
                       onClick={() => setActiveInspector(study)}
-                      className="liquid-glass-emerald inline-flex items-center gap-2 rounded-xl px-4 py-2.5 text-xs font-semibold text-[var(--emerald-action-text)] shadow-xs transition-all hover:brightness-105 active:scale-95 cursor-pointer"
+                      className="liquid-glass-emerald inline-flex items-center gap-2 rounded-xl px-4 py-2.5 text-xs sm:text-[13px] font-semibold text-[var(--emerald-action-text)] shadow-xs transition-all hover:brightness-105 active:scale-95 cursor-pointer"
                     >
                       <span>Explore Engineering</span>
                       <ArrowRight className="size-3.5" />
@@ -99,7 +99,7 @@ export function WorkSection() {
                         href={study.appStoreUrl}
                         target="_blank"
                         rel="noopener noreferrer"
-                        className="liquid-glass-control inline-flex items-center gap-1 rounded-xl px-3 py-2.5 text-xs font-medium text-foreground hover:border-border-strong transition-all cursor-pointer"
+                        className="liquid-glass-control inline-flex items-center gap-1 rounded-xl px-3 py-2.5 text-xs sm:text-[13px] font-medium text-foreground hover:border-border-strong transition-all cursor-pointer"
                         aria-label={`View ${study.name} on the App Store`}
                       >
                         <span className="hidden sm:inline">App Store</span>
@@ -114,21 +114,21 @@ export function WorkSection() {
                   {/* Left Column: Challenge & Engineering Approach */}
                   <div className="space-y-5">
                     <div>
-                      <h4 className="flex items-center gap-2 font-mono-code text-xs font-semibold uppercase tracking-wider text-accent">
+                      <h4 className="flex items-center gap-2 font-mono-code text-xs sm:text-[13px] font-semibold uppercase tracking-wider text-accent">
                         <Cpu className="size-3.5" />
                         Challenge
                       </h4>
-                      <p className="mt-2 text-sm sm:text-[15px] leading-relaxed text-foreground">
+                      <p className="mt-2 text-[15px] sm:text-base leading-relaxed text-foreground">
                         {challenge}
                       </p>
                     </div>
 
                     <div>
-                      <h4 className="flex items-center gap-2 font-mono-code text-xs font-semibold uppercase tracking-wider text-accent">
+                      <h4 className="flex items-center gap-2 font-mono-code text-xs sm:text-[13px] font-semibold uppercase tracking-wider text-accent">
                         <Layers className="size-3.5" />
                         Engineering
                       </h4>
-                      <p className="mt-2 text-sm sm:text-[15px] leading-relaxed text-foreground-muted">
+                      <p className="mt-2 text-[15px] sm:text-base leading-relaxed text-foreground-muted">
                         {engineeringApproach}
                       </p>
                     </div>
@@ -136,11 +136,11 @@ export function WorkSection() {
 
                   {/* Right Column: Contributions (2–4 concise items) */}
                   <div>
-                    <h4 className="flex items-center gap-2 font-mono-code text-xs font-semibold uppercase tracking-wider text-accent">
+                    <h4 className="flex items-center gap-2 font-mono-code text-xs sm:text-[13px] font-semibold uppercase tracking-wider text-accent">
                       <CheckCircle className="size-3.5" />
                       Contribution
                     </h4>
-                    <ul className="mt-2.5 space-y-2 text-xs sm:text-sm leading-relaxed text-foreground-muted">
+                    <ul className="mt-2.5 space-y-2.5 text-sm sm:text-[15px] leading-relaxed text-foreground-muted">
                       {study.contributions.map((item) => (
                         <li key={item} className="flex items-start gap-2.5">
                           <span className="mt-1.5 size-1.5 shrink-0 rounded-full bg-accent" />
@@ -155,11 +155,11 @@ export function WorkSection() {
                 {study.architectureHighlights && study.architectureHighlights.length > 0 && (
                   <div className="mt-6 rounded-2xl border border-border/80 bg-surface/70 p-4 transition-all">
                     <div className="flex items-center justify-between pb-2.5 border-b border-border/60">
-                      <span className="font-mono-code text-[11px] font-semibold uppercase tracking-wider text-accent flex items-center gap-1.5">
+                      <span className="font-mono-code text-xs font-semibold uppercase tracking-wider text-accent flex items-center gap-1.5">
                         <Boxes className="size-3.5" />
                         Architecture Highlights
                       </span>
-                      <span className="font-mono-code text-[10px] text-foreground-subtle hidden sm:inline">
+                      <span className="font-mono-code text-[11px] sm:text-xs text-foreground-subtle hidden sm:inline">
                         Verified Production Implementation
                       </span>
                     </div>
@@ -167,12 +167,12 @@ export function WorkSection() {
                       {study.architectureHighlights.map((hl) => (
                         <div
                           key={hl.label}
-                          className="rounded-xl border border-border bg-surface-raised/70 p-3 transition-colors hover:border-accent/40"
+                          className="rounded-xl border border-border bg-surface-raised/70 p-3.5 transition-colors hover:border-accent/40"
                         >
-                          <div className="font-mono-code text-xs font-bold text-foreground">
+                          <div className="font-mono-code text-xs sm:text-sm font-bold text-foreground">
                             {hl.label}
                           </div>
-                          <p className="mt-1 text-[11px] leading-relaxed text-foreground-muted">
+                          <p className="mt-1 text-xs sm:text-[13.5px] leading-relaxed text-foreground-muted">
                             {hl.description}
                           </p>
                         </div>
@@ -197,7 +197,7 @@ export function WorkSection() {
                     ))}
                   </div>
 
-                  <span className="font-mono-code text-[11px] text-foreground-subtle hidden sm:inline">
+                  <span className="font-mono-code text-xs text-foreground-subtle hidden sm:inline">
                     Enterprise confidentiality preserved
                   </span>
                 </div>
@@ -229,14 +229,14 @@ export function WorkSection() {
                 <div>
                   <div className="flex items-center gap-2">
                     <Sparkles className="size-3.5 text-accent" />
-                    <span className="font-mono-code text-xs font-semibold uppercase tracking-wider text-accent">
+                    <span className="font-mono-code text-xs sm:text-[13px] font-semibold uppercase tracking-wider text-accent">
                       Engineering Architecture Inspector
                     </span>
                   </div>
                   <h3 id="inspector-title" className="text-xl font-bold text-foreground sm:text-2xl mt-1">
                     {activeInspector.name}
                   </h3>
-                  <p className="text-xs text-foreground-subtle mt-0.5">
+                  <p className="text-xs sm:text-[13px] text-foreground-subtle mt-0.5">
                     {activeInspector.domain} • {activeInspector.timeframe}
                   </p>
                 </div>
@@ -253,7 +253,7 @@ export function WorkSection() {
               {/* Inspector Content */}
               <div className="mt-6 space-y-6">
                 <div>
-                  <h4 className="font-mono-code text-xs font-semibold uppercase tracking-wider text-foreground-subtle">
+                  <h4 className="font-mono-code text-xs sm:text-[13px] font-semibold uppercase tracking-wider text-foreground-subtle">
                     Architectural Highlights
                   </h4>
                   <div className="mt-3 space-y-3">
@@ -262,10 +262,10 @@ export function WorkSection() {
                         key={hl.label}
                         className="rounded-2xl border border-border bg-surface p-4"
                       >
-                        <div className="font-mono-code text-xs font-bold text-accent">
+                        <div className="font-mono-code text-xs sm:text-sm font-bold text-accent">
                           {hl.label}
                         </div>
-                        <p className="mt-1 text-xs sm:text-sm leading-relaxed text-foreground-muted">
+                        <p className="mt-1 text-sm sm:text-[15px] leading-relaxed text-foreground-muted">
                           {hl.description}
                         </p>
                       </div>
@@ -274,14 +274,14 @@ export function WorkSection() {
                 </div>
 
                 <div>
-                  <h4 className="font-mono-code text-xs font-semibold uppercase tracking-wider text-foreground-subtle">
+                  <h4 className="font-mono-code text-xs sm:text-[13px] font-semibold uppercase tracking-wider text-foreground-subtle">
                     Production Stack
                   </h4>
                   <div className="mt-3 flex flex-wrap gap-1.5">
                     {activeInspector.technologies.map((t) => (
                       <span
                         key={t}
-                        className="rounded-lg border border-border bg-surface px-2.5 py-1 font-mono-code text-xs text-foreground"
+                        className="rounded-lg border border-border bg-surface px-2.5 py-1 font-mono-code text-xs sm:text-[13px] text-foreground"
                       >
                         {t}
                       </span>
@@ -292,13 +292,13 @@ export function WorkSection() {
 
               {/* Inspector Footer */}
               <div className="mt-8 flex items-center justify-between border-t border-border pt-4">
-                <span className="font-mono-code text-xs text-foreground-subtle">
+                <span className="font-mono-code text-xs sm:text-[13px] text-foreground-subtle">
                   Verified Production Delivery
                 </span>
                 <button
                   type="button"
                   onClick={() => setActiveInspector(null)}
-                  className="liquid-glass-control rounded-xl px-4 py-2 text-xs font-semibold text-foreground cursor-pointer hover:border-border-strong"
+                  className="liquid-glass-control rounded-xl px-4 py-2 text-xs sm:text-[13px] font-semibold text-foreground cursor-pointer hover:border-border-strong"
                 >
                   Done
                 </button>

@@ -122,7 +122,7 @@ export function TechStackVisual() {
           <button
             type="button"
             onClick={() => setActiveTab("all")}
-            className={`flex-1 rounded-xl py-2 px-3 font-mono-code text-xs font-medium transition-all cursor-pointer ${
+            className={`flex-1 rounded-xl py-2 px-3 font-mono-code text-xs sm:text-[13px] font-medium transition-all cursor-pointer ${
               activeTab === "all"
                 ? "bg-accent/15 text-accent border border-accent/30 font-semibold shadow-xs"
                 : "text-foreground-muted hover:text-foreground"
@@ -137,7 +137,7 @@ export function TechStackVisual() {
                 key={group.id}
                 type="button"
                 onClick={() => setActiveTab(group.id)}
-                className={`flex-1 rounded-xl py-2 px-3 font-mono-code text-xs font-medium transition-all cursor-pointer ${
+                className={`flex-1 rounded-xl py-2 px-3 font-mono-code text-xs sm:text-[13px] font-medium transition-all cursor-pointer ${
                   isSelected
                     ? "bg-accent/15 text-accent border border-accent/30 font-semibold shadow-xs"
                     : "text-foreground-muted hover:text-foreground"
@@ -174,13 +174,13 @@ export function TechStackVisual() {
                       <h4 className="text-xl font-bold tracking-tight text-foreground">
                         {group.title}
                       </h4>
-                      <span className="font-mono-code text-[10px] text-accent font-semibold uppercase tracking-wider block">
+                      <span className="font-mono-code text-[11px] sm:text-xs text-accent font-semibold uppercase tracking-wider block">
                         {group.eyebrow}
                       </span>
                     </div>
                   </div>
 
-                  <p className="text-xs sm:text-[13px] leading-relaxed text-foreground-muted pt-1">
+                  <p className="text-sm sm:text-[15px] leading-relaxed text-foreground-muted pt-1">
                     {group.summary}
                   </p>
                 </div>
@@ -193,14 +193,14 @@ export function TechStackVisual() {
                       className="rounded-2xl border border-border/60 bg-surface/80 p-3.5 transition-all hover:border-accent/40 hover:bg-surface-elevated"
                     >
                       <div className="flex items-center justify-between">
-                        <span className="font-bold text-foreground text-sm">
+                        <span className="font-bold text-foreground text-sm sm:text-base">
                           {skill.name}
                         </span>
-                        <span className="rounded-md bg-accent/10 px-2 py-0.5 font-mono-code text-[10px] font-semibold text-accent border border-accent/20">
+                        <span className="rounded-md bg-accent/10 px-2 py-0.5 font-mono-code text-[11px] sm:text-xs font-semibold text-accent border border-accent/20">
                           {skill.level}
                         </span>
                       </div>
-                      <p className="mt-1.5 text-xs leading-relaxed text-foreground-muted">
+                      <p className="mt-1.5 text-xs sm:text-[13.5px] leading-relaxed text-foreground-muted">
                         {skill.context}
                       </p>
                     </div>
@@ -225,7 +225,7 @@ export function TechStackVisual() {
                   ? "Show primary disciplines only"
                   : "Explore remaining disciplines (Integrate, Assure, Ship)"}
               </span>
-              <span className="text-[11px]">
+              <span className="text-xs">
                 {showAllMobileDisciplines ? "▲ Collapse" : "▼ Expand"}
               </span>
             </button>

@@ -227,7 +227,7 @@ export function EngineeringStoryFlow() {
                     : "text-foreground-muted hover:text-foreground hover:bg-foreground/5"
                 }`}
               >
-                <span className="font-mono-code text-[10px] text-accent font-bold">
+                <span className="font-mono-code text-[11px] text-accent font-bold">
                   {step.number}
                 </span>
                 <Icon className="size-3.5 shrink-0" />
@@ -249,7 +249,7 @@ export function EngineeringStoryFlow() {
           {/* Left Column: Narrative & Explanation */}
           <div className="lg:col-span-6 space-y-4">
             <div className="flex items-center gap-2.5">
-              <span className="rounded-full px-2.5 py-0.5 font-mono-code text-[10px] font-semibold bg-accent/15 text-accent border border-accent/30">
+              <span className="rounded-full px-2.5 py-0.5 font-mono-code text-[11px] sm:text-xs font-semibold bg-accent/15 text-accent border border-accent/30">
                 {activeStep.category}
               </span>
               <span className="font-mono-code text-xs text-foreground-subtle">
@@ -273,7 +273,7 @@ export function EngineeringStoryFlow() {
             <div className="flex flex-wrap items-center gap-6 pt-4 border-t border-border/60">
               {activeStep.metrics.map((metric) => (
                 <div key={metric.label}>
-                  <div className="font-mono-code text-[10px] text-foreground-subtle uppercase tracking-wider font-semibold">
+                  <div className="font-mono-code text-[11px] sm:text-xs text-foreground-subtle uppercase tracking-wider font-semibold">
                     {metric.label}
                   </div>
                   <div className="mt-0.5 font-mono-code text-sm font-bold text-foreground">
@@ -292,7 +292,7 @@ export function EngineeringStoryFlow() {
                 className="w-full flex items-center justify-between rounded-xl border border-border bg-surface px-4 py-2.5 font-mono-code text-xs font-semibold text-accent hover:border-accent/40 transition-all cursor-pointer"
               >
                 <span>{showMobileCode ? "Hide technical implementation" : "View technical implementation & code"}</span>
-                <span className="text-[11px] font-mono-code">{showMobileCode ? "▲ Collapse" : "▼ Expand"}</span>
+                <span className="text-xs font-mono-code">{showMobileCode ? "▲ Collapse" : "▼ Expand"}</span>
               </button>
             </div>
           </div>
@@ -312,7 +312,7 @@ export function EngineeringStoryFlow() {
                     {activeStep.visualSnippet.filename}
                   </span>
                 </div>
-                <span className="rounded-full px-2 py-0.5 font-mono-code text-[9px] font-semibold bg-emerald-500/15 text-emerald-300 border border-emerald-500/30">
+                <span className="rounded-full px-2 py-0.5 font-mono-code text-[11px] font-semibold bg-emerald-500/15 text-emerald-300 border border-emerald-500/30">
                   {activeStep.visualSnippet.badge}
                 </span>
               </div>

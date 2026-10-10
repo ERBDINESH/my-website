@@ -87,13 +87,13 @@ export function ConsultingSection() {
                 </p>
 
                 <div className="mt-5 border-t border-border/60 pt-4">
-                  <span className="font-mono-code text-[11px] font-semibold uppercase tracking-wider text-foreground-subtle">
+                  <span className="font-mono-code text-xs font-semibold uppercase tracking-wider text-foreground-subtle">
                     Advisory Deliverables:
                   </span>
-                  <ul className="mt-2.5 space-y-1.5 text-xs text-foreground-muted">
+                  <ul className="mt-2.5 space-y-2 text-xs sm:text-[13.5px] leading-relaxed text-foreground-muted">
                     {service.deliverables.map((item) => (
                       <li key={item} className="flex items-start gap-2">
-                        <Check className="size-3 text-accent shrink-0 mt-0.5" />
+                        <Check className="size-3.5 text-accent shrink-0 mt-0.5" />
                         <span>{item}</span>
                       </li>
                     ))}
@@ -101,7 +101,7 @@ export function ConsultingSection() {
                 </div>
               </div>
 
-              <div className="mt-6 flex items-center justify-between border-t border-border/60 pt-4 text-xs font-mono-code">
+              <div className="mt-6 flex items-center justify-between border-t border-border/60 pt-4 text-xs sm:text-[13px] font-mono-code">
                 <span className="text-foreground-subtle">
                   Format: Technical RFC &amp; Paired Review
                 </span>
@@ -117,7 +117,7 @@ export function ConsultingSection() {
         <div className="mt-12 rounded-3xl border border-border/80 bg-surface/40 backdrop-blur-xs p-6 sm:p-8 lg:p-10 shadow-lg">
           <div className="flex flex-wrap items-center justify-between gap-3 border-b border-border/60 pb-5">
             <div>
-              <span className="font-mono-code text-[11px] font-bold uppercase tracking-wider text-accent">
+              <span className="font-mono-code text-xs font-bold uppercase tracking-wider text-accent">
                 Engagement Model
               </span>
               <h4 className="text-xl font-bold text-foreground mt-1">
@@ -125,14 +125,14 @@ export function ConsultingSection() {
               </h4>
             </div>
             <div className="flex items-center gap-3">
-              <span className="hidden sm:inline font-mono-code text-xs text-foreground-subtle">
+              <span className="hidden sm:inline font-mono-code text-xs sm:text-[13px] text-foreground-subtle">
                 Deterministic, Phased Engagements
               </span>
               <button
                 type="button"
                 onClick={() => setShowEngagementStages(!showEngagementStages)}
                 aria-expanded={showEngagementStages}
-                className="lg:hidden rounded-lg border border-border bg-surface px-3 py-1 font-mono-code text-[11px] font-semibold text-accent hover:border-accent/40 transition-all cursor-pointer"
+                className="lg:hidden rounded-lg border border-border bg-surface px-3 py-1 font-mono-code text-xs font-semibold text-accent hover:border-accent/40 transition-all cursor-pointer"
               >
                 {showEngagementStages ? "▲ Hide Stages" : "▼ View Stages"}
               </button>
@@ -150,16 +150,16 @@ export function ConsultingSection() {
                     <span className="flex size-7 items-center justify-center rounded-xl bg-accent/15 font-mono-code text-xs font-bold text-accent border border-accent/25">
                       {ws.step}
                     </span>
-                    <span className="rounded-full bg-accent/10 px-2 py-0.5 font-mono-code text-[10px] text-accent font-semibold">
+                    <span className="rounded-full bg-accent/10 px-2 py-0.5 font-mono-code text-[11px] sm:text-xs text-accent font-semibold">
                       {ws.badge}
                     </span>
                   </div>
 
-                  <h5 className="font-bold text-foreground text-base pt-1">
+                  <h5 className="font-bold text-foreground text-base sm:text-[17px] pt-1">
                     {ws.title}
                   </h5>
 
-                  <p className="text-xs leading-relaxed text-foreground-muted">
+                  <p className="text-xs sm:text-[13.5px] leading-relaxed text-foreground-muted">
                     {ws.description}
                   </p>
                 </div>
@@ -173,14 +173,14 @@ export function ConsultingSection() {
           <div className="flex items-start gap-3">
             <ShieldCheck className="size-5 shrink-0 text-accent mt-0.5" />
             <div>
-              <h4 className="font-mono-code text-xs font-semibold uppercase tracking-wider text-foreground">
+              <h4 className="font-mono-code text-xs sm:text-[13px] font-semibold uppercase tracking-wider text-foreground">
                 Advisory Standards &amp; Verified Scope
               </h4>
-              <p className="mt-1 text-xs text-foreground-muted">
+              <p className="mt-1 text-xs sm:text-sm text-foreground-muted">
                 Engagements are structured around demonstrable engineering capabilities. Clear operational boundaries ensure expectations remain accurate and achievable:
               </p>
 
-              <ul className="mt-4 grid gap-2 text-xs text-foreground-muted sm:grid-cols-2">
+              <ul className="mt-4 grid gap-2.5 text-xs sm:text-[13.5px] leading-relaxed text-foreground-muted sm:grid-cols-2">
                 {consultingBoundaries.map((boundary, i) => (
                   <li key={i} className="flex items-start gap-2">
                     <span className="mt-1 size-1.5 shrink-0 rounded-full bg-accent" />
@@ -193,7 +193,7 @@ export function ConsultingSection() {
         </div>
 
         {/* Specialized Areas Strip */}
-        <div className="mt-8 flex flex-wrap items-center justify-center gap-2 text-xs text-foreground-subtle font-mono-code">
+        <div className="mt-8 flex flex-wrap items-center justify-center gap-2 text-xs sm:text-[13px] text-foreground-subtle font-mono-code">
           <span className="text-foreground-muted">Advisory Specialties:</span>
           <span className="rounded-md border border-border bg-surface px-2.5 py-1">Swift &amp; SwiftUI</span>
           <span className="rounded-md border border-border bg-surface px-2.5 py-1">UIKit Interop</span>

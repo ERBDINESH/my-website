@@ -45,7 +45,7 @@ export function IPhoneDuoPreview() {
             type="button"
             onClick={() => setMobilePane("left")}
             aria-pressed={mobilePane === "left"}
-            className={`flex-1 flex items-center justify-center gap-1.5 rounded-lg py-1.5 text-center font-mono-code text-[11px] transition-all cursor-pointer ${
+            className={`flex-1 flex items-center justify-center gap-1.5 rounded-lg py-1.5 text-center font-mono-code text-xs transition-all cursor-pointer ${
               mobilePane === "left"
                 ? "bg-accent/15 text-accent font-semibold border border-accent/30 shadow-xs"
                 : "text-foreground-muted hover:text-foreground"
@@ -58,7 +58,7 @@ export function IPhoneDuoPreview() {
             type="button"
             onClick={() => setMobilePane("right")}
             aria-pressed={mobilePane === "right"}
-            className={`flex-1 flex items-center justify-center gap-1.5 rounded-lg py-1.5 text-center font-mono-code text-[11px] transition-all cursor-pointer ${
+            className={`flex-1 flex items-center justify-center gap-1.5 rounded-lg py-1.5 text-center font-mono-code text-xs transition-all cursor-pointer ${
               mobilePane === "right"
                 ? "bg-accent/15 text-accent font-semibold border border-accent/30 shadow-xs"
                 : "text-foreground-muted hover:text-foreground"
@@ -100,17 +100,17 @@ export function IPhoneDuoPreview() {
                 className="relative flex h-full min-h-[390px] sm:min-h-[410px] md:min-h-[440px] flex-col overflow-hidden rounded-[18px] sm:rounded-[24px] bg-[var(--phone-screen-bg)] text-[var(--phone-text)] transition-colors duration-200"
               >
                 {/* iOS Compact Status Bar */}
-                <div className="relative z-10 flex h-9 w-full items-center justify-between px-4 sm:px-5 pt-1 text-[11px] font-semibold text-[var(--phone-text)] opacity-95">
+                <div className="relative z-10 flex h-9 w-full items-center justify-between px-4 sm:px-5 pt-1 text-xs font-semibold text-[var(--phone-text)] opacity-95">
                   <span>9:41</span>
                   {/* Dynamic Island FaceID status */}
                   <div className="flex items-center gap-1.5 rounded-full bg-black/70 px-2.5 py-0.5 border border-white/10 shadow-inner">
                     <span className="size-1.5 rounded-full bg-emerald-400 animate-pulse" />
-                    <span className="font-mono-code text-[8.5px] text-emerald-400 font-semibold">
+                    <span className="font-mono-code text-[11px] text-emerald-400 font-semibold">
                       FaceID
                     </span>
                   </div>
                   <div className="flex items-center gap-1.5">
-                    <span className="font-mono-code text-[9px] font-bold">5G</span>
+                    <span className="font-mono-code text-[11px] font-bold">5G</span>
                     <Wifi className="size-3" />
                     <Battery className="size-3.5" />
                   </div>
@@ -121,23 +121,23 @@ export function IPhoneDuoPreview() {
                   {/* Title & ProMotion 120 FPS Chip */}
                   <div className="flex items-center justify-between pt-0.5">
                     <div>
-                      <span className="font-mono-code text-[8px] uppercase tracking-wider text-accent font-bold block">
+                      <span className="font-mono-code text-[11px] uppercase tracking-wider text-accent font-bold block">
                         SwiftUI Production App
                       </span>
                       <h4 className="text-base sm:text-lg font-extrabold tracking-tight text-[var(--phone-text)] leading-tight">
                         Treasury Vault
                       </h4>
                     </div>
-                    <span className="rounded-full bg-emerald-500/15 px-2 py-0.5 font-mono-code text-[8px] font-bold text-accent border border-emerald-500/30">
+                    <span className="rounded-full bg-emerald-500/15 px-2 py-0.5 font-mono-code text-[11px] font-bold text-accent border border-emerald-500/30">
                       120 FPS
                     </span>
                   </div>
 
                   {/* Net Liquidity Card */}
                   <div className="rounded-2xl border border-[var(--phone-card-border)] bg-[var(--phone-card-bg)] p-3 shadow-xs">
-                    <div className="flex items-center justify-between text-[9.5px] text-[var(--phone-text-subtle)] font-mono-code">
+                    <div className="flex items-center justify-between text-[11px] text-[var(--phone-text-subtle)] font-mono-code">
                       <span>Total Portfolio Liquidity</span>
-                      <span className="font-semibold text-emerald-400">+14.2% YTD</span>
+                      <span className="font-semibold text-emerald-600 dark:text-emerald-400">+14.2% YTD</span>
                     </div>
                     <div className="mt-1 text-xl sm:text-2xl font-black tracking-tight text-[var(--phone-text)]">
                       € 48,290.00
@@ -164,7 +164,7 @@ export function IPhoneDuoPreview() {
                             }`}
                           >
                             <Icon className="size-3" />
-                            <span className="font-mono-code text-[8.5px]">{action.label}</span>
+                            <span className="font-mono-code text-[11px]">{action.label}</span>
                           </button>
                         );
                       })}
@@ -172,22 +172,22 @@ export function IPhoneDuoPreview() {
                   </div>
 
                   {/* Active Enterprise Tier Card */}
-                  <div className="rounded-xl border border-accent/25 bg-gradient-to-br from-emerald-950/30 to-surface/40 p-2.5 shadow-xs">
+                  <div className="rounded-xl border border-accent/25 bg-gradient-to-br from-emerald-500/10 to-transparent p-2.5 shadow-xs">
                     <div className="flex items-center justify-between">
                       <div className="flex items-center gap-2">
                         <div className="flex size-5 items-center justify-center rounded-md bg-accent/20 text-accent">
                           <ShieldCheck className="size-3" />
                         </div>
                         <div>
-                          <div className="text-[10px] font-bold text-[var(--phone-text)]">
+                          <div className="text-xs font-bold text-[var(--phone-text)]">
                             Enterprise Treasury Tier 1
                           </div>
-                          <div className="font-mono-code text-[8px] text-accent">
+                          <div className="font-mono-code text-[11px] text-accent font-medium">
                             Contactless • Instant Wire
                           </div>
                         </div>
                       </div>
-                      <span className="font-mono-code text-[8.5px] text-[var(--phone-text-subtle)]">
+                      <span className="font-mono-code text-[11px] text-[var(--phone-text-subtle)]">
                         •• 4092
                       </span>
                     </div>
@@ -196,23 +196,23 @@ export function IPhoneDuoPreview() {
                   {/* Recent Verified Settlement */}
                   <div className="rounded-xl border border-[var(--phone-card-border)] bg-[var(--phone-card-bg)] p-2 text-xs flex items-center justify-between">
                     <div className="flex items-center gap-2">
-                      <div className="flex size-5 items-center justify-center rounded-md bg-emerald-500/15 text-accent font-bold text-[9px]">
+                      <div className="flex size-5 items-center justify-center rounded-md bg-emerald-500/15 text-accent font-bold text-xs">
                         +
                       </div>
                       <div>
-                        <div className="text-[10px] font-semibold text-[var(--phone-text)]">
+                        <div className="text-xs font-semibold text-[var(--phone-text)]">
                           SEPA Instant Settlement
                         </div>
-                        <div className="font-mono-code text-[8px] text-[var(--phone-text-subtle)]">
+                        <div className="font-mono-code text-[11px] text-[var(--phone-text-subtle)]">
                           Verified • 08:30 UTC
                         </div>
                       </div>
                     </div>
                     <div className="text-right">
-                      <div className="font-mono-code text-[10px] font-bold text-emerald-400">
+                      <div className="font-mono-code text-xs font-bold text-emerald-600 dark:text-emerald-400">
                         +€ 3,400.00
                       </div>
-                      <div className="font-mono-code text-[7.5px] text-accent">
+                      <div className="font-mono-code text-[11px] text-accent font-medium">
                         Settled
                       </div>
                     </div>
@@ -255,24 +255,24 @@ export function IPhoneDuoPreview() {
             >
               <div
                 data-app-theme={theme}
-                className="relative flex h-full min-h-[390px] sm:min-h-[410px] md:min-h-[440px] flex-col overflow-hidden rounded-[18px] sm:rounded-[24px] bg-[#090d0b] text-[var(--phone-text)] transition-colors duration-200"
+                className="relative flex h-full min-h-[390px] sm:min-h-[410px] md:min-h-[440px] flex-col overflow-hidden rounded-[18px] sm:rounded-[24px] bg-[var(--phone-eng-screen-bg)] text-[var(--phone-text)] transition-colors duration-200"
               >
                 {/* Engineering HUD Status Bar */}
-                <div className="relative z-10 flex h-9 w-full items-center justify-between px-4 sm:px-5 pt-1 text-[11px] font-semibold text-[var(--phone-text)] opacity-95">
+                <div className="relative z-10 flex h-9 w-full items-center justify-between px-4 sm:px-5 pt-1 text-xs font-semibold text-[var(--phone-text)] opacity-95">
                   <div className="flex items-center gap-1.5">
                     <TerminalIcon className="size-3 text-accent" />
-                    <span className="font-mono-code text-[8.5px] text-accent font-bold">
+                    <span className="font-mono-code text-[11px] text-accent font-bold">
                       ENGINEERING ENGINE
                     </span>
                   </div>
                   {/* Dynamic Runtime Status */}
                   <div className="flex items-center gap-1 rounded-full bg-emerald-500/15 px-2 py-0.5 border border-emerald-500/30">
                     <span className="size-1.5 rounded-full bg-emerald-400 animate-ping" />
-                    <span className="font-mono-code text-[8px] text-emerald-400 font-semibold">
+                    <span className="font-mono-code text-[11px] text-emerald-600 dark:text-emerald-400 font-semibold">
                       LIVE RUNTIME
                     </span>
                   </div>
-                  <span className="font-mono-code text-[8.5px] text-foreground-subtle">
+                  <span className="font-mono-code text-[11px] text-[var(--phone-text-subtle)] font-medium">
                     ARC CLEAN
                   </span>
                 </div>
@@ -283,20 +283,20 @@ export function IPhoneDuoPreview() {
                   <div>
                     <div className="flex items-center justify-between pb-1">
                       <div>
-                        <span className="font-mono-code text-[8px] uppercase tracking-wider text-sky-400 font-bold block">
+                        <span className="font-mono-code text-[11px] uppercase tracking-wider text-sky-600 dark:text-sky-400 font-bold block">
                           Architectural Inspector
                         </span>
-                        <h4 className="text-xs sm:text-sm font-extrabold tracking-tight text-[var(--phone-text)]">
+                        <h4 className="text-sm sm:text-base font-extrabold tracking-tight text-[var(--phone-text)]">
                           Contextual Telemetry
                         </h4>
                       </div>
-                      <span className="font-mono-code text-[8px] text-foreground-subtle">
+                      <span className="font-mono-code text-[11px] text-[var(--phone-text-subtle)]">
                         Linked to Product UI
                       </span>
                     </div>
 
                     {/* 3 Inspector Tabs: State, Network, Memory */}
-                    <div className="grid grid-cols-3 gap-1 rounded-xl bg-surface/70 p-1 border border-border/80">
+                    <div className="grid grid-cols-3 gap-1 rounded-xl bg-[var(--phone-card-sub-bg)] p-1 border border-[var(--phone-card-border)]">
                       {(
                         [
                           { id: "state", label: "State", icon: Layers },
@@ -311,13 +311,13 @@ export function IPhoneDuoPreview() {
                             key={tab.id}
                             type="button"
                             onClick={() => setInspectorTab(tab.id)}
-                            className={`flex items-center justify-center gap-1 rounded-lg py-1 text-center font-mono-code text-[8.5px] transition-all cursor-pointer ${
+                            className={`flex items-center justify-center gap-1 rounded-lg py-1 text-center font-mono-code text-xs transition-all cursor-pointer ${
                               isCurrent
                                 ? "bg-accent/20 text-accent font-semibold border border-accent/30 shadow-xs"
-                                : "text-foreground-subtle hover:text-foreground"
+                                : "text-[var(--phone-text-muted)] hover:text-[var(--phone-text)]"
                             }`}
                           >
-                            <Icon className="size-2.5" />
+                            <Icon className="size-3" />
                             <span>{tab.label}</span>
                           </button>
                         );
@@ -328,16 +328,17 @@ export function IPhoneDuoPreview() {
                   {/* TAB 1: STATE & ARCHITECTURE */}
                   {inspectorTab === "state" && (
                     <div className="space-y-2 animate-in fade-in duration-200">
-                      <div className="rounded-xl border border-[var(--phone-card-border)] bg-[var(--phone-card-bg)] p-2.5 space-y-1.5">
+                      <div className="rounded-xl border border-[var(--phone-card-border)] bg-[var(--phone-card-bg)] p-2.5 space-y-1.5 shadow-xs">
                         <div className="flex items-center justify-between">
-                          <span className="font-mono-code text-[9.5px] text-accent font-bold">
+                          <span className="font-mono-code text-xs text-accent font-bold">
                             @Observable AccountEngine
                           </span>
-                          <span className="rounded-full bg-emerald-500/15 px-1.5 py-0.5 font-mono-code text-[7.5px] text-emerald-400 border border-emerald-500/30">
+                          <span className="rounded-full bg-emerald-500/15 px-2 py-0.5 font-mono-code text-[11px] text-emerald-600 dark:text-emerald-400 border border-emerald-500/30 font-semibold">
                             .ready(Vault)
                           </span>
                         </div>
-                        <div className="font-mono-code text-[8.5px] text-foreground-subtle leading-relaxed bg-[#060807] rounded-lg p-2 border border-neutral-800">
+                        {/* Dark code module with syntax highlighting */}
+                        <div className="font-mono-code text-xs text-neutral-300 leading-relaxed bg-[#0b110e] rounded-lg p-2.5 border border-neutral-800 shadow-inner">
                           <div>
                             <span className="text-purple-400">selectedAction: </span>
                             <span className="text-emerald-300">.{selectedAction}</span>
@@ -353,9 +354,9 @@ export function IPhoneDuoPreview() {
                         </div>
                       </div>
 
-                      <div className="rounded-xl border border-accent/25 bg-accent/5 p-2 font-mono-code text-[8px] text-accent flex items-center justify-between">
-                        <span className="flex items-center gap-1">
-                          <CheckCircle2 className="size-3" />
+                      <div className="rounded-xl border border-accent/25 bg-accent/5 p-2 font-mono-code text-[11px] text-accent flex items-center justify-between">
+                        <span className="flex items-center gap-1.5">
+                          <CheckCircle2 className="size-3.5" />
                           Swift 6 Data-Race Free
                         </span>
                         <span className="font-bold">0 Violations</span>
@@ -366,33 +367,34 @@ export function IPhoneDuoPreview() {
                   {/* TAB 2: NETWORK & SERVICE TRANSPORT */}
                   {inspectorTab === "network" && (
                     <div className="space-y-2 animate-in fade-in duration-200">
-                      <div className="rounded-xl border border-sky-500/25 bg-[var(--phone-card-bg)] p-2.5 space-y-1.5">
+                      <div className="rounded-xl border border-sky-500/25 bg-[var(--phone-card-bg)] p-2.5 space-y-1.5 shadow-xs">
                         <div className="flex items-center justify-between">
-                          <span className="font-mono-code text-[9.5px] text-sky-400 font-bold">
+                          <span className="font-mono-code text-xs text-sky-600 dark:text-sky-400 font-bold">
                             URLSession Transport
                           </span>
-                          <span className="rounded-full bg-sky-500/15 px-1.5 py-0.5 font-mono-code text-[7.5px] text-sky-400 border border-sky-500/30">
+                          <span className="rounded-full bg-sky-500/15 px-2 py-0.5 font-mono-code text-[11px] text-sky-600 dark:text-sky-400 border border-sky-500/30 font-semibold">
                             HTTP/3 • 200 OK
                           </span>
                         </div>
-                        <div className="font-mono-code text-[8.5px] text-foreground-subtle leading-relaxed bg-[#060807] rounded-lg p-2 border border-neutral-800">
+                        {/* Dark code module with syntax highlighting */}
+                        <div className="font-mono-code text-xs text-neutral-300 leading-relaxed bg-[#0b110e] rounded-lg p-2.5 border border-neutral-800 shadow-inner">
                           <div>
                             <span className="text-sky-300">GET </span>
-                            <span className="text-neutral-300">/v2/accounts/vault/sync</span>
+                            <span className="text-neutral-200">/v2/accounts/vault/sync</span>
                           </div>
                           <div>
-                            <span className="text-neutral-500">Latency: </span>
+                            <span className="text-neutral-400">Latency: </span>
                             <span className="text-emerald-400 font-bold">38ms roundtrip</span>
                           </div>
                           <div>
-                            <span className="text-neutral-500">Security: </span>
-                            <span className="text-neutral-300">TLS 1.3 Pinning Verified</span>
+                            <span className="text-neutral-400">Security: </span>
+                            <span className="text-neutral-200">TLS 1.3 Pinning Verified</span>
                           </div>
                         </div>
                       </div>
 
-                      <div className="rounded-xl border border-[var(--phone-card-border)] bg-[var(--phone-card-bg)] p-2 text-[8px] font-mono-code flex items-center justify-between">
-                        <span className="text-foreground-subtle">Codable Serialization</span>
+                      <div className="rounded-xl border border-[var(--phone-card-border)] bg-[var(--phone-card-bg)] p-2 text-[11px] font-mono-code flex items-center justify-between">
+                        <span className="text-[var(--phone-text-muted)]">Codable Serialization</span>
                         <span className="text-accent font-semibold">Zero-Copy Sendable</span>
                       </div>
                     </div>
@@ -401,27 +403,27 @@ export function IPhoneDuoPreview() {
                   {/* TAB 3: MEMORY & PERFORMANCE */}
                   {inspectorTab === "memory" && (
                     <div className="space-y-2 animate-in fade-in duration-200">
-                      <div className="rounded-xl border border-[var(--phone-card-border)] bg-[var(--phone-card-bg)] p-2.5 space-y-1.5">
+                      <div className="rounded-xl border border-[var(--phone-card-border)] bg-[var(--phone-card-bg)] p-2.5 space-y-1.5 shadow-xs">
                         <div className="flex items-center justify-between">
-                          <span className="font-mono-code text-[9.5px] text-foreground font-bold">
+                          <span className="font-mono-code text-xs text-[var(--phone-text)] font-bold">
                             Xcode Instruments Profile
                           </span>
-                          <span className="font-mono-code text-[8.5px] text-emerald-400 font-extrabold">
+                          <span className="font-mono-code text-xs text-emerald-600 dark:text-emerald-400 font-extrabold">
                             38.4 MB
                           </span>
                         </div>
-                        <div className="space-y-1">
-                          <div className="flex items-center justify-between text-[7.5px] font-mono-code text-foreground-subtle">
+                        <div className="space-y-1.5">
+                          <div className="flex items-center justify-between text-[11px] font-mono-code text-[var(--phone-text-subtle)]">
                             <span>Resident Memory Footprint</span>
-                            <span className="text-accent">ARC Clean</span>
+                            <span className="text-accent font-semibold">ARC Clean</span>
                           </div>
-                          <div className="h-1.5 w-full rounded-full bg-neutral-800 overflow-hidden">
+                          <div className="h-2 w-full rounded-full bg-[var(--phone-progress-track)] overflow-hidden">
                             <div className="h-full w-[24%] rounded-full bg-accent" />
                           </div>
                         </div>
                       </div>
 
-                      <div className="rounded-xl border border-accent/25 bg-accent/5 p-2 font-mono-code text-[8px] text-accent flex items-center justify-between">
+                      <div className="rounded-xl border border-accent/25 bg-accent/5 p-2 font-mono-code text-[11px] text-accent flex items-center justify-between">
                         <span>Retain Cycle Audit</span>
                         <span className="font-bold">0 Leaks (Weak Delegates)</span>
                       </div>
@@ -441,10 +443,10 @@ export function IPhoneDuoPreview() {
 
       {/* Conceptual Hardware Narrative Caption */}
       <div className="mt-3 text-center px-4">
-        <p className="font-mono-code text-[11px] font-semibold text-accent">
+        <p className="font-mono-code text-xs sm:text-sm font-semibold text-accent">
           Dual-Screen iOS Engineering Concept
         </p>
-        <p className="text-[11px] text-foreground-subtle mt-0.5">
+        <p className="text-xs sm:text-sm text-foreground-subtle mt-0.5">
           &ldquo;Build the product on one side, understand the engineering behind it on the other.&rdquo;
         </p>
       </div>

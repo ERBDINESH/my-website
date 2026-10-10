@@ -91,10 +91,10 @@ export function AIEngineeringFlow() {
         <div className="flex flex-wrap items-center justify-between gap-4 border-b border-border/70 pb-6">
           <div>
             <div className="flex items-center gap-2">
-              <span className="rounded-full px-2.5 py-0.5 font-mono-code text-[11px] font-semibold bg-accent/15 text-accent border border-accent/30">
+              <span className="rounded-full px-2.5 py-0.5 font-mono-code text-xs font-semibold bg-accent/15 text-accent border border-accent/30">
                 AI + ENGINEERING OWNERSHIP
               </span>
-              <span className="font-mono-code text-xs text-foreground-subtle">
+              <span className="font-mono-code text-xs sm:text-[13px] text-foreground-subtle">
                 Controlled Velocity, Not Autonomous Blind Faith
               </span>
             </div>
@@ -105,7 +105,7 @@ export function AIEngineeringFlow() {
 
           <LiquidGlass
             variant="control"
-            className="rounded-xl px-3.5 py-1.5 font-mono-code text-xs text-accent border border-accent/30 shadow-xs"
+            className="rounded-xl px-3.5 py-1.5 font-mono-code text-xs sm:text-[13px] text-accent border border-accent/30 shadow-xs"
           >
             Human In The Loop Architecture
           </LiquidGlass>
@@ -123,7 +123,7 @@ export function AIEngineeringFlow() {
 
         {/* 5-Stage Verification Pipeline */}
         <div className="mt-8">
-          <div className="flex items-center justify-between text-xs text-foreground-subtle mb-3">
+          <div className="flex items-center justify-between text-xs sm:text-[13px] text-foreground-subtle mb-3">
             <span className="font-mono-code uppercase tracking-wider font-semibold">
               The 5-Gate Review Funnel
             </span>
@@ -150,17 +150,17 @@ export function AIEngineeringFlow() {
                 >
                   <div>
                     <div className="flex items-center justify-between">
-                      <span className="font-mono-code text-[11px] font-bold text-accent">
+                      <span className="font-mono-code text-xs font-bold text-accent">
                         GATE {gate.step}
                       </span>
                       <Icon className="size-3.5 text-accent" />
                     </div>
-                    <div className="mt-2 text-xs font-bold text-foreground">
+                    <div className="mt-2 text-xs sm:text-sm font-bold text-foreground">
                       {gate.name}
                     </div>
                   </div>
 
-                  <div className="mt-3 border-t border-border/60 pt-2 font-mono-code text-[10px] text-foreground-subtle">
+                  <div className="mt-3 border-t border-border/60 pt-2 font-mono-code text-[11px] sm:text-xs text-foreground-subtle">
                     {gate.status}
                   </div>
                 </button>
@@ -176,29 +176,29 @@ export function AIEngineeringFlow() {
               <span className="flex size-6 items-center justify-center rounded-lg bg-emerald-500/10 font-mono-code text-xs font-bold text-accent border border-emerald-500/20">
                 {activeGate.step}
               </span>
-              <span className="font-mono-code text-xs font-semibold text-neutral-200">
+              <span className="font-mono-code text-xs sm:text-sm font-semibold text-neutral-200">
                 {activeGate.name} — Verification Criteria
               </span>
             </div>
-            <span className="rounded-full px-2.5 py-0.5 font-mono-code text-[10px] font-semibold bg-emerald-500/15 text-emerald-300 border border-emerald-500/30">
+            <span className="rounded-full px-2.5 py-0.5 font-mono-code text-[11px] sm:text-xs font-semibold bg-emerald-500/15 text-emerald-300 border border-emerald-500/30">
               {activeGate.owner}
             </span>
           </div>
 
           <div className="mt-4 grid gap-6 sm:grid-cols-2">
             <div>
-              <div className="font-mono-code text-[11px] text-neutral-400 uppercase tracking-wider">
+              <div className="font-mono-code text-xs text-neutral-400 uppercase tracking-wider">
                 Engineering Responsibility
               </div>
-              <p className="mt-1 text-xs sm:text-sm text-neutral-300 leading-relaxed">
+              <p className="mt-1 text-sm sm:text-[15px] text-neutral-300 leading-relaxed">
                 {activeGate.role}
               </p>
             </div>
             <div>
-              <div className="font-mono-code text-[11px] text-neutral-400 uppercase tracking-wider">
+              <div className="font-mono-code text-xs text-neutral-400 uppercase tracking-wider">
                 Verification Deliverable
               </div>
-              <div className="mt-1 flex items-center gap-2 font-mono-code text-xs sm:text-sm text-emerald-300">
+              <div className="mt-1 flex items-center gap-2 font-mono-code text-sm sm:text-[15px] text-emerald-300">
                 <CheckCircle2 className="size-4 text-accent shrink-0" />
                 <span>{activeGate.verifies}</span>
               </div>
@@ -215,18 +215,18 @@ export function AIEngineeringFlow() {
             className="w-full flex items-center justify-between rounded-xl border border-border bg-surface px-4 py-2.5 font-mono-code text-xs font-semibold text-accent hover:border-accent/40 transition-all cursor-pointer"
           >
             <span>{showMobileComparison ? "Hide risk analysis" : "View AI Risk vs Senior Control Analysis"}</span>
-            <span className="text-[11px]">{showMobileComparison ? "▲ Collapse" : "▼ Expand"}</span>
+            <span className="text-xs">{showMobileComparison ? "▲ Collapse" : "▼ Expand"}</span>
           </button>
         </div>
 
         {/* Contrast Breakdown: AI vs Production Reality */}
-        <div className={`mt-6 grid gap-4 sm:grid-cols-2 text-xs ${showMobileComparison ? "block space-y-4 sm:space-y-0" : "hidden sm:grid"}`}>
+        <div className={`mt-6 grid gap-4 sm:grid-cols-2 text-xs sm:text-sm ${showMobileComparison ? "block space-y-4 sm:space-y-0" : "hidden sm:grid"}`}>
           <div className="rounded-2xl border border-red-900/30 bg-surface-raised p-4">
-            <div className="flex items-center gap-1.5 font-mono-code text-red-400 font-bold">
-              <AlertTriangle className="size-3.5" />
+            <div className="flex items-center gap-1.5 font-mono-code text-xs sm:text-sm text-red-400 font-bold">
+              <AlertTriangle className="size-3.5 shrink-0" />
               <span>Uncontrolled AI Risks in iOS:</span>
             </div>
-            <ul className="mt-2 space-y-1.5 text-foreground-muted">
+            <ul className="mt-2 space-y-2 leading-relaxed text-foreground-muted">
               <li>• Hidden memory retain cycles in trailing closures</li>
               <li>• Inappropriate dispatching across concurrency domains</li>
               <li>• Missed Apple Human Interface Guidelines and dynamic sizing</li>
@@ -235,11 +235,11 @@ export function AIEngineeringFlow() {
           </div>
 
           <div className="rounded-2xl border border-accent/40 bg-surface-raised p-4">
-            <div className="flex items-center gap-1.5 font-mono-code text-accent font-bold">
-              <ShieldCheck className="size-3.5" />
+            <div className="flex items-center gap-1.5 font-mono-code text-xs sm:text-sm text-accent font-bold">
+              <ShieldCheck className="size-3.5 shrink-0" />
               <span>Controlled AI Advantage:</span>
             </div>
-            <ul className="mt-2 space-y-1.5 text-foreground-muted">
+            <ul className="mt-2 space-y-2 leading-relaxed text-foreground-muted">
               <li>• 3x faster initial prototyping and schema drafting</li>
               <li>• Senior engineer enforces MVVM-C contracts &amp; test harness</li>
               <li>• Instruments verification guarantees zero runtime leaks</li>

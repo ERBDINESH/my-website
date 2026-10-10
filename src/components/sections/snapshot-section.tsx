@@ -29,7 +29,7 @@ export function SnapshotSection() {
                   <span className="flex size-6 items-center justify-center rounded-lg bg-accent/10 border border-accent/20">
                     {icons[index % icons.length]}
                   </span>
-                  <span className="font-mono-code text-[11px] font-semibold uppercase tracking-wider text-accent">
+                  <span className="font-mono-code text-xs font-semibold uppercase tracking-wider text-accent">
                     {item.category}
                   </span>
                 </div>
@@ -39,7 +39,7 @@ export function SnapshotSection() {
                 </div>
               </div>
 
-              <p className="mt-2.5 text-xs sm:text-[13px] leading-relaxed text-foreground-muted">
+              <p className="mt-2.5 text-sm sm:text-[15px] leading-relaxed text-foreground-muted">
                 {item.description}
               </p>
             </div>

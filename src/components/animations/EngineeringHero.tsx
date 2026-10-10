@@ -90,7 +90,7 @@ export function EngineeringHero() {
         className="mb-3.5 flex w-full flex-col gap-2 rounded-2xl p-2 shadow-md border border-border"
       >
         <div className="flex items-center justify-between px-1">
-          <div className="flex items-center gap-1.5 font-mono-code text-[11px] font-semibold text-accent">
+          <div className="flex items-center gap-1.5 font-mono-code text-xs font-semibold text-accent">
             <Sparkles className="size-3" />
             <span className="uppercase tracking-wider">Engineering Pipeline</span>
           </div>
@@ -98,7 +98,7 @@ export function EngineeringHero() {
             <button
               type="button"
               onClick={() => setIsPlaying(!isPlaying)}
-              className="flex items-center gap-1 rounded-md px-2 py-0.5 font-mono-code text-[10px] text-foreground-muted hover:text-foreground transition-colors cursor-pointer"
+              className="flex items-center gap-1 rounded-md px-2 py-0.5 font-mono-code text-[11px] text-foreground-muted hover:text-foreground transition-colors cursor-pointer"
               aria-label={isPlaying ? "Pause automated transformation" : "Play transformation"}
             >
               {isPlaying ? (
@@ -155,7 +155,7 @@ export function EngineeringHero() {
                 }`}
               >
                 <Icon className="size-3.5" />
-                <span className="font-mono-code text-[10px] truncate max-w-full">
+                <span className="font-mono-code text-[11px] sm:text-xs truncate max-w-full">
                   {stage.shortLabel}
                 </span>
               </button>
@@ -181,18 +181,18 @@ export function EngineeringHero() {
                   Swift 6.0 Concurrency
                 </span>
               </div>
-              <span className="rounded-full px-2 py-0.5 font-mono-code text-[10px] font-semibold bg-emerald-500/15 text-accent border border-emerald-500/30">
+              <span className="rounded-full px-2 py-0.5 font-mono-code text-[11px] font-semibold bg-emerald-500/15 text-accent border border-emerald-500/30">
                 STRICT_SAFETY
               </span>
             </div>
 
             {/* Swift Syntax Block with clean typography */}
             <div className="mt-4 rounded-2xl border border-border bg-[#0b0f0d] p-4 font-mono-code text-xs text-neutral-300 shadow-inner">
-              <div className="flex items-center justify-between text-[10px] text-neutral-500 pb-2 border-b border-neutral-800">
+              <div className="flex items-center justify-between text-xs text-neutral-500 pb-2 border-b border-neutral-800">
                 <span>AccountEngine.swift</span>
                 <span className="text-emerald-400">@MainActor isolated</span>
               </div>
-              <pre className="mt-3 overflow-x-auto text-[11px] leading-relaxed text-neutral-300 font-mono-code">
+              <pre className="mt-3 overflow-x-auto text-xs leading-relaxed text-neutral-300 font-mono-code">
                 <code>
                   <span className="text-purple-400">@Observable</span>{"\n"}
                   <span className="text-blue-400">final class</span>{" "}
@@ -217,14 +217,14 @@ export function EngineeringHero() {
             {/* Verification metrics bar */}
             <div className="mt-4 grid grid-cols-2 gap-2 text-xs">
               <div className="rounded-xl border border-border bg-surface p-2.5">
-                <div className="font-mono-code text-[10px] text-foreground-subtle">DATA-RACE</div>
+                <div className="font-mono-code text-[11px] text-foreground-subtle">DATA-RACE</div>
                 <div className="mt-1 flex items-center gap-1 font-mono-code text-xs font-semibold text-accent">
                   <CheckCircle2 className="size-3" />
                   0 Compile Errors
                 </div>
               </div>
               <div className="rounded-xl border border-border bg-surface p-2.5">
-                <div className="font-mono-code text-[10px] text-foreground-subtle">MEMORY SAFETY</div>
+                <div className="font-mono-code text-[11px] text-foreground-subtle">MEMORY SAFETY</div>
                 <div className="mt-1 flex items-center gap-1 font-mono-code text-xs font-semibold text-accent">
                   <ShieldCheck className="size-3" />
                   ARC Optimized
@@ -233,7 +233,7 @@ export function EngineeringHero() {
             </div>
 
             <div className="mt-4 flex items-center justify-between text-xs text-foreground-muted border-t border-border pt-3">
-              <span className="font-mono-code text-[11px]">Step 1 of 4</span>
+              <span className="font-mono-code text-xs">Step 1 of 4</span>
               <button
                 type="button"
                 onClick={() => setActiveStage("architecture")}
@@ -260,7 +260,7 @@ export function EngineeringHero() {
                   MVVM-C Contract Mesh
                 </span>
               </div>
-              <span className="font-mono-code text-[10px] text-foreground-muted">
+              <span className="font-mono-code text-[11px] text-foreground-muted">
                 DECOUPLED LAYERS
               </span>
             </div>
@@ -273,11 +273,11 @@ export function EngineeringHero() {
                   <span className="font-mono-code text-xs font-bold text-accent">
                     AppCoordinator
                   </span>
-                  <span className="font-mono-code text-[9px] uppercase tracking-wider text-foreground-subtle">
+                  <span className="font-mono-code text-[11px] uppercase tracking-wider text-foreground-subtle">
                     Flow &amp; Routing
                   </span>
                 </div>
-                <div className="mt-1 text-[11px] text-foreground-muted">
+                <div className="mt-1 text-xs sm:text-[13px] leading-relaxed text-foreground-muted">
                   Manages view lifecycle without coupling UI screens to navigation controllers.
                 </div>
               </div>
@@ -293,9 +293,9 @@ export function EngineeringHero() {
                   <span className="font-mono-code text-xs font-bold text-foreground">
                     PolicyViewModel
                   </span>
-                  <span className="font-mono-code text-[9px] text-accent">@Observable</span>
+                  <span className="font-mono-code text-[11px] text-accent">@Observable</span>
                 </div>
-                <div className="mt-1 text-[11px] text-foreground-muted">
+                <div className="mt-1 text-xs sm:text-[13px] leading-relaxed text-foreground-muted">
                   Transforms domain events into predictable UI state.
                 </div>
               </div>
@@ -311,11 +311,11 @@ export function EngineeringHero() {
                   <span className="font-mono-code text-xs font-bold text-foreground">
                     &lt;BankingServicing&gt;
                   </span>
-                  <span className="font-mono-code text-[9px] text-foreground-subtle">
+                  <span className="font-mono-code text-[11px] text-foreground-subtle">
                     DI Protocol Contract
                   </span>
                 </div>
-                <div className="mt-1 flex items-center justify-between text-[11px] text-foreground-muted">
+                <div className="mt-1 flex items-center justify-between text-xs sm:text-[13px] leading-relaxed text-foreground-muted">
                   <span>URLSession Network Transport</span>
                   <span className="text-accent font-mono-code">MockInjected</span>
                 </div>
@@ -323,7 +323,7 @@ export function EngineeringHero() {
             </div>
 
             <div className="mt-4 flex items-center justify-between text-xs text-foreground-muted border-t border-border pt-3">
-              <span className="font-mono-code text-[11px]">Step 2 of 4</span>
+              <span className="font-mono-code text-xs">Step 2 of 4</span>
               <button
                 type="button"
                 onClick={() => setActiveStage("swiftui")}
@@ -350,7 +350,7 @@ export function EngineeringHero() {
                   SwiftUI Declarative Hierarchy
                 </span>
               </div>
-              <span className="rounded-full px-2 py-0.5 font-mono-code text-[10px] bg-accent/15 text-accent border border-accent/25">
+              <span className="rounded-full px-2 py-0.5 font-mono-code text-[11px] bg-accent/15 text-accent border border-accent/25">
                 120 FPS FLUID
               </span>
             </div>
@@ -361,37 +361,37 @@ export function EngineeringHero() {
               <div className="flex items-center justify-between rounded-full bg-black px-4 py-2 text-white shadow-md">
                 <div className="flex items-center gap-2">
                   <span className="size-2 rounded-full bg-accent animate-pulse" />
-                  <span className="font-mono-code text-[10px]">OTP Secured</span>
+                  <span className="font-mono-code text-[11px]">OTP Secured</span>
                 </div>
-                <span className="font-mono-code text-[10px] text-emerald-400">99.98% Live</span>
+                <span className="font-mono-code text-[11px] text-emerald-400">99.98% Live</span>
               </div>
 
               {/* Declarative Glass Cards */}
               <div className="rounded-2xl border border-border bg-surface p-3.5 shadow-sm">
                 <div className="flex items-center justify-between">
-                  <span className="font-mono-code text-[11px] text-accent uppercase tracking-wider font-semibold">
+                  <span className="font-mono-code text-xs text-accent uppercase tracking-wider font-semibold">
                     PolicyServicingView
                   </span>
-                  <span className="text-[10px] font-mono-code text-foreground-subtle">
+                  <span className="text-[11px] font-mono-code text-foreground-subtle">
                     SwiftUI Body
                   </span>
                 </div>
                 <div className="mt-2 space-y-2">
-                  <div className="flex items-center justify-between rounded-xl bg-surface-raised p-2 text-xs">
+                  <div className="flex items-center justify-between rounded-xl bg-surface-raised p-2 text-xs sm:text-[13px]">
                     <span className="text-foreground">Policy #IT-90412</span>
-                    <span className="font-mono-code text-[10px] text-accent font-semibold">
+                    <span className="font-mono-code text-xs text-accent font-semibold">
                       € 1,240.00
                     </span>
                   </div>
-                  <div className="flex items-center justify-between rounded-xl bg-surface-raised p-2 text-xs">
+                  <div className="flex items-center justify-between rounded-xl bg-surface-raised p-2 text-xs sm:text-[13px]">
                     <span className="text-foreground">Auto-Renewal Cancellation</span>
-                    <span className="font-mono-code text-[10px] text-emerald-500">Scheduled</span>
+                    <span className="font-mono-code text-xs text-emerald-500">Scheduled</span>
                   </div>
                 </div>
               </div>
 
               {/* View modifiers pill */}
-              <div className="flex flex-wrap gap-1.5 font-mono-code text-[10px] text-foreground-subtle">
+              <div className="flex flex-wrap gap-1.5 font-mono-code text-[11px] text-foreground-subtle">
                 <span className="rounded-md border border-border bg-surface px-2 py-1">
                   .navigationTitle()
                 </span>
@@ -405,7 +405,7 @@ export function EngineeringHero() {
             </div>
 
             <div className="mt-4 flex items-center justify-between text-xs text-foreground-muted border-t border-border pt-3">
-              <span className="font-mono-code text-[11px]">Step 3 of 4</span>
+              <span className="font-mono-code text-xs">Step 3 of 4</span>
               <button
                 type="button"
                 onClick={() => setActiveStage("production")}
@@ -429,7 +429,7 @@ export function EngineeringHero() {
             <IPhoneDuoPreview />
 
             {/* Production Quality Seal Bar */}
-            <div className="mt-4 flex items-center justify-between rounded-xl border border-border bg-surface-raised/80 px-3.5 py-2 font-mono-code text-[11px] text-foreground-subtle">
+            <div className="mt-4 flex items-center justify-between rounded-xl border border-border bg-surface-raised/80 px-3.5 py-2 font-mono-code text-xs text-foreground-subtle">
               <span className="flex items-center gap-1.5 text-accent font-semibold">
                 <CheckCircle2 className="size-3.5" />
                 App Store Ready

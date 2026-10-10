@@ -67,10 +67,10 @@ export function ModernizationFlow() {
         <div className="flex flex-wrap items-center justify-between gap-4 border-b border-border/70 pb-6">
           <div>
             <div className="flex items-center gap-2">
-              <span className="rounded-full px-2.5 py-0.5 font-mono-code text-[11px] font-semibold bg-accent/15 text-accent border border-accent/30">
+              <span className="rounded-full px-2.5 py-0.5 font-mono-code text-xs font-semibold bg-accent/15 text-accent border border-accent/30">
                 LEGACY MODERNIZATION
               </span>
-              <span className="font-mono-code text-xs text-foreground-subtle">
+              <span className="font-mono-code text-xs sm:text-[13px] text-foreground-subtle">
                 Objective-C &amp; UIKit → Swift 6 &amp; SwiftUI
               </span>
             </div>
@@ -87,7 +87,7 @@ export function ModernizationFlow() {
             <button
               type="button"
               onClick={() => setActiveTab("comparison")}
-              className={`rounded-lg px-3 py-1.5 font-mono-code text-xs font-medium transition-all cursor-pointer ${
+              className={`rounded-lg px-3 py-1.5 font-mono-code text-xs sm:text-[13px] font-medium transition-all cursor-pointer ${
                 activeTab === "comparison"
                   ? "bg-accent/15 text-accent border border-accent/30 font-semibold"
                   : "text-foreground-muted hover:text-foreground"
@@ -98,7 +98,7 @@ export function ModernizationFlow() {
             <button
               type="button"
               onClick={() => setActiveTab("pipeline")}
-              className={`rounded-lg px-3 py-1.5 font-mono-code text-xs font-medium transition-all cursor-pointer ${
+              className={`rounded-lg px-3 py-1.5 font-mono-code text-xs sm:text-[13px] font-medium transition-all cursor-pointer ${
                 activeTab === "pipeline"
                   ? "bg-accent/15 text-accent border border-accent/30 font-semibold"
                   : "text-foreground-muted hover:text-foreground"
@@ -117,7 +117,7 @@ export function ModernizationFlow() {
               <button
                 type="button"
                 onClick={() => setActiveSide("legacy")}
-                className={`flex-1 py-1.5 font-mono-code text-xs rounded-lg transition-all ${
+                className={`flex-1 py-1.5 font-mono-code text-xs sm:text-[13px] rounded-lg transition-all ${
                   activeSide === "legacy"
                     ? "bg-surface-raised text-amber-400 font-semibold"
                     : "text-foreground-muted"
@@ -128,7 +128,7 @@ export function ModernizationFlow() {
               <button
                 type="button"
                 onClick={() => setActiveSide("modern")}
-                className={`flex-1 py-1.5 font-mono-code text-xs rounded-lg transition-all ${
+                className={`flex-1 py-1.5 font-mono-code text-xs sm:text-[13px] rounded-lg transition-all ${
                   activeSide === "modern"
                     ? "bg-accent/20 text-accent font-semibold"
                     : "text-foreground-muted"
@@ -148,16 +148,16 @@ export function ModernizationFlow() {
                 <div className="flex items-center justify-between border-b border-border/50 pb-3">
                   <div className="flex items-center gap-2">
                     <ShieldAlert className="size-4 text-amber-500" />
-                    <span className="font-mono-code text-xs font-bold text-amber-400">
+                    <span className="font-mono-code text-sm font-bold text-amber-400">
                       Legacy Codebase (Objective-C / UIKit)
                     </span>
                   </div>
-                  <span className="font-mono-code text-[10px] text-amber-500/80 bg-amber-500/10 px-2 py-0.5 rounded-full">
+                  <span className="font-mono-code text-[11px] sm:text-xs text-amber-500/80 bg-amber-500/10 px-2 py-0.5 rounded-full">
                     TECHNICAL DEBT
                   </span>
                 </div>
 
-                <ul className="mt-4 space-y-2 text-xs text-neutral-400 font-sans">
+                <ul className="mt-4 space-y-2.5 text-xs sm:text-[13.5px] leading-relaxed text-neutral-300 font-sans">
                   <li className="flex items-start gap-2">
                     <span className="text-amber-500 font-bold shrink-0">✗</span>
                     <span>Massive UIViewController with 1,800+ lines of mixed concerns</span>
@@ -182,7 +182,7 @@ export function ModernizationFlow() {
                     type="button"
                     onClick={() => setShowMobileSnippets(!showMobileSnippets)}
                     aria-expanded={showMobileSnippets}
-                    className="w-full flex items-center justify-between rounded-xl border border-neutral-800 bg-black/40 px-3.5 py-2 font-mono-code text-[11px] font-semibold text-amber-400 hover:border-amber-500/40 transition-all cursor-pointer"
+                    className="w-full flex items-center justify-between rounded-xl border border-neutral-800 bg-black/40 px-3.5 py-2 font-mono-code text-xs font-semibold text-amber-400 hover:border-amber-500/40 transition-all cursor-pointer"
                   >
                     <span>{showMobileSnippets ? "Hide legacy snippet" : "View legacy Objective-C snippet"}</span>
                     <span>{showMobileSnippets ? "▲ Collapse" : "▼ Expand"}</span>
@@ -190,8 +190,8 @@ export function ModernizationFlow() {
                 </div>
 
                 {/* Legacy Snippet */}
-                <div className={`mt-4 rounded-xl border border-neutral-800 bg-black/60 p-3 font-mono-code text-[11px] text-neutral-400 ${showMobileSnippets ? "block" : "hidden sm:block"}`}>
-                  <div className="text-[10px] text-neutral-500 mb-1">{"// PolicyDetailsViewController.m"}</div>
+                <div className={`mt-4 rounded-xl border border-neutral-800 bg-black/60 p-3.5 font-mono-code text-xs leading-relaxed text-neutral-300 ${showMobileSnippets ? "block" : "hidden sm:block"}`}>
+                  <div className="text-[11px] text-neutral-500 mb-1">{"// PolicyDetailsViewController.m"}</div>
                   <pre className="overflow-x-auto text-neutral-300">
                     <code>
                       <span className="text-amber-400">@implementation</span> PolicyDetailsVC{"\n"}
@@ -209,11 +209,11 @@ export function ModernizationFlow() {
               {/* TRANSITION BRIDGE CONNECTOR (Desktop) */}
               <div className="hidden lg:flex flex-col items-center justify-center gap-2 px-1">
                 <div className="h-10 w-[1.5px] bg-gradient-to-b from-amber-500/40 via-accent/60 to-accent" />
-                <div className="flex flex-col items-center gap-1 rounded-xl border border-accent/30 bg-accent/10 px-2 py-2 text-center shadow-xs">
-                  <span className="font-mono-code text-[9px] font-bold text-accent uppercase tracking-wider">
+                <div className="flex flex-col items-center gap-1 rounded-xl border border-accent/30 bg-accent/10 px-2.5 py-2 text-center shadow-xs">
+                  <span className="font-mono-code text-[11px] font-bold text-accent uppercase tracking-wider">
                     Adapter
                   </span>
-                  <ArrowRight className="size-3 text-accent" />
+                  <ArrowRight className="size-3.5 text-accent" />
                 </div>
                 <div className="h-10 w-[1.5px] bg-gradient-to-b from-accent to-accent/20" />
               </div>
@@ -227,16 +227,16 @@ export function ModernizationFlow() {
                 <div className="flex items-center justify-between border-b border-border/50 pb-3">
                   <div className="flex items-center gap-2">
                     <ShieldCheck className="size-4 text-accent" />
-                    <span className="font-mono-code text-xs font-bold text-accent">
+                    <span className="font-mono-code text-sm font-bold text-accent">
                       Modern Architecture (Swift 6 / SwiftUI)
                     </span>
                   </div>
-                  <span className="font-mono-code text-[10px] text-accent bg-emerald-500/15 px-2 py-0.5 rounded-full">
+                  <span className="font-mono-code text-[11px] sm:text-xs text-accent bg-emerald-500/15 px-2 py-0.5 rounded-full">
                     MAINTAINABLE
                   </span>
                 </div>
 
-                <ul className="mt-4 space-y-2 text-xs text-foreground-muted font-sans">
+                <ul className="mt-4 space-y-2.5 text-xs sm:text-[13.5px] leading-relaxed text-foreground-muted font-sans">
                   <li className="flex items-start gap-2">
                     <CheckCircle2 className="size-3.5 text-accent shrink-0 mt-0.5" />
                     <span>Modular MVVM-C with discrete single-responsibility layers</span>
@@ -261,7 +261,7 @@ export function ModernizationFlow() {
                     type="button"
                     onClick={() => setShowMobileSnippets(!showMobileSnippets)}
                     aria-expanded={showMobileSnippets}
-                    className="w-full flex items-center justify-between rounded-xl border border-accent/30 bg-accent/10 px-3.5 py-2 font-mono-code text-[11px] font-semibold text-accent hover:border-accent/60 transition-all cursor-pointer"
+                    className="w-full flex items-center justify-between rounded-xl border border-accent/30 bg-accent/10 px-3.5 py-2 font-mono-code text-xs font-semibold text-accent hover:border-accent/60 transition-all cursor-pointer"
                   >
                     <span>{showMobileSnippets ? "Hide modern Swift snippet" : "View modern Swift 6 snippet"}</span>
                     <span>{showMobileSnippets ? "▲ Collapse" : "▼ Expand"}</span>
@@ -269,8 +269,8 @@ export function ModernizationFlow() {
                 </div>
 
                 {/* Modern Snippet */}
-                <div className={`mt-4 rounded-xl border border-border bg-[#0b0f0d] p-3 font-mono-code text-[11px] text-neutral-300 ${showMobileSnippets ? "block" : "hidden sm:block"}`}>
-                  <div className="text-[10px] text-neutral-500 mb-1">{"// PolicyDetailsView.swift"}</div>
+                <div className={`mt-4 rounded-xl border border-border bg-[#0b0f0d] p-3.5 font-mono-code text-xs leading-relaxed text-neutral-300 ${showMobileSnippets ? "block" : "hidden sm:block"}`}>
+                  <div className="text-[11px] text-neutral-500 mb-1">{"// PolicyDetailsView.swift"}</div>
                   <pre className="overflow-x-auto text-neutral-300">
                     <code>
                       <span className="text-purple-400">@Observable</span>{"\n"}
@@ -288,14 +288,14 @@ export function ModernizationFlow() {
             </div>
 
             {/* Bridge Callout */}
-            <div className="flex flex-wrap items-center justify-between gap-3 rounded-2xl border border-border/80 bg-surface/50 p-4 text-xs">
+            <div className="flex flex-wrap items-center justify-between gap-3 rounded-2xl border border-border/80 bg-surface/50 p-4 text-xs sm:text-sm">
               <div className="flex items-center gap-2">
-                <Sparkles className="size-4 text-accent" />
+                <Sparkles className="size-4 text-accent shrink-0" />
                 <span className="font-semibold text-foreground">
                   Interop Strategy: UIHostingController mounts SwiftUI inside existing UINavigationController stacks.
                 </span>
               </div>
-              <span className="font-mono-code text-accent font-medium">
+              <span className="font-mono-code text-xs sm:text-[13px] text-accent font-medium">
                 Enables gradual, zero-downtime deprecation
               </span>
             </div>
@@ -364,20 +364,20 @@ export function ModernizationFlow() {
                           <span className="flex size-7 items-center justify-center rounded-xl bg-surface-raised font-mono-code text-xs font-bold text-accent border border-border">
                             {phase.step}
                           </span>
-                          <span className="rounded-full px-2 py-0.5 font-mono-code text-[9px] bg-surface-raised border border-border text-foreground-subtle">
+                          <span className="rounded-full px-2 py-0.5 font-mono-code text-[11px] bg-surface-raised border border-border text-foreground-subtle">
                             {phase.badge}
                           </span>
                         </div>
 
-                        <h4 className="mt-3 font-bold text-foreground text-sm sm:text-base">
+                        <h4 className="mt-3 font-bold text-foreground text-base sm:text-[17px]">
                           {phase.title}
                         </h4>
 
-                        <p className="mt-1 font-mono-code text-[11px] text-accent font-semibold">
+                        <p className="mt-1 font-mono-code text-xs text-accent font-semibold">
                           {phase.action}
                         </p>
 
-                        <p className="mt-3 text-xs leading-relaxed text-foreground-muted">
+                        <p className="mt-3 text-xs sm:text-[13.5px] leading-relaxed text-foreground-muted">
                           {phase.description}
                         </p>
                       </div>
@@ -387,12 +387,12 @@ export function ModernizationFlow() {
               </div>
             </div>
 
-            <div className="rounded-2xl border border-border/80 bg-surface/50 p-5 text-xs text-foreground-muted">
+            <div className="rounded-2xl border border-border/80 bg-surface/50 p-5 text-xs sm:text-sm text-foreground-muted">
               <div className="flex items-center gap-2 font-mono-code text-foreground font-semibold">
                 <CheckCircle2 className="size-4 text-accent" />
                 <span>Verified in Production Codebases:</span>
               </div>
-              <p className="mt-2 leading-relaxed">
+              <p className="mt-2 text-xs sm:text-sm leading-relaxed">
                 Applied during banking and commerce feature development to modernize mission-critical policy flows and shopping carts without pausing active release cycles or introducing regressions.
               </p>
             </div>

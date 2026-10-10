@@ -76,6 +76,7 @@
 
   /* iPhone Screen Semantic Tokens (Dark Mode) */
   --phone-screen-bg: #0c100e;
+  --phone-eng-screen-bg: #090d0b;
   --phone-card-bg: #121815;
   --phone-card-sub-bg: #0e1310;
   --phone-card-border: rgba(255, 255, 255, 0.08);
@@ -165,8 +166,9 @@
 
   /* iPhone Screen Semantic Tokens (Light Mode) */
   --phone-screen-bg: #f2f5f3;
+  --phone-eng-screen-bg: #edf2ef;
   --phone-card-bg: #ffffff;
-  --phone-card-sub-bg: #ffffff;
+  --phone-card-sub-bg: #f8faf9;
   --phone-card-border: rgba(16, 21, 18, 0.08);
   --phone-bar-bg: rgba(255, 255, 255, 0.75);
   --phone-badge-bg: rgba(226, 232, 240, 0.65);

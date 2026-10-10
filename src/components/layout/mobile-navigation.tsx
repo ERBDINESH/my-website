@@ -75,11 +75,11 @@ export function MobileNavigation({
 
               <div className="flex items-center justify-between border-b border-border pb-4">
                 <div className="flex items-center gap-2">
-                  <span className="font-mono-code text-xs font-semibold uppercase tracking-wider text-accent">
+                  <span className="font-mono-code text-xs sm:text-[13px] font-semibold uppercase tracking-wider text-accent">
                     Navigation
                   </span>
                   <span className="text-foreground-subtle">•</span>
-                  <span className="text-xs text-foreground-subtle">Dineshbabu Elumalai</span>
+                  <span className="text-xs sm:text-[13px] text-foreground-subtle">Dineshbabu Elumalai</span>
                 </div>
                 <button
                   type="button"
@@ -93,7 +93,7 @@ export function MobileNavigation({
 
               {/* Theme Switcher inside Mobile Sheet */}
               <div className="mt-4 flex items-center justify-between rounded-xl border border-border bg-surface/60 p-3">
-                <span className="text-xs font-medium text-foreground">
+                <span className="text-sm font-medium text-foreground">
                   Appearance
                 </span>
                 <ThemeToggle size="sm" />
@@ -105,11 +105,11 @@ export function MobileNavigation({
                     <li key={item.id}>
                       <a
                         href={item.href}
-                        className="flex min-h-12 items-center justify-between rounded-xl px-4 text-sm font-medium text-foreground hover:bg-accent/10 hover:text-accent active:bg-accent/15 transition-all"
+                        className="flex min-h-12 items-center justify-between rounded-xl px-4 text-[15px] font-medium text-foreground hover:bg-accent/10 hover:text-accent active:bg-accent/15 transition-all"
                         onClick={closeMenu}
                       >
                         <span>{item.label}</span>
-                        <span className="font-mono-code text-xs text-foreground-subtle">
+                        <span className="font-mono-code text-xs sm:text-[13px] text-foreground-subtle">
                           #{item.id}
                         </span>
                       </a>
@@ -157,28 +157,28 @@ export function MobileNavigation({
           >
             <a
               href="#work"
-              className="flex flex-col items-center justify-center px-3 py-1 text-[10px] font-medium text-foreground-muted hover:text-accent transition-colors"
+              className="flex flex-col items-center justify-center px-3 py-1 text-[11px] font-medium text-foreground-muted hover:text-accent transition-colors"
             >
               <Layers className="size-3.5 mb-0.5 text-accent" />
               <span>Work</span>
             </a>
             <a
               href="#capabilities"
-              className="flex flex-col items-center justify-center px-3 py-1 text-[10px] font-medium text-foreground-muted hover:text-accent transition-colors"
+              className="flex flex-col items-center justify-center px-3 py-1 text-[11px] font-medium text-foreground-muted hover:text-accent transition-colors"
             >
               <Terminal className="size-3.5 mb-0.5 text-accent" />
               <span>Skills</span>
             </a>
             <a
               href="#workspace"
-              className="flex flex-col items-center justify-center px-3 py-1 text-[10px] font-medium text-foreground-muted hover:text-accent transition-colors"
+              className="flex flex-col items-center justify-center px-3 py-1 text-[11px] font-medium text-foreground-muted hover:text-accent transition-colors"
             >
               <Sparkles className="size-3.5 mb-0.5 text-accent" />
               <span>Depth</span>
             </a>
             <a
               href="#contact"
-              className="flex flex-col items-center justify-center px-3 py-1 text-[10px] font-medium text-foreground-muted hover:text-accent transition-colors"
+              className="flex flex-col items-center justify-center px-3 py-1 text-[11px] font-medium text-foreground-muted hover:text-accent transition-colors"
             >
               <MessageSquare className="size-3.5 mb-0.5 text-accent" />
               <span>Contact</span>

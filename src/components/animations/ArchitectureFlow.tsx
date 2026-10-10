@@ -139,7 +139,7 @@ export function ArchitectureFlow() {
         <div className="flex flex-wrap items-center justify-between gap-4 border-b border-border/70 pb-6">
           <div>
             <div className="flex items-center gap-2">
-              <span className="rounded-full px-2.5 py-0.5 font-mono-code text-[11px] font-semibold bg-accent/15 text-accent border border-accent/30">
+              <span className="rounded-full px-2.5 py-0.5 font-mono-code text-xs font-semibold bg-accent/15 text-accent border border-accent/30">
                 SYSTEM DESIGN
               </span>
               <span className="font-mono-code text-xs text-foreground-subtle">
@@ -191,8 +191,8 @@ export function ArchitectureFlow() {
 
         {/* Live Exact Request Trace Breadcrumb Pipeline */}
         <div className="mt-5 overflow-x-auto pb-1">
-          <div className="flex min-w-[620px] items-center gap-1.5 rounded-2xl border border-border/80 bg-surface/80 p-2.5 font-mono-code text-[11px]">
-            <span className="mr-1 text-[10px] font-bold uppercase tracking-wider text-foreground-subtle shrink-0">
+          <div className="flex min-w-[620px] items-center gap-1.5 rounded-2xl border border-border/80 bg-surface/80 p-2.5 font-mono-code text-xs">
+            <span className="mr-1 text-[11px] font-bold uppercase tracking-wider text-foreground-subtle shrink-0">
               Trace Sequence:
             </span>
             {NODES.map((node, i) => {
@@ -232,7 +232,7 @@ export function ArchitectureFlow() {
               <span className="font-mono-code uppercase tracking-wider">
                 Component Pipeline (Click to Inspect)
               </span>
-              <span className="font-mono-code text-[11px] text-accent">
+              <span className="font-mono-code text-xs text-accent">
                 {simulatingStep !== null ? "Trace Active..." : "Interactive Nodes"}
               </span>
             </div>
@@ -276,26 +276,26 @@ export function ArchitectureFlow() {
                               {node.name}
                             </span>
                             {isSimulating && (
-                              <span className="inline-flex items-center gap-1 rounded-full bg-emerald-500/25 px-2 py-0.5 font-mono-code text-[9px] font-bold text-emerald-300 border border-emerald-500/40">
+                              <span className="inline-flex items-center gap-1 rounded-full bg-emerald-500/25 px-2 py-0.5 font-mono-code text-[11px] font-bold text-emerald-300 border border-emerald-500/40">
                                 <Radio className="size-2.5 animate-spin" />
                                 ACTIVE
                               </span>
                             )}
                             {isCompleted && !isSimulating && (
-                              <span className="inline-flex items-center gap-1 rounded-full bg-accent/15 px-1.5 py-0.5 font-mono-code text-[9px] font-semibold text-accent">
+                              <span className="inline-flex items-center gap-1 rounded-full bg-accent/15 px-2 py-0.5 font-mono-code text-[11px] font-semibold text-accent">
                                 <CheckCircle2 className="size-2.5" />
                                 TRACED
                               </span>
                             )}
                           </div>
-                          <div className="font-mono-code text-[11px] text-foreground-subtle">
+                          <div className="font-mono-code text-xs text-foreground-subtle">
                             {node.swiftType}
                           </div>
                         </div>
                       </div>
 
                       <div className="flex items-center gap-2">
-                        <span className="rounded-full px-2 py-0.5 font-mono-code text-[10px] text-foreground-subtle bg-surface-raised border border-border">
+                        <span className="rounded-full px-2 py-0.5 font-mono-code text-[11px] text-foreground-subtle bg-surface-raised border border-border">
                           {node.layer}
                         </span>
                         <ArrowRight
@@ -326,10 +326,10 @@ export function ArchitectureFlow() {
           <div className="lg:col-span-5">
             <div className="sticky top-24 rounded-2xl border border-border-strong bg-surface-raised p-6 shadow-xl">
               <div className="flex items-center justify-between border-b border-border pb-3">
-                <span className="font-mono-code text-[11px] font-bold text-accent uppercase tracking-wider">
+                <span className="font-mono-code text-xs font-bold text-accent uppercase tracking-wider">
                   Node Inspector
                 </span>
-                <span className="rounded-full px-2 py-0.5 font-mono-code text-[10px] bg-accent/15 text-accent border border-accent/25">
+                <span className="rounded-full px-2.5 py-0.5 font-mono-code text-xs bg-accent/15 text-accent border border-accent/25">
                   {selectedNode.layer}
                 </span>
               </div>
@@ -337,35 +337,35 @@ export function ArchitectureFlow() {
               <h4 className="mt-4 text-xl font-bold text-foreground">
                 {selectedNode.name}
               </h4>
-              <p className="mt-1 font-mono-code text-xs text-accent">
+              <p className="mt-1 font-mono-code text-sm text-accent">
                 {selectedNode.swiftType}
               </p>
 
-              <p className="mt-3 text-xs sm:text-sm leading-relaxed text-foreground-muted">
+              <p className="mt-3 text-sm sm:text-[15px] leading-relaxed text-foreground-muted">
                 {selectedNode.role}
               </p>
 
               {/* Architectural Attributes */}
-              <div className="mt-5 space-y-3 border-t border-border pt-4 text-xs">
+              <div className="mt-5 space-y-3.5 border-t border-border pt-4 text-xs">
                 <div>
-                  <span className="font-mono-code text-[10px] text-foreground-subtle uppercase tracking-wider font-semibold">
+                  <span className="font-mono-code text-[11px] text-foreground-subtle uppercase tracking-wider font-semibold">
                     Testability &amp; Isolation:
                   </span>
-                  <div className="mt-1 flex items-center gap-1.5 font-mono-code text-xs text-foreground font-medium">
+                  <div className="mt-1.5 flex items-center gap-1.5 font-mono-code text-xs sm:text-[13px] text-foreground font-medium">
                     <CheckCircle2 className="size-3.5 text-accent shrink-0" />
                     <span>{selectedNode.testStrategy}</span>
                   </div>
                 </div>
 
                 <div>
-                  <span className="font-mono-code text-[10px] text-foreground-subtle uppercase tracking-wider font-semibold">
+                  <span className="font-mono-code text-[11px] text-foreground-subtle uppercase tracking-wider font-semibold">
                     Inbound Dependencies:
                   </span>
-                  <div className="mt-1 flex flex-wrap gap-1">
+                  <div className="mt-1.5 flex flex-wrap gap-1.5">
                     {selectedNode.dependencies.map((dep) => (
                       <span
                         key={dep}
-                        className="rounded-md border border-border bg-surface px-2 py-0.5 font-mono-code text-[10px] text-foreground-muted"
+                        className="rounded-md border border-border bg-surface px-2 py-0.5 font-mono-code text-[11px] sm:text-xs text-foreground-muted"
                       >
                         {dep}
                       </span>
@@ -374,14 +374,14 @@ export function ArchitectureFlow() {
                 </div>
 
                 <div>
-                  <span className="font-mono-code text-[10px] text-foreground-subtle uppercase tracking-wider font-semibold">
+                  <span className="font-mono-code text-[11px] text-foreground-subtle uppercase tracking-wider font-semibold">
                     Outbound Emission:
                   </span>
-                  <div className="mt-1 flex flex-wrap gap-1">
+                  <div className="mt-1.5 flex flex-wrap gap-1.5">
                     {selectedNode.emits.map((item) => (
                       <span
                         key={item}
-                        className="rounded-md border border-accent/20 bg-accent/5 px-2 py-0.5 font-mono-code text-[10px] text-accent"
+                        className="rounded-md border border-accent/20 bg-accent/5 px-2 py-0.5 font-mono-code text-[11px] sm:text-xs text-accent"
                       >
                         {item}
                       </span>
@@ -391,7 +391,7 @@ export function ArchitectureFlow() {
               </div>
 
               {/* Protocol decoupling note */}
-              <div className="mt-5 rounded-xl border border-border bg-surface p-3 font-mono-code text-[11px] text-foreground-subtle leading-relaxed">
+              <div className="mt-5 rounded-xl border border-border bg-surface p-3 font-mono-code text-xs sm:text-[13px] text-foreground-subtle leading-relaxed">
                 <span className="text-accent font-semibold">DI Pattern: </span>
                 Layer boundaries are decoupled via protocol injection. Unit tests swap concrete instances for mocks without compiling network or UI code.
               </div>

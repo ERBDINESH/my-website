@@ -63,10 +63,10 @@ export function SiteHeader() {
                 style={{ width: "auto" }}
               />
               <div className="flex flex-col min-w-0">
-                <span className="text-xs sm:text-[13px] font-semibold tracking-tight text-foreground group-hover:text-accent transition-colors truncate">
+                <span className="text-sm font-semibold tracking-tight text-foreground group-hover:text-accent transition-colors truncate">
                   {profile.fullName}
                 </span>
-                <span className="font-mono-code text-[10px] text-foreground-subtle truncate hidden sm:block">
+                <span className="font-mono-code text-[11px] sm:text-xs text-foreground-subtle truncate hidden sm:block">
                   Senior iOS Engineer
                 </span>
               </div>
@@ -85,7 +85,7 @@ export function SiteHeader() {
                   <li key={item.id} className="whitespace-nowrap">
                     <a
                       href={item.href}
-                      className={`relative inline-flex min-h-7 items-center rounded-lg px-1.5 xl:px-2.5 py-1 font-mono-code text-xs xl:text-[13px] font-medium transition-all whitespace-nowrap cursor-pointer ${
+                      className={`relative inline-flex min-h-7 items-center rounded-lg px-2 xl:px-2.5 py-1 font-mono-code text-[13px] xl:text-sm font-medium transition-all whitespace-nowrap cursor-pointer ${
                         isActive
                           ? "liquid-glass-emerald text-[var(--emerald-action-text)] border border-accent/40 shadow-xs font-semibold"
                           : "text-foreground-muted hover:text-foreground hover:bg-foreground/5"
@@ -113,7 +113,7 @@ export function SiteHeader() {
                   href={profile.resumeUrl}
                   variant="secondary"
                   download="Dineshbabu-Elumalai-Resume.pdf"
-                  className="text-xs py-1.5 px-2.5 xl:px-3 rounded-xl whitespace-nowrap"
+                  className="text-xs sm:text-[13px] py-1.5 px-2.5 xl:px-3 rounded-xl whitespace-nowrap"
                 >
                   <Download className="mr-1.5 size-3 text-accent" />
                   <span>Resume</span>
@@ -126,7 +126,7 @@ export function SiteHeader() {
               <ActionLink
                 href="#contact"
                 variant="primary"
-                className="text-xs py-1.5 px-3 xl:px-3.5 rounded-xl font-semibold shadow-xs whitespace-nowrap"
+                className="text-xs sm:text-[13px] py-1.5 px-3 xl:px-3.5 rounded-xl font-semibold shadow-xs whitespace-nowrap"
               >
                 <Sparkles className="mr-1.5 size-3" />
                 <span>Discuss Project</span>

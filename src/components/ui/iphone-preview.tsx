@@ -107,14 +107,14 @@ export function IPhonePreview() {
                 {/* Translucent Navigation Header */}
                 <div className="flex items-center justify-between rounded-xl px-3 py-2 border border-[var(--phone-card-border)] bg-[var(--phone-bar-bg)] backdrop-blur-md shadow-xs">
                   <div>
-                    <span className="font-mono-code text-[9px] uppercase tracking-wider text-accent font-semibold">
+                    <span className="font-mono-code text-[11px] uppercase tracking-wider text-accent font-semibold">
                       MVVM-C Flow
                     </span>
                     <h4 className="text-xs font-bold text-[var(--phone-text)]">
                       Policy Servicing Flow
                     </h4>
                   </div>
-                  <span className="rounded-full px-2 py-0.5 font-mono-code text-[9px] font-medium bg-emerald-500/15 text-accent border border-emerald-500/25">
+                  <span className="rounded-full px-2 py-0.5 font-mono-code text-[11px] font-medium bg-emerald-500/15 text-accent border border-emerald-500/25">
                     .active
                   </span>
                 </div>
@@ -146,7 +146,7 @@ export function IPhonePreview() {
                 </div>
 
                 {/* State Machine Inspector Badge */}
-                <div className="rounded-xl p-2.5 font-mono-code text-[10px] border border-[var(--phone-card-border)] bg-[var(--phone-badge-bg)] text-[var(--phone-text-muted)]">
+                <div className="rounded-xl p-2.5 font-mono-code text-[11px] border border-[var(--phone-card-border)] bg-[var(--phone-badge-bg)] text-[var(--phone-text-muted)]">
                   <div className="flex items-center justify-between">
                     <span>Coordinator State</span>
                     <span className="text-accent font-semibold">.readyForConfirmation</span>
@@ -172,12 +172,12 @@ export function IPhonePreview() {
                 {/* Floating Translucent Navigation Bar */}
                 <div className="flex items-center justify-between rounded-xl px-3 py-2 border border-[var(--phone-card-border)] bg-[var(--phone-bar-bg)] backdrop-blur-md shadow-xs">
                   <div>
-                    <span className="font-mono-code text-[9px] uppercase tracking-wider text-accent font-semibold">
+                    <span className="font-mono-code text-[11px] uppercase tracking-wider text-accent font-semibold">
                       Commerce Pipeline
                     </span>
                     <h4 className="text-xs font-bold text-[var(--phone-text)]">Live Bakery Order</h4>
                   </div>
-                  <span className="rounded-full px-2 py-0.5 font-mono-code text-[9px] font-medium bg-blue-500/15 text-blue-600 dark:text-blue-400 border border-blue-500/25">
+                  <span className="rounded-full px-2 py-0.5 font-mono-code text-[11px] font-medium bg-blue-500/15 text-blue-600 dark:text-blue-400 border border-blue-500/25">
                     #4812
                   </span>
                 </div>
@@ -191,7 +191,7 @@ export function IPhonePreview() {
                   <div className="mt-2.5 h-1.5 w-full overflow-hidden rounded-full bg-[var(--phone-progress-track)]">
                     <div className="h-full w-3/4 rounded-full bg-accent" />
                   </div>
-                  <p className="mt-2 text-[10px] text-[var(--phone-text-subtle)]">
+                  <p className="mt-2 text-[11px] text-[var(--phone-text-subtle)]">
                     ETA: 14 mins • Courier dispatched via stream
                   </p>
                 </div>
@@ -209,7 +209,7 @@ export function IPhonePreview() {
                 </div>
 
                 {/* Architecture Indicator */}
-                <div className="rounded-xl p-2 font-mono-code text-[10px] border border-[var(--phone-card-border)] bg-[var(--phone-badge-bg)] text-[var(--phone-text-muted)]">
+                <div className="rounded-xl p-2 font-mono-code text-[11px] border border-[var(--phone-card-border)] bg-[var(--phone-badge-bg)] text-[var(--phone-text-muted)]">
                   <div className="flex items-center justify-between">
                     <span>Local Cache</span>
                     <span className="text-accent font-semibold">CoreData.synced</span>
@@ -232,12 +232,12 @@ export function IPhonePreview() {
                 {/* Floating Translucent Navigation Bar */}
                 <div className="flex items-center justify-between rounded-xl px-3 py-2 border border-[var(--phone-card-border)] bg-[var(--phone-bar-bg)] backdrop-blur-md shadow-xs">
                   <div>
-                    <span className="font-mono-code text-[9px] uppercase tracking-wider text-accent font-semibold">
+                    <span className="font-mono-code text-[11px] uppercase tracking-wider text-accent font-semibold">
                       CoreBluetooth BLE
                     </span>
                     <h4 className="text-xs font-bold text-[var(--phone-text)]">Peripheral Sync</h4>
                   </div>
-                  <span className="flex items-center gap-1 rounded-full px-2 py-0.5 font-mono-code text-[9px] font-medium bg-emerald-500/15 text-accent border border-emerald-500/25">
+                  <span className="flex items-center gap-1 rounded-full px-2 py-0.5 font-mono-code text-[11px] font-medium bg-emerald-500/15 text-accent border border-emerald-500/25">
                     <Radio className="size-2.5 animate-pulse text-accent" />
                     Connected
                   </span>
@@ -252,7 +252,7 @@ export function IPhonePreview() {
                       </div>
                       <div>
                         <div className="text-xs font-semibold text-[var(--phone-text)]">Mighty V2 Audio</div>
-                        <div className="font-mono-code text-[10px] text-[var(--phone-text-subtle)]">
+                        <div className="font-mono-code text-[11px] text-[var(--phone-text-subtle)]">
                           RSSI -54 dBm • MTU 512
                         </div>
                       </div>
@@ -271,7 +271,7 @@ export function IPhonePreview() {
                 </div>
 
                 {/* Protocol Stack Glass Card */}
-                <div className="rounded-xl p-2.5 font-mono-code text-[10px] border border-[var(--phone-card-border)] bg-[var(--phone-badge-bg)] text-[var(--phone-text-muted)]">
+                <div className="rounded-xl p-2.5 font-mono-code text-[11px] border border-[var(--phone-card-border)] bg-[var(--phone-badge-bg)] text-[var(--phone-text-muted)]">
                   <div className="flex items-center justify-between">
                     <span>Protocol Stack</span>
                     <span className="font-semibold text-[var(--phone-text)]">Chunked CBCharacteristic</span>

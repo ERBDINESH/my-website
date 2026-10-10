@@ -57,7 +57,7 @@ export function HeroSection() {
                   <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-accent opacity-75" />
                   <span className="relative inline-flex size-2 rounded-full bg-accent" />
                 </span>
-                <span className="text-xs font-medium text-foreground-muted">
+                <span className="text-xs sm:text-[13px] font-medium text-foreground-muted">
                   Available for Senior Native iOS Roles &amp; Advisory
                 </span>
               </LiquidGlass>
@@ -91,9 +91,9 @@ export function HeroSection() {
             </div>
 
             {/* Technical Verification Pill Strip (Solid Content) */}
-            <div className="mt-10 flex flex-wrap items-center gap-x-4 gap-y-2 border-t border-border pt-6 text-xs text-foreground-subtle">
+            <div className="mt-10 flex flex-wrap items-center gap-x-4 gap-y-2 border-t border-border pt-6 text-xs sm:text-[13px] text-foreground-subtle">
               <span className="flex items-center gap-1.5 font-mono-code text-foreground-muted">
-                <Terminal className="size-3 text-accent" aria-hidden="true" />
+                <Terminal className="size-3.5 text-accent" aria-hidden="true" />
                 Swift • SwiftUI • UIKit • Objective-C
               </span>
               <span className="hidden text-foreground-subtle/40 sm:inline">•</span>

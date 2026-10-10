@@ -27,33 +27,33 @@ export function AboutSection() {
           {/* Product-like Progression Status Bar */}
           <div className="mt-2 flex flex-wrap items-center gap-2.5">
             <div className="inline-flex flex-wrap items-center gap-2 rounded-full border border-border bg-surface-raised/80 px-4 py-1.5 backdrop-blur-md shadow-xs">
-              <span className="font-mono-code text-[11px] font-semibold uppercase tracking-wider text-foreground-subtle">
+              <span className="font-mono-code text-xs font-semibold uppercase tracking-wider text-foreground-subtle">
                 Path
               </span>
               <span className="text-border-strong" aria-hidden="true">
                 •
               </span>
-              <span className="inline-flex items-center gap-1.5 text-xs font-medium text-foreground">
+              <span className="inline-flex items-center gap-1.5 text-xs sm:text-[13px] font-medium text-foreground">
                 <span className="size-1.5 rounded-full bg-accent" />
                 Native iOS
               </span>
               <span className="text-xs text-foreground-subtle" aria-hidden="true">
                 →
               </span>
-              <span className="inline-flex items-center gap-1.5 text-xs font-medium text-foreground">
+              <span className="inline-flex items-center gap-1.5 text-xs sm:text-[13px] font-medium text-foreground">
                 <span className="size-1.5 rounded-full bg-accent" />
                 Product Engineering
               </span>
               <span className="text-xs text-foreground-subtle" aria-hidden="true">
                 →
               </span>
-              <span className="inline-flex items-center gap-1.5 text-xs font-semibold text-accent">
+              <span className="inline-flex items-center gap-1.5 text-xs sm:text-[13px] font-semibold text-accent">
                 <span className="size-1.5 rounded-full bg-accent animate-pulse" />
                 Senior Production Delivery
               </span>
             </div>
 
-            <div className="hidden sm:inline-flex items-center gap-1.5 rounded-full border border-border bg-surface-raised/40 px-3.5 py-1.5 font-mono-code text-xs text-foreground-subtle">
+            <div className="hidden sm:inline-flex items-center gap-1.5 rounded-full border border-border bg-surface-raised/40 px-3.5 py-1.5 font-mono-code text-xs sm:text-[13px] text-foreground-subtle">
               <Sparkles className="size-3 text-accent" />
               <span>7+ Years Progression</span>
             </div>
@@ -72,7 +72,7 @@ export function AboutSection() {
                 From foundational Swift, Objective-C and UIKit client architectures to consumer commerce at scale, hardware Bluetooth protocols, and mission-critical European banking journeys with SwiftUI, UIKit and MVVM-C.
               </p>
             </div>
-            <div className="flex flex-wrap gap-2.5 font-mono-code text-xs text-foreground-subtle lg:justify-end">
+            <div className="flex flex-wrap gap-2.5 font-mono-code text-xs sm:text-[13px] text-foreground-subtle lg:justify-end">
               <div className="flex items-center gap-1.5 rounded-xl border border-border bg-surface/60 px-3 py-1.5">
                 <MapPin className="size-3.5 text-accent" />
                 <span>{profile.location}</span>
@@ -114,7 +114,7 @@ export function AboutSection() {
                       </div>
 
                       {/* Year Label */}
-                      <span className="mt-2 font-mono-code text-xs font-bold text-accent">
+                      <span className="mt-2 font-mono-code text-xs sm:text-sm font-bold text-accent">
                         {stage.year}
                       </span>
                     </div>
@@ -138,14 +138,14 @@ export function AboutSection() {
                   >
                     {/* Top Row inside card: Stage label on left, Date range on right */}
                     <div className="flex items-center justify-between gap-3 mb-3">
-                      <span className="font-mono-code text-[11px] font-semibold uppercase tracking-wider text-accent/90">
+                      <span className="font-mono-code text-xs font-semibold uppercase tracking-wider text-accent/90">
                         {stage.label}
                       </span>
 
                       {/* Date-range pill top-right inside card */}
                       <LiquidGlass
                         variant="subtle"
-                        className="px-2.5 py-0.5 rounded-full text-[11px] font-mono-code font-medium text-foreground-subtle border border-border shrink-0"
+                        className="px-2.5 py-0.5 rounded-full text-xs font-mono-code font-medium text-foreground-subtle border border-border shrink-0"
                       >
                         {stage.period}
                       </LiquidGlass>
@@ -153,29 +153,29 @@ export function AboutSection() {
 
                     {/* Company & Role */}
                     <div className="space-y-1">
-                      <h4 className="text-sm font-bold text-foreground group-hover:text-accent transition-colors leading-tight">
+                      <h4 className="text-base font-bold text-foreground group-hover:text-accent transition-colors leading-tight">
                         {stage.company}
                       </h4>
-                      <p className="text-xs text-foreground-subtle">
+                      <p className="text-xs sm:text-[13px] text-foreground-subtle">
                         {stage.role}
                       </p>
                     </div>
 
                     {/* Factual Description */}
-                    <p className="mt-4 text-xs leading-relaxed text-foreground-muted grow">
+                    <p className="mt-4 text-xs sm:text-[13.5px] leading-relaxed text-foreground-muted grow">
                       {stage.description}
                     </p>
 
                     {/* Engineering Growth Tags */}
                     <div className="mt-6 pt-4 border-t border-border/80">
-                      <div className="text-[10px] font-mono-code uppercase tracking-wider text-foreground-subtle mb-2">
+                      <div className="text-[11px] sm:text-xs font-mono-code uppercase tracking-wider text-foreground-subtle mb-2">
                         Engineering Growth
                       </div>
                       <div className="flex flex-wrap gap-1.5">
                         {stage.growth.map((tag) => (
                           <span
                             key={tag}
-                            className="rounded-md border border-border bg-surface-raised/80 px-2 py-0.5 font-mono-code text-[10px] text-foreground-muted group-hover:border-accent/30 group-hover:text-foreground transition-colors"
+                            className="rounded-md border border-border bg-surface-raised/80 px-2 py-0.5 font-mono-code text-[11px] sm:text-xs text-foreground-muted group-hover:border-accent/30 group-hover:text-foreground transition-colors"
                           >
                             {tag}
                           </span>
@@ -221,7 +221,7 @@ export function AboutSection() {
                       </div>
 
                       {/* Year */}
-                      <span className="font-mono-code text-xs font-bold text-accent">
+                      <span className="font-mono-code text-xs sm:text-sm font-bold text-accent">
                         {stage.year}
                       </span>
                     </div>
@@ -230,41 +230,41 @@ export function AboutSection() {
                     <div className="ml-9 rounded-2xl border border-border bg-surface/70 p-4 sm:p-5 transition-all duration-300">
                       {/* Card Top: Stage label on left, Date range on right */}
                       <div className="flex items-center justify-between gap-2 mb-2.5">
-                        <span className="font-mono-code text-[11px] font-semibold uppercase tracking-wider text-accent/90">
+                        <span className="font-mono-code text-xs font-semibold uppercase tracking-wider text-accent/90">
                           {stage.label}
                         </span>
 
                         <LiquidGlass
                           variant="subtle"
-                          className="px-2 py-0.5 rounded-full text-[10px] sm:text-[11px] font-mono-code text-foreground-subtle border border-border shrink-0"
+                          className="px-2 py-0.5 rounded-full text-[11px] sm:text-xs font-mono-code text-foreground-subtle border border-border shrink-0"
                         >
                           {stage.period}
                         </LiquidGlass>
                       </div>
 
                       {/* Company & Role */}
-                      <h4 className="text-sm font-bold text-foreground">
+                      <h4 className="text-base font-bold text-foreground">
                         {stage.company}
                       </h4>
-                      <p className="text-xs text-foreground-subtle mt-0.5">
+                      <p className="text-xs sm:text-[13px] text-foreground-subtle mt-0.5">
                         {stage.role}
                       </p>
 
                       {/* Description */}
-                      <p className="mt-3 text-xs leading-relaxed text-foreground-muted">
+                      <p className="mt-3 text-xs sm:text-[13.5px] leading-relaxed text-foreground-muted">
                         {stage.description}
                       </p>
 
                       {/* Engineering Growth Tags */}
                       <div className="mt-4 pt-3 border-t border-border/80">
-                        <div className="text-[10px] font-mono-code uppercase tracking-wider text-foreground-subtle mb-1.5">
+                        <div className="text-[11px] sm:text-xs font-mono-code uppercase tracking-wider text-foreground-subtle mb-1.5">
                           Engineering Growth
                         </div>
                         <div className="flex flex-wrap gap-1.5">
                           {stage.growth.map((tag) => (
                             <span
                               key={tag}
-                              className="rounded-md border border-border bg-surface-raised/80 px-2 py-0.5 font-mono-code text-[10px] text-foreground-muted"
+                              className="rounded-md border border-border bg-surface-raised/80 px-2 py-0.5 font-mono-code text-[11px] sm:text-xs text-foreground-muted"
                             >
                               {tag}
                             </span>

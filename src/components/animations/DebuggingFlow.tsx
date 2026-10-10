@@ -152,10 +152,10 @@ export function DebuggingFlow() {
         <div className="flex flex-wrap items-center justify-between gap-4 border-b border-border/70 pb-6">
           <div>
             <div className="flex items-center gap-2">
-              <span className="rounded-full px-2.5 py-0.5 font-mono-code text-[11px] font-semibold bg-accent/15 text-accent border border-accent/30">
+              <span className="rounded-full px-2.5 py-0.5 font-mono-code text-xs font-semibold bg-accent/15 text-accent border border-accent/30">
                 PRODUCTION PROBLEM SOLVING
               </span>
-              <span className="font-mono-code text-xs text-foreground-subtle">
+              <span className="font-mono-code text-xs sm:text-[13px] text-foreground-subtle">
                 Real-World Debugging &amp; Performance Triage
               </span>
             </div>
@@ -166,7 +166,7 @@ export function DebuggingFlow() {
 
           <LiquidGlass
             variant="control"
-            className="rounded-xl px-3.5 py-1.5 font-mono-code text-xs text-foreground-muted border border-border"
+            className="rounded-xl px-3.5 py-1.5 font-mono-code text-xs sm:text-[13px] text-foreground-muted border border-border"
           >
             Case: Concurrency Race Condition
           </LiquidGlass>
@@ -207,10 +207,10 @@ export function DebuggingFlow() {
                     <Icon className="size-4" />
                   </div>
                   <div className="text-center">
-                    <span className="font-mono-code text-[10px] text-foreground-subtle block">
+                    <span className="font-mono-code text-[11px] text-foreground-subtle block">
                       {step.number}
                     </span>
-                    <span className="text-xs font-semibold text-foreground truncate max-w-[80px] block">
+                    <span className="text-xs sm:text-[13px] font-semibold text-foreground truncate max-w-[85px] block">
                       {step.name}
                     </span>
                   </div>
@@ -225,7 +225,7 @@ export function DebuggingFlow() {
           {/* Left Column: Triage Description */}
           <div className="lg:col-span-5 space-y-4">
             <div className="flex items-center gap-2">
-              <span className="rounded-full px-2.5 py-0.5 font-mono-code text-[10px] font-bold bg-accent/15 text-accent border border-accent/30">
+              <span className="rounded-full px-2.5 py-0.5 font-mono-code text-[11px] font-bold bg-accent/15 text-accent border border-accent/30">
                 STAGE {activeStep.number} {"//"} {activeStep.stage}
               </span>
             </div>
@@ -234,12 +234,12 @@ export function DebuggingFlow() {
               {activeStep.name}
             </h4>
 
-            <p className="text-sm leading-relaxed text-foreground">
+            <p className="text-[15px] sm:text-base leading-relaxed text-foreground">
               {activeStep.summary}
             </p>
 
-            <div className="rounded-xl border border-border bg-surface p-3 text-xs text-foreground-muted">
-              <span className="font-mono-code text-[10px] text-foreground-subtle uppercase tracking-wider block font-semibold mb-1">
+            <div className="rounded-xl border border-border bg-surface p-3.5 text-xs sm:text-[13.5px] text-foreground-muted">
+              <span className="font-mono-code text-[11px] text-foreground-subtle uppercase tracking-wider block font-semibold mb-1">
                 Engineering Assessment:
               </span>
               <p className="leading-relaxed">{activeStep.technicalDetails}</p>
@@ -251,7 +251,7 @@ export function DebuggingFlow() {
                 type="button"
                 disabled={activeStepIndex === 0}
                 onClick={() => setActiveStepIndex((prev) => Math.max(0, prev - 1))}
-                className="rounded-lg border border-border px-3 py-1.5 font-mono-code text-xs text-foreground-muted hover:text-foreground disabled:opacity-40 cursor-pointer"
+                className="rounded-lg border border-border px-3 py-1.5 font-mono-code text-xs sm:text-[13px] text-foreground-muted hover:text-foreground disabled:opacity-40 cursor-pointer"
               >
                 ← Previous
               </button>
@@ -263,7 +263,7 @@ export function DebuggingFlow() {
                     Math.min(DEBUG_STEPS.length - 1, prev + 1)
                   )
                 }
-                className="liquid-glass-emerald rounded-lg px-3 py-1.5 font-mono-code text-xs font-semibold text-[var(--emerald-action-text)] disabled:opacity-40 cursor-pointer"
+                className="liquid-glass-emerald rounded-lg px-3 py-1.5 font-mono-code text-xs sm:text-[13px] font-semibold text-[var(--emerald-action-text)] disabled:opacity-40 cursor-pointer"
               >
                 Next Step →
               </button>
@@ -278,7 +278,7 @@ export function DebuggingFlow() {
                 className="w-full flex items-center justify-between rounded-xl border border-border bg-surface px-4 py-2.5 font-mono-code text-xs font-semibold text-accent hover:border-accent/40 transition-all cursor-pointer"
               >
                 <span>{showMobileConsole ? "Hide terminal output" : "View diagnostic console & lldb output"}</span>
-                <span className="text-[11px]">{showMobileConsole ? "▲ Collapse" : "▼ Expand"}</span>
+                <span className="text-xs">{showMobileConsole ? "▲ Collapse" : "▼ Expand"}</span>
               </button>
             </div>
           </div>
@@ -291,10 +291,10 @@ export function DebuggingFlow() {
                   <Terminal className="size-3.5 text-accent" />
                   <span>lldb / Unified Console Output</span>
                 </div>
-                <span className="text-[10px] text-emerald-400">TRACE CAPTURE</span>
+                <span className="text-[11px] text-emerald-400">TRACE CAPTURE</span>
               </div>
 
-              <div className="mt-4 space-y-2 overflow-x-auto text-[11px] leading-relaxed text-neutral-300">
+              <div className="mt-4 space-y-2 overflow-x-auto text-xs leading-relaxed text-neutral-300">
                 {activeStep.terminalOutput.map((line, i) => (
                   <div key={i} className="flex items-start gap-2">
                     <span className="text-neutral-600 select-none">&gt;</span>
@@ -313,9 +313,9 @@ export function DebuggingFlow() {
                 ))}
               </div>
 
-              <div className="mt-4 border-t border-neutral-800 pt-3 text-[10px] text-neutral-500 flex items-center justify-between">
+              <div className="mt-4 border-t border-neutral-800 pt-3 text-[11px] text-neutral-500 flex items-center justify-between">
                 <span>Correlation ID: req-8891-bnp-prod</span>
-                <span className="text-accent">Resolved with 0 regressions</span>
+                <span className="text-accent font-medium">Resolved with 0 regressions</span>
               </div>
             </div>
           </div>

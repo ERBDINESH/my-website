@@ -37,17 +37,17 @@ export function ConsultantBadge() {
       {/* Consultant Identity Info */}
       <div className="flex flex-col text-left">
         <div className="flex items-center gap-1.5">
-          <span className="text-xs font-bold text-foreground tracking-tight">
+          <span className="text-sm font-bold text-foreground tracking-tight">
             {profile.fullName}
           </span>
-          <span className="rounded-full bg-accent/15 px-1.5 py-0.2 font-mono-code text-[9px] font-semibold text-accent border border-accent/25">
+          <span className="rounded-full bg-accent/15 px-1.5 py-0.5 font-mono-code text-[11px] font-semibold text-accent border border-accent/25">
             VERIFIED
           </span>
         </div>
-        <div className="flex items-center gap-1 text-[11px] text-foreground-muted">
-          <span className="font-mono-code text-accent">Senior iOS Engineer</span>
+        <div className="flex items-center gap-1.5 text-xs text-foreground-muted">
+          <span className="font-mono-code text-accent font-medium">Senior iOS Engineer</span>
           <span className="text-foreground-subtle/50">•</span>
-          <span className="font-mono-code text-[10px] text-foreground-subtle">
+          <span className="font-mono-code text-[11px] sm:text-xs text-foreground-subtle">
             7+ Yrs Native
           </span>
         </div>

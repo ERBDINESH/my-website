@@ -76,15 +76,15 @@ export function WorkspaceSection() {
               <div className="hidden sm:flex items-center gap-2 border-l border-border pl-3 text-xs">
                 <div className="flex items-center gap-1.5 rounded-lg border border-border bg-surface px-2.5 py-1 text-foreground shadow-xs">
                   <Play className="size-3 fill-accent text-accent" />
-                  <span className="font-mono-code text-[11px] font-semibold text-foreground">
+                  <span className="font-mono-code text-xs font-semibold text-foreground">
                     Portfolio
                   </span>
                   <span className="text-foreground-subtle/50">|</span>
-                  <span className="font-mono-code text-[11px] text-foreground-muted">
+                  <span className="font-mono-code text-xs text-foreground-muted">
                     iOS App
                   </span>
                 </div>
-                <span className="font-mono-code text-[11px] text-accent font-medium hidden md:inline">
+                <span className="font-mono-code text-xs text-accent font-medium hidden md:inline">
                   Ready
                 </span>
               </div>
@@ -104,7 +104,7 @@ export function WorkspaceSection() {
 
             {/* Right: IDE Format Badge & Inspector Toggle Chrome */}
             <div className="flex items-center gap-2.5">
-              <span className="font-mono-code text-[11px] text-foreground-subtle hidden sm:inline">
+              <span className="font-mono-code text-xs text-foreground-subtle hidden sm:inline">
                 Swift • Native iOS
               </span>
               <div
@@ -112,7 +112,7 @@ export function WorkspaceSection() {
                 title="Xcode Inspector Pane"
               >
                 <Sliders className="size-3 text-accent" />
-                <span className="font-mono-code text-[10px] font-medium uppercase tracking-wider text-foreground">
+                <span className="font-mono-code text-[11px] font-medium uppercase tracking-wider text-foreground">
                   Inspector
                 </span>
               </div>
@@ -128,12 +128,12 @@ export function WorkspaceSection() {
             >
               <div>
                 {/* Navigator Header */}
-                <div className="flex items-center justify-between px-2 py-1 text-[11px] font-mono-code uppercase tracking-wider text-foreground-subtle font-semibold border-b border-border pb-2">
+                <div className="flex items-center justify-between px-2 py-1 text-xs font-mono-code uppercase tracking-wider text-foreground-subtle font-semibold border-b border-border pb-2">
                   <div className="flex items-center gap-1.5">
                     <LayoutGrid className="size-3 text-accent" />
                     <span>Project Navigator</span>
                   </div>
-                  <span className="text-[10px] text-foreground-subtle/60">Xcode View</span>
+                  <span className="text-[11px] text-foreground-subtle/60">Xcode View</span>
                 </div>
 
                 {/* Root Project Node */}
@@ -164,7 +164,7 @@ export function WorkspaceSection() {
                               <ChevronRight className="size-3 text-foreground-subtle/70 shrink-0" />
                             )}
                             <Folder className="size-3 text-emerald-500/80 shrink-0" />
-                            <span className="text-[11px] font-medium text-foreground-subtle">
+                            <span className="text-xs font-medium text-foreground-subtle">
                               {topic.folder}
                             </span>
                           </button>
@@ -187,7 +187,7 @@ export function WorkspaceSection() {
                                     isActive ? "text-accent" : "text-foreground-subtle"
                                   }`}
                                 />
-                                <span className="truncate text-xs">{topic.filename}</span>
+                                <span className="truncate text-xs sm:text-[13px]">{topic.filename}</span>
                               </button>
                             </div>
                           )}
@@ -199,12 +199,12 @@ export function WorkspaceSection() {
               </div>
 
               {/* Factual Architectural Descriptors (No unsupported claims) */}
-              <div className="mt-6 hidden lg:block rounded-2xl border border-border bg-surface p-3 text-[11px] font-mono-code">
+              <div className="mt-6 hidden lg:block rounded-2xl border border-border bg-surface p-3 text-xs font-mono-code">
                 <div className="flex items-center gap-1.5 text-foreground font-semibold border-b border-border pb-1.5">
                   <Terminal className="size-3 text-accent" />
                   <span>ARCHITECTURE</span>
                 </div>
-                <div className="mt-2 space-y-1.5 text-foreground-muted text-[11px]">
+                <div className="mt-2 space-y-1.5 text-foreground-muted text-xs">
                   <div>
                     <span className="text-foreground-subtle">Pattern: </span>
                     <span className="text-foreground font-medium">{activeTopic.architecture.pattern}</span>
@@ -229,10 +229,10 @@ export function WorkspaceSection() {
                   <div className="flex items-center gap-2 rounded-lg bg-[#141b16] px-3 py-1 font-mono-code text-xs text-white border border-white/10 shadow-xs">
                     <FileCode2 className="size-3 text-emerald-400" />
                     <span className="font-semibold">{activeTopic.filename}</span>
-                    <span className="text-slate-500 hover:text-white text-[11px] ml-1">×</span>
+                    <span className="text-slate-500 hover:text-white text-xs ml-1">×</span>
                   </div>
                 </div>
-                <span className="font-mono-code text-[11px] text-emerald-400/90 font-medium hidden sm:inline">
+                <span className="font-mono-code text-xs text-emerald-400/90 font-medium hidden sm:inline">
                   Swift • Native iOS
                 </span>
               </div>
@@ -275,7 +275,7 @@ export function WorkspaceSection() {
                     <Sliders className="size-3.5" />
                     <span>INSPECTOR</span>
                   </div>
-                  <span className="font-mono-code text-[10px] text-foreground-subtle">
+                  <span className="font-mono-code text-[11px] sm:text-xs text-foreground-subtle">
                     {activeTopic.filename}
                   </span>
                 </div>
@@ -285,7 +285,7 @@ export function WorkspaceSection() {
                   <h4 className="font-mono-code text-xs font-semibold uppercase tracking-wider text-foreground-subtle">
                     Responsibility
                   </h4>
-                  <p className="mt-2 text-xs sm:text-[13px] leading-relaxed text-foreground-muted">
+                  <p className="mt-2 text-sm sm:text-[14px] leading-relaxed text-foreground-muted">
                     {activeTopic.responsibility}
                   </p>
                 </div>
@@ -295,7 +295,7 @@ export function WorkspaceSection() {
                   <h4 className="font-mono-code text-xs font-semibold uppercase tracking-wider text-foreground-subtle">
                     Engineering Choices
                   </h4>
-                  <ul className="mt-2 space-y-1.5 text-xs text-foreground-muted">
+                  <ul className="mt-2 space-y-2 text-xs sm:text-[13.5px] leading-relaxed text-foreground-muted">
                     {activeTopic.engineeringChoices.map((choice) => (
                       <li key={choice} className="flex items-start gap-2">
                         <span className="size-1.5 rounded-full bg-accent mt-1.5 shrink-0" />
@@ -341,7 +341,7 @@ export function WorkspaceSection() {
               </div>
 
               {/* Inspector Footer Status */}
-              <div className="mt-6 border-t border-border pt-4 flex items-center justify-between font-mono-code text-[11px] text-foreground-subtle">
+              <div className="mt-6 border-t border-border pt-4 flex items-center justify-between font-mono-code text-xs text-foreground-subtle">
                 <span className="flex items-center gap-1.5">
                   <Code2 className="size-3 text-accent" />
                   <span>Module Status</span>

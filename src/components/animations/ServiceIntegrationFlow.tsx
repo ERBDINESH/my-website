@@ -141,10 +141,10 @@ export function ServiceIntegrationFlow() {
         <div className="flex flex-wrap items-center justify-between gap-4 border-b border-border/70 pb-6">
           <div>
             <div className="flex items-center gap-2">
-              <span className="rounded-full px-2.5 py-0.5 font-mono-code text-[11px] font-semibold bg-accent/15 text-accent border border-accent/30">
+              <span className="rounded-full px-2.5 py-0.5 font-mono-code text-xs font-semibold bg-accent/15 text-accent border border-accent/30">
                 DATA &amp; NETWORKING ARCHITECTURE
               </span>
-              <span className="font-mono-code text-xs text-foreground-subtle">
+              <span className="font-mono-code text-xs sm:text-[13px] text-foreground-subtle">
                 URLSession • Actors • Codable • Offline Cache
               </span>
             </div>
@@ -157,7 +157,7 @@ export function ServiceIntegrationFlow() {
             type="button"
             onClick={runTraceSimulation}
             disabled={isSimulating}
-            className="liquid-glass-emerald inline-flex items-center gap-2 rounded-xl px-3.5 py-2 font-mono-code text-xs font-semibold text-[var(--emerald-action-text)] transition-all cursor-pointer disabled:opacity-50"
+            className="liquid-glass-emerald inline-flex items-center gap-2 rounded-xl px-3.5 py-2 font-mono-code text-xs sm:text-[13px] font-semibold text-[var(--emerald-action-text)] transition-all cursor-pointer disabled:opacity-50"
           >
             <Play className="size-3" />
             <span>Simulate Request Pipeline</span>
@@ -168,11 +168,11 @@ export function ServiceIntegrationFlow() {
         <div className="mt-8 grid gap-8 lg:grid-cols-12 lg:items-start">
           {/* Left Column: Interactive Stage Cards */}
           <div className="lg:col-span-6 space-y-3">
-            <div className="flex items-center justify-between text-xs text-foreground-subtle pb-1">
+            <div className="flex items-center justify-between text-xs sm:text-[13px] text-foreground-subtle pb-1">
               <span className="font-mono-code uppercase tracking-wider">
                 Pipeline Stages (Click to Inspect)
               </span>
-              <span className="font-mono-code text-[11px] text-accent">
+              <span className="font-mono-code text-xs text-accent">
                 {isSimulating ? "Executing Trace..." : "5 Safe Stages"}
               </span>
             </div>
@@ -199,10 +199,10 @@ export function ServiceIntegrationFlow() {
                         {stage.step}
                       </span>
                       <div>
-                        <div className="font-bold text-foreground text-sm">
+                        <div className="font-bold text-foreground text-sm sm:text-base">
                           {stage.title}
                         </div>
-                        <div className="font-mono-code text-[10px] text-foreground-subtle">
+                        <div className="font-mono-code text-[11px] sm:text-xs text-foreground-subtle">
                           {stage.layer}
                         </div>
                       </div>
@@ -221,7 +221,7 @@ export function ServiceIntegrationFlow() {
                 className="w-full flex items-center justify-between rounded-xl border border-border bg-surface px-4 py-2.5 font-mono-code text-xs font-semibold text-accent hover:border-accent/40 transition-all cursor-pointer"
               >
                 <span>{showMobileSnippet ? "Hide Swift implementation" : "View Swift implementation & code"}</span>
-                <span className="text-[11px]">{showMobileSnippet ? "▲ Collapse" : "▼ Expand"}</span>
+                <span className="text-xs">{showMobileSnippet ? "▲ Collapse" : "▼ Expand"}</span>
               </button>
             </div>
           </div>
@@ -232,18 +232,18 @@ export function ServiceIntegrationFlow() {
               <div className="flex items-center justify-between border-b border-neutral-800 pb-3 text-neutral-400">
                 <div className="flex items-center gap-2">
                   <span className="size-2 rounded-full bg-accent animate-pulse" />
-                  <span className="text-neutral-200 font-bold">
+                  <span className="text-sm sm:text-base text-neutral-200 font-bold">
                     {activeStage.title}
                   </span>
                 </div>
-                <span className="rounded-full px-2 py-0.5 text-[9px] bg-emerald-500/15 text-emerald-300 border border-emerald-500/30">
+                <span className="rounded-full px-2 py-0.5 text-[11px] bg-emerald-500/15 text-emerald-300 border border-emerald-500/30">
                   {activeStage.layer}
                 </span>
               </div>
 
               {/* Code Snippet */}
               <div className="mt-4 rounded-xl border border-neutral-800 bg-black/60 p-3.5">
-                <pre className="overflow-x-auto text-[11px] leading-relaxed text-neutral-300 font-mono-code">
+                <pre className="overflow-x-auto text-xs leading-relaxed text-neutral-300 font-mono-code">
                   <code>
                     {activeStage.swiftSnippet.map((line, i) => (
                       <div key={i} className="py-0.5">
@@ -258,14 +258,14 @@ export function ServiceIntegrationFlow() {
               </div>
 
               {/* Responsibility Description */}
-              <div className="mt-4 space-y-2 text-xs">
-                <div className="text-neutral-400 font-sans">
+              <div className="mt-4 space-y-2.5 text-xs sm:text-[13.5px]">
+                <div className="text-neutral-300 font-sans leading-relaxed">
                   {activeStage.responsibility}
                 </div>
 
                 <div className="flex items-start gap-2 rounded-xl border border-emerald-500/25 bg-emerald-950/20 p-3 text-emerald-200">
                   <ShieldCheck className="size-4 text-emerald-400 shrink-0 mt-0.5" />
-                  <span className="leading-relaxed font-sans text-xs">
+                  <span className="leading-relaxed font-sans text-xs sm:text-[13.5px]">
                     <span className="font-bold text-accent">Reliability Guard: </span>
                     {activeStage.reliabilityFeature}
                   </span>
