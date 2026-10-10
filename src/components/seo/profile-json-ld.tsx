@@ -1,4 +1,5 @@
 import { profile, socialLinks } from "@/data/portfolio";
+import { SITE_PROFESSIONAL_TITLE } from "@/data/site-branding";
 
 const professionalProfiles = socialLinks
   .filter(
@@ -16,7 +17,7 @@ const profilePageJsonLd = {
   mainEntity: {
     "@type": "Person",
     name: profile.fullName,
-    jobTitle: profile.professionalTitle,
+    jobTitle: SITE_PROFESSIONAL_TITLE,
     description: profile.summary,
     image: profile.profileImagePath,
     homeLocation: {
