@@ -8,6 +8,7 @@ import { ActionLink } from "@/components/ui/action-link";
 import { LiquidGlass } from "@/components/ui/liquid-glass";
 import { ThemeToggle } from "@/components/ui/theme-toggle";
 import { navigation, profile } from "@/data/portfolio";
+import { SITE_PROFESSIONAL_TITLE } from "@/data/site-branding";
 
 export function SiteHeader() {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -51,7 +52,7 @@ export function SiteHeader() {
             <a
               href="#hero"
               className="group flex items-center gap-2 sm:gap-2.5 text-xs font-semibold tracking-tight text-foreground hover:text-accent transition-colors shrink-0"
-              aria-label={`${profile.fullName} - Software Engineer – iOS`}
+              aria-label={`${profile.fullName} - ${SITE_PROFESSIONAL_TITLE}`}
             >
               <Image
                 src="/assets/profile/DE_logo.png"
@@ -67,7 +68,7 @@ export function SiteHeader() {
                   {profile.fullName}
                 </span>
                 <span className="font-mono-code text-[11px] sm:text-xs text-foreground-subtle truncate hidden sm:block">
-                  Senior iOS Engineer
+                  {SITE_PROFESSIONAL_TITLE}
                 </span>
               </div>
             </a>
