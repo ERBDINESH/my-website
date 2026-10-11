@@ -9,6 +9,7 @@ import "./globals.css";
 const siteName = `${profile.fullName} | ${SITE_PROFESSIONAL_TITLE}`;
 const title = `${profile.fullName} | ${SITE_PROFESSIONAL_TITLE}`;
 const description = `Portfolio of ${profile.fullName}, ${SITE_PROFESSIONAL_TITLE}, focused on native iOS engineering, architecture, design systems, secure integrations, and production delivery.`;
+const socialImage = "/og-image.png?v=20261011";
 
 export const viewport: Viewport = {
   themeColor: [
@@ -44,12 +45,22 @@ export const metadata: Metadata = {
     url: "https://erbdinesh.com",
     locale: "en_US",
     type: "profile",
+    images: [
+      {
+        url: socialImage,
+        width: 1200,
+        height: 630,
+        alt: `${profile.fullName} | ${SITE_PROFESSIONAL_TITLE}`,
+        type: "image/png",
+      },
+    ],
   },
   twitter: {
     card: "summary_large_image",
     title,
     description,
     creator: profile.fullName,
+    images: [socialImage],
   },
   robots: {
     index: true,
