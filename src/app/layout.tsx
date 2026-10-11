@@ -9,7 +9,7 @@ import "./globals.css";
 const siteName = `${profile.fullName} | ${SITE_PROFESSIONAL_TITLE}`;
 const title = `${profile.fullName} | ${SITE_PROFESSIONAL_TITLE}`;
 const description = `Portfolio of ${profile.fullName}, ${SITE_PROFESSIONAL_TITLE}, focused on native iOS engineering, architecture, design systems, secure integrations, and production delivery.`;
-const socialImage = "/og-image.png?v=20261011";
+const socialImage = "https://erbdinesh.com/og-image.png";
 
 export const viewport: Viewport = {
   themeColor: [
