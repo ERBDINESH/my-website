@@ -7,8 +7,8 @@ import { SITE_PROFESSIONAL_TITLE } from "@/data/site-branding";
 import "./globals.css";
 
 const siteName = `${profile.fullName} | ${SITE_PROFESSIONAL_TITLE}`;
-const title = `${profile.fullName} – ${SITE_PROFESSIONAL_TITLE}`;
-const description = `Portfolio of ${profile.fullName}, ${SITE_PROFESSIONAL_TITLE}, with ${profile.experiencePositioning} across banking, commerce, and connected-device products.`;
+const title = `${profile.fullName} | ${SITE_PROFESSIONAL_TITLE}`;
+const description = `Portfolio of ${profile.fullName}, ${SITE_PROFESSIONAL_TITLE}, focused on native iOS engineering, architecture, design systems, secure integrations, and production delivery.`;
 
 export const viewport: Viewport = {
   themeColor: [
@@ -42,7 +42,6 @@ export const metadata: Metadata = {
     description,
     siteName,
     url: "https://erbdinesh.com",
-    images: "/og-image.png",
     locale: "en_US",
     type: "profile",
   },
@@ -51,7 +50,6 @@ export const metadata: Metadata = {
     title,
     description,
     creator: profile.fullName,
-    images: "/og-image.png",
   },
   robots: {
     index: true,
