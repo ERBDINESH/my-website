@@ -144,9 +144,9 @@
   /* Secondary Accent Family: Blue (AI Engineering - Light mode) */
   --blue-accent: #0284c7;
   --blue-accent-hover: #0369a1;
-  --blue-action-text: #0369a1;
+  --blue-action-text: #075985;
   --blue-glass-bg: rgba(2, 132, 199, 0.08);
-  --blue-glass-border: rgba(2, 132, 199, 0.26);
+  --blue-glass-border: rgba(2, 132, 199, 0.28);
   --blue-glow: 0 0 24px -4px rgba(2, 132, 199, 0.15);
 
   /* Subtle Highlight Accent: Amber / Yellow (Light mode) */
@@ -336,6 +336,14 @@ body {
 .liquid-glass-blue:hover {
   border-color: var(--blue-glass-border);
   box-shadow: inset 0 1px 0 0 rgba(186, 230, 253, 0.40), 0 6px 20px -2px rgba(56, 189, 248, 0.24);
+}
+
+[data-theme="light"] .liquid-glass-blue {
+  box-shadow: inset 0 1px 0 0 rgba(255, 255, 255, 0.90), 0 4px 16px -2px rgba(2, 132, 199, 0.12);
+}
+
+[data-theme="light"] .liquid-glass-blue:hover {
+  box-shadow: inset 0 1px 0 0 rgba(255, 255, 255, 1), 0 6px 20px -2px rgba(2, 132, 199, 0.18);
 }
 
 .liquid-glass-amber {

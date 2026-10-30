@@ -71,8 +71,8 @@ export function IndependentProjectsSection() {
                     </span>
                   </div>
 
-                  <span className="inline-flex items-center gap-1.5 rounded-full border border-emerald-500/30 bg-emerald-500/10 px-2.5 py-0.5 font-mono-code text-[11px] font-semibold text-emerald-400">
-                    <span className="size-1.5 rounded-full bg-emerald-400" />
+                  <span className="inline-flex items-center gap-1.5 rounded-full border border-emerald-200 bg-emerald-50 text-emerald-700 dark:border-emerald-500/30 dark:bg-emerald-500/10 dark:text-emerald-400 px-2.5 py-0.5 font-mono-code text-[11px] font-semibold">
+                    <span className="size-1.5 rounded-full bg-emerald-600 dark:bg-emerald-400" />
                     {launchProof.status}
                   </span>
                 </div>
@@ -121,7 +121,7 @@ export function IndependentProjectsSection() {
                       <ShieldCheck className="size-3.5 text-accent" />
                       Sample Launch Verification Pipeline
                     </span>
-                    <span className="font-mono-code text-emerald-400">
+                    <span className="font-mono-code text-emerald-700 dark:text-emerald-400 font-semibold">
                       17 Automated Checks
                     </span>
                   </div>
@@ -155,38 +155,48 @@ export function IndependentProjectsSection() {
                   ))}
                 </div>
 
-                {launchProof.websiteUrl && (
+                <div className="flex flex-wrap items-center gap-2">
                   <a
-                    href={launchProof.websiteUrl}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="liquid-glass-emerald inline-flex items-center gap-1.5 rounded-xl px-3.5 py-2 text-xs sm:text-[13px] font-semibold text-[var(--emerald-action-text)] shadow-xs transition-all hover:brightness-105 active:scale-95"
+                    href="/projects/launchproof"
+                    className="inline-flex items-center gap-1.5 rounded-xl border border-emerald-200 bg-emerald-50 text-emerald-700 hover:bg-emerald-100 hover:border-emerald-300 dark:border-accent/40 dark:bg-accent/10 dark:text-accent dark:hover:bg-accent/20 dark:hover:border-accent px-3.5 py-2 text-xs sm:text-[13px] font-semibold shadow-xs transition-all active:scale-95 cursor-pointer"
                   >
-                    <span>Visit LaunchProof</span>
+                    <span>Explore Case Study</span>
                     <ArrowUpRight className="size-3.5" />
                   </a>
-                )}
+
+                  {launchProof.websiteUrl && (
+                    <a
+                      href={launchProof.websiteUrl}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="liquid-glass-emerald inline-flex items-center gap-1.5 rounded-xl px-3.5 py-2 text-xs sm:text-[13px] font-semibold text-[var(--emerald-action-text)] shadow-xs transition-all hover:brightness-105 active:scale-95"
+                    >
+                      <span>Visit LaunchProof</span>
+                      <ArrowUpRight className="size-3.5" />
+                    </a>
+                  )}
+                </div>
               </div>
             </article>
           )}
 
           {/* Card 2: Personal AI Agent (AI Experiment) - Spans 5 columns on desktop */}
           {personalAgent && (
-            <article className="lg:col-span-5 flex flex-col justify-between rounded-3xl border border-blue-500/20 bg-surface/50 backdrop-blur-xs p-6 sm:p-8 shadow-xl transition-all hover:border-blue-500/40 hover:bg-surface-raised/40">
+            <article className="lg:col-span-5 flex flex-col justify-between rounded-3xl border border-blue-200 dark:border-blue-500/20 bg-surface/50 backdrop-blur-xs p-6 sm:p-8 shadow-xl transition-all hover:border-blue-300 dark:hover:border-blue-500/40 hover:bg-surface-raised/40">
               <div>
                 {/* Header Strip */}
                 <div className="flex flex-wrap items-center justify-between gap-3 border-b border-border/70 pb-4">
                   <div className="flex items-center gap-2">
                     <LiquidGlass
                       variant="control"
-                      className="rounded-full px-2.5 py-0.5 font-mono-code text-xs font-semibold uppercase tracking-wider text-[var(--blue-accent)]"
+                      className="rounded-full px-2.5 py-0.5 font-mono-code text-xs font-semibold uppercase tracking-wider text-blue-700 dark:text-[var(--blue-accent)]"
                     >
                       {personalAgent.category}
                     </LiquidGlass>
                   </div>
 
-                  <span className="inline-flex items-center gap-1.5 rounded-full border border-blue-500/30 bg-blue-500/10 px-2.5 py-0.5 font-mono-code text-[11px] font-semibold text-blue-400">
-                    <Clock className="size-3" />
+                  <span className="inline-flex items-center gap-1.5 rounded-full border border-blue-200 bg-blue-50 dark:border-blue-500/30 dark:bg-blue-500/10 px-2.5 py-0.5 font-mono-code text-[11px] font-semibold text-blue-700 dark:text-blue-400">
+                    <Clock className="size-3 text-blue-600 dark:text-blue-400" />
                     {personalAgent.status}
                   </span>
                 </div>
@@ -194,14 +204,14 @@ export function IndependentProjectsSection() {
                 {/* Identity & Description */}
                 <div className="mt-5">
                   <div className="flex items-center gap-2.5">
-                    <div className="flex size-10 shrink-0 items-center justify-center rounded-xl bg-blue-500/10 border border-blue-500/25 text-blue-400">
+                    <div className="flex size-10 shrink-0 items-center justify-center rounded-xl bg-blue-50 border border-blue-200 text-blue-600 dark:bg-blue-500/10 dark:border-blue-500/25 dark:text-blue-400">
                       <Bot className="size-5" />
                     </div>
                     <div>
                       <h3 className="text-2xl font-bold tracking-tight text-foreground sm:text-3xl">
                         {personalAgent.name}
                       </h3>
-                      <p className="font-mono-code text-xs text-blue-400/80">
+                      <p className="font-mono-code text-xs text-blue-700 dark:text-blue-400/80">
                         Developer Automation Experiment
                       </p>
                     </div>
@@ -214,14 +224,14 @@ export function IndependentProjectsSection() {
 
                 {/* Structured Engineering Capabilities */}
                 <div className="mt-5">
-                  <h4 className="font-mono-code text-xs font-semibold uppercase tracking-wider text-[var(--blue-accent)] flex items-center gap-1.5">
+                  <h4 className="font-mono-code text-xs font-semibold uppercase tracking-wider text-blue-700 dark:text-[var(--blue-accent)] flex items-center gap-1.5">
                     <Terminal className="size-3.5" />
                     Demonstrates
                   </h4>
                   <ul className="mt-2.5 space-y-2 text-xs sm:text-sm text-foreground-muted">
                     {personalAgent.demonstrates.map((item) => (
                       <li key={item} className="flex items-start gap-2">
-                        <CheckCircle2 className="size-3.5 mt-0.5 text-blue-400 shrink-0" />
+                        <CheckCircle2 className="size-3.5 mt-0.5 text-blue-600 dark:text-blue-400 shrink-0" />
                         <span>{item}</span>
                       </li>
                     ))}
@@ -229,34 +239,37 @@ export function IndependentProjectsSection() {
                 </div>
 
                 {/* Defensible Boundary Notice */}
-                <div className="mt-6 rounded-2xl border border-blue-500/20 bg-blue-950/20 p-3.5 text-xs text-blue-200/80 leading-relaxed">
+                <div className="mt-6 rounded-2xl border border-blue-200 bg-blue-50/80 p-3.5 text-xs text-slate-700 leading-relaxed dark:border-blue-500/30 dark:bg-blue-950/30 dark:text-blue-100/90">
                   <p className="flex items-start gap-2">
-                    <Sparkles className="size-3.5 mt-0.5 text-blue-400 shrink-0" />
+                    <Sparkles className="size-3.5 mt-0.5 text-blue-600 dark:text-blue-400 shrink-0" />
                     <span>
-                      <strong className="text-blue-200">Active Prototype:</strong> Focuses on developer workflow automation, human validation gates, and deterministic test harness execution. Not offered as production-ready software.
+                      <strong className="font-semibold text-blue-900 dark:text-blue-200">Active Prototype:</strong>{" "}
+                      Focuses on developer workflow automation, human validation gates, and deterministic test harness execution. Not offered as production-ready software.
                     </span>
                   </p>
                 </div>
 
-                {/* Simulated Workflow Trace */}
-                <div className="mt-4 rounded-xl border border-border/70 bg-[#070d14] p-3 text-[11px] font-mono-code">
-                  <div className="text-foreground-subtle pb-1 border-b border-border/40 flex justify-between">
-                    <span>AGENTIC TEST WORKFLOW</span>
-                    <span className="text-blue-400">LOCAL CLI</span>
+                {/* Simulated Workflow Trace - Dark terminal appearance preserved in both themes */}
+                <div className="mt-4 rounded-xl border border-neutral-800 bg-[#070d14] p-3 text-[11px] font-mono-code shadow-inner">
+                  <div className="text-neutral-400 pb-1.5 border-b border-neutral-800 flex justify-between items-center">
+                    <span className="font-medium tracking-wide">AGENTIC TEST WORKFLOW</span>
+                    <span className="text-blue-400 font-semibold text-[10px] px-1.5 py-0.5 rounded bg-blue-500/15 border border-blue-500/25">
+                      LOCAL CLI
+                    </span>
                   </div>
-                  <div className="mt-2 space-y-1.5">
+                  <div className="mt-2.5 space-y-1.5">
                     {AGENT_WORKFLOW_STEPS.map((step) => (
                       <div key={step.step} className="flex items-center justify-between">
-                        <span className="text-neutral-400">
+                        <span className="text-neutral-300">
                           {step.step}. {step.label}
                         </span>
                         <span
-                          className={`text-[10px] px-1.5 py-0.2 rounded ${
+                          className={`text-[10px] px-1.5 py-0.5 rounded font-semibold border ${
                             step.status === "PASSED"
-                              ? "bg-emerald-500/15 text-emerald-400"
+                              ? "bg-emerald-500/15 text-emerald-400 border-emerald-500/30"
                               : step.status === "REQUIRED"
-                              ? "bg-amber-500/15 text-amber-400"
-                              : "bg-blue-500/15 text-blue-400"
+                              ? "bg-amber-500/15 text-amber-300 border-amber-500/30"
+                              : "bg-blue-500/15 text-blue-300 border-blue-500/30"
                           }`}
                         >
                           {step.status}
@@ -267,8 +280,8 @@ export function IndependentProjectsSection() {
                 </div>
               </div>
 
-              {/* Technologies Footer */}
-              <div className="mt-6 border-t border-border/70 pt-5">
+              {/* Technologies & CTA Footer */}
+              <div className="mt-6 border-t border-border/70 pt-5 flex flex-wrap items-center justify-between gap-3">
                 <div className="flex flex-wrap gap-1.5">
                   {personalAgent.technologies.map((tech) => (
                     <span
@@ -278,6 +291,24 @@ export function IndependentProjectsSection() {
                       {tech}
                     </span>
                   ))}
+                </div>
+
+                <div className="flex flex-wrap items-center gap-2">
+                  <a
+                    href="/projects/personal-ai-agent"
+                    className="inline-flex items-center gap-1.5 rounded-xl border border-blue-200 bg-blue-50 px-3.5 py-2 text-xs sm:text-[13px] font-semibold text-blue-700 shadow-xs transition-all hover:bg-blue-100 hover:border-blue-300 active:scale-95 focus-visible:outline-hidden focus-visible:ring-2 focus-visible:ring-blue-500 dark:border-blue-500/40 dark:bg-blue-500/10 dark:text-blue-400 dark:hover:bg-blue-500/20 dark:hover:border-blue-400 cursor-pointer"
+                  >
+                    <span>Explore Case Study</span>
+                    <ArrowUpRight className="size-3.5" />
+                  </a>
+
+                  <a
+                    href="/projects/personal-ai-agent#interactive-demo"
+                    className="liquid-glass-blue inline-flex items-center gap-1.5 rounded-xl border border-blue-300 dark:border-[var(--blue-glass-border)] px-3.5 py-2 text-xs sm:text-[13px] font-semibold text-blue-800 dark:text-[var(--blue-action-text)] shadow-xs transition-all hover:bg-blue-100/90 dark:hover:brightness-110 active:scale-95 focus-visible:outline-hidden focus-visible:ring-2 focus-visible:ring-blue-500 focus-visible:ring-offset-2 cursor-pointer"
+                  >
+                    <span>Try Demo</span>
+                    <Terminal className="size-3.5" />
+                  </a>
                 </div>
               </div>
             </article>

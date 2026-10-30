@@ -864,6 +864,7 @@ export const independentProjects: readonly IndependentProject[] = [
     technologies: ["Next.js", "TypeScript", "Tailwind CSS", "Supabase", "Cloudflare"],
     websiteUrl: "https://launchproof.erbdinesh.com",
     githubUrl: "https://github.com/ERBDINESH/launchproof",
+    caseStudyUrl: "/projects/launchproof",
     isExperimental: false,
   },
   {
@@ -880,6 +881,8 @@ export const independentProjects: readonly IndependentProject[] = [
       "Exploration of developer productivity automation",
     ],
     technologies: ["TypeScript", "Node.js", "Test Harnesses", "CLI Tooling", "Git Automation"],
+    caseStudyUrl: "/projects/personal-ai-agent",
+    hasInteractiveDemo: true,
     isExperimental: true,
   },
 ];

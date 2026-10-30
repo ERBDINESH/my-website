@@ -157,6 +157,8 @@ export interface IndependentProject {
   technologies: readonly string[];
   websiteUrl?: string;
   githubUrl?: string;
+  caseStudyUrl?: string;
+  hasInteractiveDemo?: boolean;
   isExperimental?: boolean;
 }
 

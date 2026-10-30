@@ -25,16 +25,43 @@ if (!fs.existsSync(OUT_DIR)) {
   process.exit(1);
 }
 
-const server = http.createServer((req, res) => {
-  let reqPath = decodeURI(req.url.split("?")[0]);
+function resolveStaticFilePath(outDir, urlPath) {
+  let reqPath = decodeURI(urlPath.split("?")[0]);
   if (reqPath === "/") reqPath = "/index.html";
 
-  let filePath = path.join(OUT_DIR, reqPath);
-  if (!fs.existsSync(filePath) && fs.existsSync(filePath + ".html")) {
-    filePath += ".html";
+  let targetPath = path.join(outDir, reqPath);
+
+  // 1. Direct file match
+  if (fs.existsSync(targetPath) && fs.statSync(targetPath).isFile()) {
+    return targetPath;
   }
 
-  if (fs.existsSync(filePath) && fs.statSync(filePath).isFile()) {
+  // 2. Exact file with .html appended (e.g. /projects/launchproof -> /projects/launchproof.html)
+  if (fs.existsSync(targetPath + ".html") && fs.statSync(targetPath + ".html").isFile()) {
+    return targetPath + ".html";
+  }
+
+  // 3. Directory with index.html (e.g. /projects/launchproof/ -> /projects/launchproof/index.html)
+  const indexPath = path.join(targetPath, "index.html");
+  if (fs.existsSync(indexPath) && fs.statSync(indexPath).isFile()) {
+    return indexPath;
+  }
+
+  // 4. Clean URL trailing slash handling (e.g. /projects/launchproof/ -> /projects/launchproof.html)
+  if (reqPath.endsWith("/")) {
+    const strippedPath = path.join(outDir, reqPath.slice(0, -1));
+    if (fs.existsSync(strippedPath + ".html") && fs.statSync(strippedPath + ".html").isFile()) {
+      return strippedPath + ".html";
+    }
+  }
+
+  return null;
+}
+
+const server = http.createServer((req, res) => {
+  const filePath = resolveStaticFilePath(OUT_DIR, req.url);
+
+  if (filePath && fs.existsSync(filePath) && fs.statSync(filePath).isFile()) {
     const ext = path.extname(filePath).toLowerCase();
     const stat = fs.statSync(filePath);
     res.writeHead(200, {
@@ -55,18 +82,28 @@ const server = http.createServer((req, res) => {
   }
 });
 
-server.listen(DEFAULT_PORT, () => {
-  console.log(`\n======================================================`);
-  console.log(`✓ Static export production server running at:`);
-  console.log(`  http://localhost:${DEFAULT_PORT}`);
-  console.log(`======================================================\n`);
-});
+let currentPort = DEFAULT_PORT;
+
+function startListening(port) {
+  server.listen(port, () => {
+    console.log(`\n======================================================`);
+    console.log(`✓ Next.js Static Export Production Preview Running`);
+    console.log(`  Root:             http://localhost:${port}`);
+    console.log(`  LaunchProof:      http://localhost:${port}/projects/launchproof`);
+    console.log(`  Personal AI Agent: http://localhost:${port}/projects/personal-ai-agent`);
+    console.log(`  Resume PDF:       http://localhost:${port}/Dineshbabu-Elumalai-Resume.pdf`);
+    console.log(`======================================================\n`);
+  });
+}
 
 server.on("error", (err) => {
   if (err.code === "EADDRINUSE") {
-    console.log(`Port ${DEFAULT_PORT} in use, trying port ${DEFAULT_PORT + 1}...`);
-    server.listen(DEFAULT_PORT + 1);
+    currentPort += 1;
+    console.log(`Port in use, trying http://localhost:${currentPort}...`);
+    startListening(currentPort);
   } else {
     console.error("Server error:", err);
   }
 });
+
+startListening(currentPort);
