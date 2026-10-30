@@ -25,16 +25,26 @@ export function HeroSection() {
           {/* Main Hero Copy */}
           <div className="flex flex-col items-start text-left">
             {/* 1. Engineer Identity Primary */}
-            <div className="space-y-1">
+            <div className="space-y-1.5">
               <h1
                 id="hero-heading"
                 className="text-4xl font-extrabold tracking-tight text-foreground sm:text-5xl lg:text-[clamp(3rem,5vw,5.5rem)] lg:leading-[1.08]"
               >
                 {profile.fullName}
               </h1>
-              <p className="font-mono-code text-lg font-semibold text-accent sm:text-xl">
-                {SITE_PROFESSIONAL_TITLE}
-              </p>
+              <div className="flex flex-wrap items-center gap-2 pt-0.5">
+                <p className="font-mono-code text-lg font-semibold text-accent sm:text-xl">
+                  {SITE_PROFESSIONAL_TITLE}
+                </p>
+                {profile.extendedPositioning ? (
+                  <>
+                    <span className="hidden text-foreground-subtle/40 sm:inline">•</span>
+                    <span className="font-mono-code text-xs sm:text-[13px] text-foreground-muted">
+                      {profile.extendedPositioning}
+                    </span>
+                  </>
+                ) : null}
+              </div>
             </div>
 
             {/* 2. Core & Supporting Value Proposition */}
@@ -59,16 +69,21 @@ export function HeroSection() {
                   <span className="relative inline-flex size-2 rounded-full bg-accent" />
                 </span>
                 <span className="text-xs sm:text-[13px] font-medium text-foreground-muted">
-                  Available for {SITE_PROFESSIONAL_TITLE} roles &amp; advisory
+                  Available for Senior iOS &amp; AI-Assisted Engineering roles
                 </span>
               </LiquidGlass>
             </div>
 
-            {/* Call to Actions: 2 Prominent Actions + 1 Subtle Text Link */}
+            {/* Call to Actions: 2 Prominent Actions + Resume + Contact */}
             <div className="mt-8 flex flex-wrap items-center gap-3 sm:gap-4">
               <ActionLink href="#work" variant="primary">
                 View Engineering Work
                 <ArrowDown className="ml-2 size-4" aria-hidden="true" />
+              </ActionLink>
+
+              <ActionLink href="#ai-engineering" variant="secondary">
+                <span>Explore AI Lab</span>
+                <Terminal className="ml-2 size-4 text-[var(--blue-accent)]" aria-hidden="true" />
               </ActionLink>
 
               {profile.resumeUrl ? (
@@ -78,7 +93,7 @@ export function HeroSection() {
                   download="Dineshbabu-Elumalai-Resume.pdf"
                 >
                   <Download className="mr-2 size-4 text-accent" aria-hidden="true" />
-                  Download Resume
+                  Resume
                 </ActionLink>
               ) : null}
 
@@ -87,7 +102,7 @@ export function HeroSection() {
                 className="inline-flex items-center gap-1.5 px-2 py-2 text-sm font-medium text-foreground-muted hover:text-accent transition-colors"
               >
                 <MessageSquare className="size-3.5 text-accent" aria-hidden="true" />
-                <span>Discuss an iOS Project</span>
+                <span>Discuss a Project</span>
               </a>
             </div>
 
@@ -95,7 +110,7 @@ export function HeroSection() {
             <div className="mt-10 flex flex-wrap items-center gap-x-4 gap-y-2 border-t border-border pt-6 text-xs sm:text-[13px] text-foreground-subtle">
               <span className="flex items-center gap-1.5 font-mono-code text-foreground-muted">
                 <Terminal className="size-3.5 text-accent" aria-hidden="true" />
-                Swift • SwiftUI • UIKit • Objective-C
+                Swift • SwiftUI • UIKit • Objective-C • AI Workflows
               </span>
               <span className="hidden text-foreground-subtle/40 sm:inline">•</span>
               <span>Chennai, India (Remote &amp; Onsite)</span>

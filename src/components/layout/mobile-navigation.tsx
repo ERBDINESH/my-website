@@ -1,8 +1,8 @@
 "use client";
 
-import { useEffect, useRef, useState } from "react";
+import { useEffect, useRef, useState, useSyncExternalStore } from "react";
 import { createPortal } from "react-dom";
-import { Download, Layers, Menu, MessageSquare, Sparkles, Terminal, X } from "lucide-react";
+import { Bot, Download, Layers, Menu, MessageSquare, Sparkles, Terminal, X } from "lucide-react";
 import { ActionLink } from "@/components/ui/action-link";
 import { LiquidGlass } from "@/components/ui/liquid-glass";
 import { ThemeToggle } from "@/components/ui/theme-toggle";
@@ -14,17 +14,19 @@ interface MobileNavigationProps {
   resumeUrl?: PersonalProfile["resumeUrl"];
 }
 
+const emptySubscribe = () => () => {};
+
 export function MobileNavigation({
   items,
   resumeUrl,
 }: MobileNavigationProps) {
   const [isOpen, setIsOpen] = useState(false);
-  const [isMounted, setIsMounted] = useState(false);
+  const isMounted = useSyncExternalStore(
+    emptySubscribe,
+    () => true,
+    () => false
+  );
   const buttonRef = useRef<HTMLButtonElement>(null);
-
-  useEffect(() => {
-    setIsMounted(true);
-  }, []);
 
   useEffect(() => {
     if (!isOpen) return;
@@ -178,11 +180,11 @@ export function MobileNavigation({
                     <span>Skills</span>
                   </a>
                   <a
-                    href="#workspace"
-                    className="flex flex-col items-center justify-center px-3 py-1 text-[11px] font-medium text-foreground-muted hover:text-accent transition-colors"
+                    href="#ai-engineering"
+                    className="flex flex-col items-center justify-center px-3 py-1 text-[11px] font-medium text-foreground-muted hover:text-[var(--blue-accent)] transition-colors"
                   >
-                    <Sparkles className="size-3.5 mb-0.5 text-accent" />
-                    <span>Depth</span>
+                    <Bot className="size-3.5 mb-0.5 text-[var(--blue-accent)]" />
+                    <span>AI Lab</span>
                   </a>
                   <a
                     href="#contact"

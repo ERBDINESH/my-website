@@ -6,6 +6,7 @@ import type {
   EngineeringPrinciple,
   Experience,
   FeaturedProject,
+  IndependentProject,
   JourneyStage,
   NavigationItem,
   PersonalProfile,
@@ -18,21 +19,22 @@ import type {
 
 export const profile: PersonalProfile = {
   fullName: "Dineshbabu Elumalai",
-  professionalTitle: "Software Engineer – iOS",
+  professionalTitle: "Senior Software Engineer - iOS",
+  extendedPositioning: "iOS Engineering | AI-Augmented Software Development | Mobile Architecture",
   experiencePositioning: "7+ years building production native iOS applications",
-  headline: "Building reliable native iOS products across banking, commerce and connected devices.",
+  headline: "Building Reliable iOS Products. Expanding Software Engineering with AI.",
   supportingMessage:
-    "7+ years delivering production features, reusable UI systems, API-driven workflows and maintainable mobile architecture with Swift, SwiftUI, UIKit and Objective-C.",
+    "7+ years of production iOS engineering experience across banking, commerce, and connected devices. Combining native mobile expertise with AI-assisted development, automation, testing, and practical software engineering.",
   location: "Chennai, India",
   email: "dineshbabucse1@gmail.com",
   resumeUrl: "/Dineshbabu-Elumalai-Resume.pdf",
   profileImagePath: "/assets/profile/dineshbabu-elumalai.png",
   summary:
-    "Native iOS software engineer with 7+ years of experience delivering production mobile applications across banking, commerce, and connected-device products. Experienced in MVVM-C architecture, modular feature design, asynchronous data pipelines, and production release reliability.",
+    "Senior Software Engineer - iOS with 7+ years of production experience shipping native Apple-platform applications across banking, commerce, and connected devices. Combining robust mobile architecture, Swift concurrency, and design systems with disciplined AI-augmented development, automation, and testing.",
   aboutParagraphs: [
     "I’m a native iOS engineer with 7+ years of experience building production mobile applications across banking, commerce and connected devices.",
     "I enjoy turning complex product requirements into maintainable mobile flows, improving existing codebases and building reusable foundations that make future development easier.",
-    "Currently working across production banking features while continuing to deepen architecture, testing, performance and modern Swift engineering practices.",
+    "Currently working across production banking features while continuing to deepen architecture, testing, performance and modern Swift engineering practices, alongside AI-assisted automation.",
   ],
 };
 
@@ -62,10 +64,11 @@ export const credibilityItems: readonly CredibilityItem[] = [
 export const navigation: readonly NavigationItem[] = [
   { id: "capabilities", label: "Capabilities", href: "#capabilities" },
   { id: "work", label: "Work", href: "#work" },
+  { id: "projects", label: "Projects", href: "#projects" },
+  { id: "ai-engineering", label: "AI Lab", href: "#ai-engineering" },
   { id: "approach", label: "Approach", href: "#approach" },
   { id: "workspace", label: "Workspace", href: "#workspace" },
   { id: "consulting", label: "Consulting", href: "#consulting" },
-  { id: "journey", label: "Journey", href: "#journey" },
   { id: "contact", label: "Contact", href: "#contact" },
 ];
 
@@ -843,6 +846,44 @@ export const featuredProject: FeaturedProject = {
   githubUrl: "https://github.com/ERBDINESH/launchproof",
 };
 
+export const independentProjects: readonly IndependentProject[] = [
+  {
+    id: "launchproof",
+    name: "LaunchProof",
+    category: "Independent Web Product",
+    status: "Live Web Product",
+    description:
+      "A web application focused on website launch readiness, validation, and verification workflows.",
+    demonstrates: [
+      "Web application development",
+      "Product workflows",
+      "Testing and validation",
+      "Cloud deployment",
+      "Broader software engineering beyond iOS",
+    ],
+    technologies: ["Next.js", "TypeScript", "Tailwind CSS", "Supabase", "Cloudflare"],
+    websiteUrl: "https://launchproof.erbdinesh.com",
+    githubUrl: "https://github.com/ERBDINESH/launchproof",
+    isExperimental: false,
+  },
+  {
+    id: "personal-ai-agent",
+    name: "Personal AI Agent",
+    category: "AI-Augmented Engineering Experiment",
+    status: "In Progress",
+    description:
+      "An evolving personal engineering project exploring AI-assisted development, developer automation, and agent-based workflows.",
+    demonstrates: [
+      "Structured experimentation",
+      "Test-oriented development",
+      "Human validation of generated code",
+      "Exploration of developer productivity automation",
+    ],
+    technologies: ["TypeScript", "Node.js", "Test Harnesses", "CLI Tooling", "Git Automation"],
+    isExperimental: true,
+  },
+];
+
 export const skillGroups: readonly SkillGroup[] = [
   {
     name: "Primary iOS",
@@ -911,6 +952,7 @@ export const portfolio: PortfolioData = {
   navigation,
   capabilities,
   caseStudies,
+  independentProjects,
   principles,
   workspaceTopics,
   consultingServices,

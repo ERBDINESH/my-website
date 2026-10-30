@@ -7,6 +7,7 @@ import { ContactSection } from "@/components/sections/contact-section";
 import { DebuggingSection } from "@/components/sections/debugging-section";
 import { EngineeringStorySection } from "@/components/sections/engineering-story-section";
 import { HeroSection } from "@/components/sections/hero-section";
+import { IndependentProjectsSection } from "@/components/sections/independent-projects-section";
 import { ModernizationSection } from "@/components/sections/modernization-section";
 import { ServiceIntegrationSection } from "@/components/sections/service-integration-section";
 import { SnapshotSection } from "@/components/sections/snapshot-section";
@@ -26,6 +27,7 @@ export default function Home() {
       <ModernizationSection />
       <ServiceIntegrationSection />
       <WorkSection />
+      <IndependentProjectsSection />
       <DebuggingSection />
       <AIEngineeringSection />
       <TechStackSection />

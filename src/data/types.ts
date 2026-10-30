@@ -1,7 +1,10 @@
 export type SectionId =
   | "hero"
   | "capabilities"
+  | "architecture"
   | "work"
+  | "projects"
+  | "ai-engineering"
   | "approach"
   | "workspace"
   | "consulting"
@@ -29,6 +32,7 @@ export interface JourneyStage {
 export interface PersonalProfile {
   fullName: string;
   professionalTitle: string;
+  extendedPositioning?: string;
   experiencePositioning: string;
   headline: string;
   supportingMessage: string;
@@ -143,6 +147,19 @@ export interface FeaturedProject {
   githubUrl: string;
 }
 
+export interface IndependentProject {
+  id: string;
+  name: string;
+  category: string;
+  status: string;
+  description: string;
+  demonstrates: readonly string[];
+  technologies: readonly string[];
+  websiteUrl?: string;
+  githubUrl?: string;
+  isExperimental?: boolean;
+}
+
 export interface SkillGroup {
   name: string;
   skills: readonly string[];
@@ -162,6 +179,7 @@ export interface PortfolioData {
   navigation: readonly NavigationItem[];
   capabilities: readonly EngineeringCapability[];
   caseStudies: readonly CaseStudy[];
+  independentProjects?: readonly IndependentProject[];
   principles: readonly EngineeringPrinciple[];
   workspaceTopics: readonly WorkspaceTopic[];
   consultingServices: readonly ConsultingService[];

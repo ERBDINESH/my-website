@@ -8,7 +8,7 @@ import "./globals.css";
 
 const siteName = `${profile.fullName} | ${SITE_PROFESSIONAL_TITLE}`;
 const title = `${profile.fullName} | ${SITE_PROFESSIONAL_TITLE}`;
-const description = `Portfolio of ${profile.fullName}, ${SITE_PROFESSIONAL_TITLE}, focused on native iOS engineering, architecture, design systems, secure integrations, and production delivery.`;
+const description = `Portfolio of ${profile.fullName}, ${SITE_PROFESSIONAL_TITLE}. 7+ years of production iOS engineering experience across banking, commerce, and connected devices, expanding into AI-augmented software engineering.`;
 const socialImage = "https://erbdinesh.com/og-image.png";
 
 export const viewport: Viewport = {
@@ -27,10 +27,15 @@ export const metadata: Metadata = {
     "Dineshbabu Elumalai",
     SITE_PROFESSIONAL_TITLE,
     "Senior iOS Engineer",
-    "Mobile Software Engineer",
-    "Swift Developer",
-    "SwiftUI Developer",
+    "Senior Software Engineer",
+    "Swift",
+    "SwiftUI",
     "UIKit",
+    "Mobile Architecture",
+    "AI-Augmented Software Engineering",
+    "AI-Assisted Development",
+    "Developer Automation",
+    "Agentic Workflows",
     "iOS Architecture",
     "iOS Technical Consulting",
   ],
